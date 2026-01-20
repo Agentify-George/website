@@ -205,9 +205,7 @@
                     class="transition-all duration-300 hover:bg-white/20 text-xs font-medium text-white font-manrope bg-purple-700 border-white/10 border rounded-full pt-2 pr-4 pb-2 pl-4 backdrop-blur-sm">
                     Book a Call
                 </a>
-                <button id="mobile-menu-btn"
-                    class="md:hidden p-2 text-slate-300 hover:text-white transition-colors focus:outline-none"
-                    aria-label="Toggle menu">
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -217,29 +215,22 @@
                 </button>
             </div>
         </div>
-        <div id="mobile-menu"
-            class="hidden md:hidden absolute top-16 left-0 w-full bg-black border-b border-white/10 p-6 flex flex-col gap-6 shadow-2xl">
-            <a href="case-studies.html"
-                class="text-base font-medium text-slate-400 hover:text-white font-manrope transition-colors">
-                Case Studies
-            </a>
-            <a href="howitworks.html"
-                class="text-base font-medium text-slate-400 hover:text-white font-manrope transition-colors">
-                How it Works
-            </a>
-            <a href="index.html#pricing"
-                class="text-base font-medium text-slate-400 hover:text-white font-manrope transition-colors">
-                Pricing
-            </a>
-            <a href="#" class="text-base font-medium text-slate-400 hover:text-white font-manrope transition-colors">
-                Sign in
-            </a>
-            <a href="https://cal.com/weareagentify/agentify-calender-meetings" target="_blank"
-                class="text-base font-medium text-slate-400 hover:text-white font-manrope transition-colors">
-                Book a Call
-            </a>
-        </div>
     </nav>
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-[#030304] z-40 hidden flex-col pt-24 px-6 space-y-6 transform transition-transform duration-300 h-screen overflow-y-auto">
+        <a href="case-studies.html"
+            class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">Case Studies</a>
+        <a href="howitworks.html"
+            class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">How it Works</a>
+        <a href="index.html#pricing"
+            class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">Pricing</a>
+        <div class="pt-4 flex flex-col gap-4">
+            <a href="#" class="text-center w-full py-3 rounded-lg border border-white/10 text-white font-manrope">Sign
+                in</a>
+            <a href="https://cal.com/weareagentify/agentify-calender-meetings" target="_blank"
+                class="text-center w-full py-3 rounded-lg bg-purple-700 text-white font-manrope">Book a Call</a>
+        </div>
+    </div>
 
 
     <!-- Hero Section -->
