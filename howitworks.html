@@ -1604,31 +1604,7 @@
             const revealElements = document.querySelectorAll('.reveal');
             revealElements.forEach(el => observer.observe(el));
 
-            // Mobile Menu Logic
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const closeBtn = document.getElementById('close-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
 
-            function toggleMenu() {
-                const isHidden = mobileMenu.classList.contains('hidden');
-                if (isHidden) {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenu.classList.add('flex');
-                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                } else {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                    document.body.style.overflow = '';
-                }
-            }
-
-            if (mobileBtn) mobileBtn.addEventListener('click', toggleMenu);
-            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', toggleMenu);
-            });
         });
     </script>
     <script>
