@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentify - How It Works</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .font-manrope {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #444;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel-hover:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #e2e8f0, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: blur(10px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        .delay-400 {
+            transition-delay: 400ms;
+        }
+
+        /* Step Connector Line */
+        .step-line {
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(99, 102, 241, 0.3), transparent);
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .step-line {
+                left: 1rem;
+            }
+        }
+    </style>
+    <link id="all-fonts-link-font-geist" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-geist">
+        .font-geist {
+            font-family: 'Geist', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-roboto" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-roboto">
+        .font-roboto {
+            font-family: 'Roboto', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-poppins" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-poppins">
+        .font-poppins {
+            font-family: 'Poppins', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-playfair" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap">
+    <style id="all-fonts-style-font-playfair">
+        .font-playfair {
+            font-family: 'Playfair Display', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-instrument-serif" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-instrument-serif">
+        .font-instrument-serif {
+            font-family: 'Instrument Serif', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-merriweather" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap">
+    <style id="all-fonts-style-font-merriweather">
+        .font-merriweather {
+            font-family: 'Merriweather', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-bricolage" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-bricolage">
+        .font-bricolage {
+            font-family: 'Bricolage Grotesque', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-jakarta" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-jakarta">
+        .font-jakarta {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-space-grotesk" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-space-grotesk">
+        .font-space-grotesk {
+            font-family: 'Space Grotesk', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-work-sans" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-work-sans">
+        .font-work-sans {
+            font-family: 'Work Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-pt-serif" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap">
+    <style id="all-fonts-style-font-pt-serif">
+        .font-pt-serif {
+            font-family: 'PT Serif', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-geist-mono" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-geist-mono">
+        .font-geist-mono {
+            font-family: 'Geist Mono', monospace !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-space-mono" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap">
+    <style id="all-fonts-style-font-space-mono">
+        .font-space-mono {
+            font-family: 'Space Mono', monospace !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-quicksand" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-quicksand">
+        .font-quicksand {
+            font-family: 'Quicksand', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-nunito" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-nunito">
+        .font-nunito {
+            font-family: 'Nunito', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-newsreader" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap">
+    <style id="all-fonts-style-font-newsreader">
+        .font-newsreader {
+            font-family: 'Newsreader', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-google-sans-flex" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-google-sans-flex">
+        .font-google-sans-flex {
+            font-family: 'Google Sans Flex', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-oswald" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-oswald">
+        .font-oswald {
+            font-family: 'Oswald', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-dm-sans" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-dm-sans">
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-cormorant" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-cormorant">
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-manrope" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-manrope">
+        .font-manrope {
+            font-family: 'Manrope', sans-serif !important;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#030304] antialiased selection:bg-indigo-500/30 selection:text-indigo-200 overflow-x-hidden text-slate-400">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Background (component) added by Aura -->
+    <div class="aura-background-component fixed top-0 w-full h-screen -z-10 opacity-40 mix-blend-normal"
+        data-alpha-mask="80"
+        style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)">
+        <div data-us-project="hk4GkXoEfSX9qZozoFL6" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+        <script type="text/javascript">
+            !function () { if (!window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.31/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();
+        </script>
+    </div>
+
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b bg-[#030304]/80 backdrop-blur-md transition-all duration-300 reveal active border-white/5"
+        x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="flex text-[10px] font-bold text-white tracking-tighter font-manrope bg-purple-700 w-6 h-6 rounded items-center justify-center">
+                    A</div>
+                <span
+                    class="group-hover:opacity-80 transition-opacity text-base font-medium text-white tracking-tight font-montserrat"
+                    style="transition: outline 0.1s ease-in-out">Agentify</span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="/casestudies" class="transition-colors hover:text-white font-manrope">Case Studies</a>
+                <a href="howitworks.html" class="transition-colors hover:text-white font-manrope">How it Works</a>
+                <a href="/pricing" class="transition-colors hover:text-white font-manrope">Pricing</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#"
+                    class="hidden sm:block text-xs font-medium transition-colors hover:text-white font-manrope">Sign
+                    in</a>
+                <a href="https://cal.com/weareagentify/agentify-calender-meetings" target="_blank"
+                    class="hidden sm:block transition-all duration-300 hover:bg-white/20 text-xs font-medium text-white bg-purple-700 border-white/10 border rounded-full pt-2 pr-4 pb-2 pl-4 backdrop-blur-sm font-manrope">Book
+                    a Call</a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="md:hidden text-white p-2 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-[#030304] z-40 hidden flex-col pt-24 px-6 space-y-6 transform transition-transform duration-300 h-screen overflow-y-auto">
+            <a href="/casestudies"
+                class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">Case Studies</a>
+            <a href="howitworks.html"
+                class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">How it Works</a>
+            <a href="/pricing"
+                class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">Pricing</a>
+            <div class="pt-4 flex flex-col gap-4">
+                <a href="#"
+                    class="text-center w-full py-3 rounded-lg border border-white/10 text-white font-manrope">Sign
+                    in</a>
+                <a href="https://cal.com/weareagentify/agentify-calender-meetings" target="_blank"
+                    class="text-center w-full py-3 rounded-lg bg-purple-700 text-white font-manrope">Book a Call</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+
+
+    <!-- Hero Section -->
+    <section class="md:pt-48 md:pb-32 overflow-hidden pt-32 pb-20 relative">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] hero-glow pointer-events-none opacity-60">
+        </div>
+
+        <div class="max-w-7xl z-10 mr-auto ml-auto pr-6 pl-6 relative">
+            <div class="flex flex-col text-center max-w-3xl mx-auto items-center">
+                <div
+                    class="reveal inline-flex gap-2 text-[11px] font-medium bg-emerald-500/10 border-emerald-500/30 border rounded-full mb-8 px-3 py-1 items-center text-emerald-400 font-manrope">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Systems active 24/7
+                </div>
+
+                <h1
+                    class="reveal delay-100 leading-[1.1] title-gradient md:text-7xl text-5xl font-medium tracking-tight font-montserrat bg-gradient-to-b from-[#ffffff] to-slate-400 bg-clip-text text-transparent mb-6">
+                    No bots. No scripts.<br>Just reliable systems.
+                </h1>
+
+                <p
+                    class="reveal delay-200 md:text-xl leading-relaxed text-lg font-light max-w-2xl mb-10 text-slate-400 font-manrope">
+                    We design and deploy AI-powered phone and messaging systems that answer calls, follow up with leads,
+                    and book appointments automatically.
+                </p>
+
+                <div class="reveal delay-300 flex flex-col sm:flex-row gap-4">
+                    <a href="#bottlenecks"
+                        class="group transition-all duration-300 hover:bg-slate-100 text-sm font-semibold text-black bg-white border border-transparent rounded-full px-8 py-3.5 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] font-manrope">
+                        See How It Works
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 1: Bottlenecks -->
+    <section id="bottlenecks" class="py-24 border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 items-start">
+                <div class="md:w-1/3 sticky top-32 reveal">
+                    <div class="text-xs font-bold tracking-wider text-purple-500 uppercase mb-4 font-manrope">Step 1
+                    </div>
+                    <h2 class="text-3xl md:text-4xl text-white tracking-tight font-montserrat font-medium mb-6">We
+                        Identify the Bottleneck</h2>
+                    <p class="text-lg text-slate-400 font-manrope leading-relaxed mb-6">
+                        On the discovery call, we identify where money or time is leaking. We only recommend systems
+                        that directly fix that leak.
+                    </p>
+                    <div class="p-4 rounded-lg bg-red-500/5 border border-red-500/20 flex gap-3 items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-red-400 shrink-0 mt-0.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <p class="text-sm text-red-200/80 font-manrope">Every business has one of these core problems.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                    <!-- Problem 1 -->
+                    <div
+                        class="reveal delay-100 group p-6 rounded-2xl bg-[#08080a] border border-white/5 hover:border-red-500/30 transition-all duration-300">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 mb-4 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                                <path
+                                    d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91">
+                                </path>
+                                <line x1="23" y1="1" x2="1" y2="23"></line>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-medium text-lg mb-2 font-manrope">Missed Calls</h3>
+                        <p class="text-sm text-slate-500 font-manrope">Revenue lost to voicemail or busy signals during
+                            peak hours.</p>
+                    </div>
+
+                    <!-- Problem 2 -->
+                    <div
+                        class="reveal delay-200 group p-6 rounded-2xl bg-[#08080a] border border-white/5 hover:border-red-500/30 transition-all duration-300">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 mb-4 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-medium text-lg mb-2 font-manrope">Slow Lead Follow-up</h3>
+                        <p class="text-sm text-slate-500 font-manrope">Leads cool down within 5 minutes. Manual
+                            follow-up is too slow.</p>
+                    </div>
+
+                    <!-- Problem 3 -->
+                    <div
+                        class="reveal delay-300 group p-6 rounded-2xl bg-[#08080a] border border-white/5 hover:border-red-500/30 transition-all duration-300">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 mb-4 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M4 5a2 2 0 0 1 1-2h14a2 2 0 0 1 1.05.3"></path>
+                                <path d="M8.3 10a2 2 0 0 1 2-1.7h5.4a2 2 0 0 1 2 1.7"></path>
+                                <path d="M8 21v-2a4 4 0 0 1 2.5-3.7"></path>
+                                <line x1="12" y1="2" x2="12" y2="4"></line>
+                                <path d="M12 18a6 6 0 0 1-6-6V9"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-medium text-lg mb-2 font-manrope">Staff Burnout</h3>
+                        <p class="text-sm text-slate-500 font-manrope">High turnover from repetitive tasks and
+                            qualifying unqualified leads.</p>
+                    </div>
+
+                    <!-- Problem 4 -->
+                    <div
+                        class="reveal delay-400 group p-6 rounded-2xl bg-[#08080a] border border-white/5 hover:border-red-500/30 transition-all duration-300">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 mb-4 group-hover:scale-110 transition-transform">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 20h9"></path>
+                                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+                                <path d="m15 5 3 3"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-white font-medium text-lg mb-2 font-manrope">Low Booking Rates</h3>
+                        <p class="text-sm text-slate-500 font-manrope">Friction in the scheduling process causes
+                            drop-offs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 2: The Systems (The Core Offering) -->
+    <section id="systems" class="py-24 bg-[#050507] border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <div class="text-xs font-bold tracking-wider text-purple-500 uppercase mb-4 font-manrope">Step 2</div>
+                <h2 class="text-3xl md:text-5xl text-white tracking-tight font-montserrat font-medium mb-6">We Deploy
+                    the Right AI System</h2>
+                <p class="text-lg text-slate-400 font-manrope">Most clients start with one core system and expand from
+                    there.</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- System 1: Inbound Receptionist -->
+                <div
+                    class="reveal glass-panel rounded-2xl p-8 md:p-12 border border-white/10 hover:border-indigo-500/30 transition-all duration-300 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-indigo-500/10 transition-colors">
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row gap-12 relative z-10">
+                        <div class="lg:w-1/3">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                    <path d="m16 2 6 6"></path>
+                                    <path d="m22 2-6 6"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl text-white font-montserrat font-medium mb-2">AI Inbound Receptionist
+                            </h3>
+                            <p class="text-indigo-300 font-medium mb-4 font-manrope">Never Miss Another Call</p>
+                            <a href="#book"
+                                class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors font-manrope">
+                                Book a call to see demo
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="lg:w-2/3 grid md:grid-cols-3 gap-8">
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
+                                    What it does</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-indigo-500">•</span>Answers every inbound call instantly</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-indigo-500">•</span>Understands caller intent</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-indigo-500">•</span>Routes, books, or escalates</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-indigo-500">•</span>Sends SMS follow-ups</li>
+                                </ul>
+                            </div>
+                            <div class="">
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
+                                    Best For</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Service
+                                        Biz</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Clinics</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Real
+                                        Estate</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">SaaS
+                                        Support</span>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-gradient-to-br from-[#0f1014] to-[#050505] p-5 rounded-xl border border-white/5">
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 font-manrope">
+                                    Outcome</h4>
+                                <p class="text-sm leading-relaxed text-indigo-200 font-manrope">More answered calls.
+                                    Fewer interruptions. Zero missed opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System 2: Booking Agent -->
+                <div
+                    class="reveal glass-panel rounded-2xl p-8 md:p-12 border border-white/10 hover:border-emerald-500/30 transition-all duration-300 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-emerald-500/10 transition-colors">
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row gap-12 relative z-10">
+                        <div class="lg:w-1/3">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M8 2v4"></path>
+                                    <path d="M16 2v4"></path>
+                                    <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                    <path d="M3 10h18"></path>
+                                    <path d="M10 16h4"></path>
+                                    <path d="M12 14v4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl text-white font-montserrat font-medium mb-2">Inbound Booking Agent</h3>
+                            <p class="text-emerald-300 font-medium mb-4 font-manrope">Turns Calls Into Appointments</p>
+                            <a href="#book"
+                                class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors font-manrope">
+                                See how this books for you
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="lg:w-2/3 grid md:grid-cols-3 gap-8">
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
+                                    What it does</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-emerald-500">•</span>Answers inbound calls/texts</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-emerald-500">•</span>Asks qualification questions</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-emerald-500">•</span>Books directly to calendar</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-emerald-500">•</span>Sends reminders</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
+                                    Best For</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Sales
+                                        Teams</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Consultations</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">High-intent
+                                        Leads</span>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-gradient-to-br from-[#0f1014] to-[#050505] p-5 rounded-xl border border-white/5">
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 font-manrope">
+                                    Outcome</h4>
+                                <p class="text-sm leading-relaxed text-emerald-200 font-manrope">Higher booking rates.
+                                    Better-qualified appointments. Less manual scheduling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System 3: Speed to Lead -->
+                <div
+                    class="reveal glass-panel rounded-2xl p-8 md:p-12 border border-white/10 hover:border-amber-500/30 transition-all duration-300 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-amber-500/10 transition-colors">
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row gap-12 relative z-10">
+                        <div class="lg:w-1/3">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl text-white font-montserrat font-medium mb-2">AI Speed-to-Lead</h3>
+                            <p class="text-amber-300 font-medium mb-4 font-manrope">Contacts Leads in Seconds</p>
+                            <a href="#book"
+                                class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors font-manrope">
+                                See impact on conversion
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="lg:w-2/3 grid md:grid-cols-3 gap-8">
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
+                                    What it does</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-amber-500">•</span>Calls/texts leads instantly</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-amber-500">•</span>Follows up multiple times</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-amber-500">•</span>Escalates hot leads</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-amber-500">•</span>Logs everything in CRM</li>
+                                </ul>
+                            </div>
+                            <div class="">
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
+                                    Best For</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Paid
+                                        Ads</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Web
+                                        Forms</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Missed
+                                        Calls</span>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-gradient-to-br from-[#0f1014] to-[#050505] p-5 rounded-xl border border-white/5">
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 font-manrope">
+                                    Outcome</h4>
+                                <p class="text-sm leading-relaxed text-amber-200 font-manrope">Faster contact. Higher
+                                    conversion rates. No lead left behind.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System 4: Lead Reactivation -->
+                <div
+                    class="reveal glass-panel rounded-2xl p-8 md:p-12 border border-white/10 hover:border-purple-500/30 transition-all duration-300 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-purple-500/10 transition-colors">
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row gap-12 relative z-10">
+                        <div class="lg:w-1/3">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                                    <path d="M3 3v5h5"></path>
+                                    <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+                                    <path d="M16 16h5v5"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl text-white font-montserrat font-medium mb-2">Lead Reactivation</h3>
+                            <p class="text-purple-300 font-medium mb-4 font-manrope">Turns Old Leads Into Revenue</p>
+                            <a href="#book"
+                                class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors font-manrope">
+                                See the ROI potential
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="lg:w-2/3 grid md:grid-cols-3 gap-8">
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
+                                    What it does</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-purple-500">•</span>Re-engages dormant leads</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-purple-500">•</span>Re-qualifies interest</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-purple-500">•</span>Books appointments</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-purple-500">•</span>Filters bad leads</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
+                                    Best For</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Large
+                                        CRMs</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Old
+                                        Data</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">"Dead"
+                                        Leads</span>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-gradient-to-br from-[#0f1014] to-[#050505] p-5 rounded-xl border border-white/5">
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 font-manrope">
+                                    Outcome</h4>
+                                <p class="text-sm leading-relaxed text-purple-200 font-manrope">Revenue from leads you
+                                    already paid for. No pressure selling. Automated follow-up.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System 5: Multi-Channel Hub -->
+                <div
+                    class="reveal glass-panel rounded-2xl p-8 md:p-12 border border-white/10 hover:border-cyan-500/30 transition-all duration-300 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-cyan-500/10 transition-colors">
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row gap-12 relative z-10">
+                        <div class="lg:w-1/3">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 3a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"></path>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                    <line x1="12" x2="12" y1="19" y2="22"></line>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl text-white font-montserrat font-medium mb-2">Multi-Channel Hub</h3>
+                            <p class="text-cyan-300 font-medium mb-4 font-manrope">One Brain Across Voice &amp; Chat</p>
+                            <a href="#book"
+                                class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors font-manrope">
+                                Unify your communications
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div class="lg:w-2/3 grid md:grid-cols-3 gap-8">
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
+                                    What it does</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-cyan-500">•</span>Unifies Voice, SMS, Chat</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-cyan-500">•</span>Full context awareness</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-cyan-500">•</span>Smart routing</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-cyan-500">•</span>Logs and searchable</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
+                                    Best For</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Omnichannel
+                                        Ops</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">Inbox
+                                        Fatigue</span>
+                                    <span
+                                        class="px-2 py-1 rounded bg-white/5 border border-white/5 text-xs text-slate-400 font-manrope">High
+                                        Volume</span>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-gradient-to-br from-[#0f1014] to-[#050505] p-5 rounded-xl border border-white/5">
+                                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 font-manrope">
+                                    Outcome</h4>
+                                <p class="text-sm leading-relaxed text-cyan-200 font-manrope">No lost context. Faster
+                                    responses. Cleaner operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 3: Integration -->
+    <section id="integration" class="py-24 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div class="text-xs font-bold tracking-wider text-purple-500 uppercase mb-4 font-manrope">Step 3
+                    </div>
+                    <h2 class="text-3xl md:text-4xl text-white tracking-tight font-montserrat font-medium mb-6">We
+                        Integrate With Your Existing Tools</h2>
+                    <p class="text-lg text-slate-400 font-manrope leading-relaxed mb-6">
+                        We don’t replace your stack. We connect to it. Everything runs quietly in the background,
+                        updating your Calendars, CRMs, and ticketing systems automatically.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-slate-300 font-manrope">
+                            <div
+                                class="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            HubSpot, Salesforce, Pipedrive
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-300 font-manrope">
+                            <div
+                                class="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            Calendly, Cal.com, Google Calendar
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-300 font-manrope">
+                            <div
+                                class="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            Slack, Notion, Internal DBs
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="reveal delay-200 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 rounded-full blur-[80px] opacity-40">
+                    </div>
+                    <div
+                        class="relative glass-panel rounded-2xl p-8 border border-white/10 flex items-center justify-center aspect-square">
+                        <!-- Abstract Integration Graphic -->
+                        <div class="relative w-full h-full">
+                            <!-- Center Hub -->
+                            <div
+                                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-purple-700/20 border border-purple-500/50 flex items-center justify-center z-20 shadow-[0_0_30px_rgba(147,51,234,0.3)]">
+                                <div
+                                    class="text-[10px] font-bold text-white bg-purple-700 w-12 h-12 rounded flex items-center justify-center font-manrope">
+                                    AI</div>
+                            </div>
+
+                            <!-- Orbiting Icons -->
+                            <div
+                                class="absolute top-4 left-1/2 -translate-x-1/2 p-3 rounded-lg bg-[#111] border border-white/10 animate-[bounce_3s_infinite]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-orange-400">
+                                    <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                    <path d="M16 2v4"></path>
+                                    <path d="M8 2v4"></path>
+                                    <path d="M3 10h18"></path>
+                                </svg>
+                            </div>
+                            <div
+                                class="absolute bottom-4 left-1/2 -translate-x-1/2 p-3 rounded-lg bg-[#111] border border-white/10 animate-[bounce_4s_infinite]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-blue-400">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <div
+                                class="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-lg bg-[#111] border border-white/10 animate-[pulse_3s_infinite]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-green-400">
+                                    <path d="M3 21l18-18"></path>
+                                    <path d="M3 21l10-10"></path>
+                                    <path d="M13 6h8"></path>
+                                    <path d="M13 11h8"></path>
+                                </svg>
+                            </div>
+                            <div
+                                class="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-lg bg-[#111] border border-white/10 animate-[pulse_4s_infinite]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-yellow-400">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+
+                            <!-- Connection Lines -->
+                            <svg class="absolute inset-0 w-full h-full pointer-events-none text-white/10"
+                                style="z-index: 10;">
+                                <line x1="50%" y1="50%" x2="50%" y2="15%" stroke="currentColor" stroke-dasharray="4 4">
+                                </line>
+                                <line x1="50%" y1="50%" x2="50%" y2="85%" stroke="currentColor" stroke-dasharray="4 4">
+                                </line>
+                                <line x1="50%" y1="50%" x2="15%" y2="50%" stroke="currentColor" stroke-dasharray="4 4">
+                                </line>
+                                <line x1="50%" y1="50%" x2="85%" y2="50%" stroke="currentColor" stroke-dasharray="4 4">
+                                </line>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 4 & Audience -->
+    <section id="optimization" class="py-24 bg-[#050507] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+
+                <!-- Step 4 -->
+                <div class="reveal">
+                    <div class="text-xs font-bold tracking-wider text-purple-500 uppercase mb-4 font-manrope">Step 4
+                    </div>
+                    <h2 class="text-3xl text-white tracking-tight font-montserrat font-medium mb-6">We Optimize &amp;
+                        Scale</h2>
+                    <p class="text-lg text-slate-400 font-manrope mb-8">
+                        This isn’t a one-off build. It’s a managed system. After launch, we continuously refine prompts,
+                        add automations, and expand use cases.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <div class="text-white font-medium mb-1 font-manrope">Review</div>
+                            <div class="text-xs text-slate-500 font-manrope">Analyze conversations daily</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <div class="text-white font-medium mb-1 font-manrope">Refine</div>
+                            <div class="text-xs text-slate-500 font-manrope">Improve prompts &amp; flow</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <div class="text-white font-medium mb-1 font-manrope">Automate</div>
+                            <div class="text-xs text-slate-500 font-manrope">Add new trigger actions</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <div class="text-white font-medium mb-1 font-manrope">Expand</div>
+                            <div class="text-xs text-slate-500 font-manrope">Roll out to new departments</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Who This Is For -->
+                <div class="reveal delay-200">
+                    <div class="glass-panel p-8 rounded-2xl border border-white/10 h-full">
+                        <h3 class="text-2xl text-white font-montserrat font-medium mb-8">Who This Is For</h3>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round" class="text-purple-400">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-white font-medium font-manrope">You get inbound calls or leads</p>
+                                    <p class="text-sm text-slate-500 mt-1 font-manrope">Volume that is hard to manage
+                                        manually.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round" class="text-purple-400">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-white font-medium font-manrope">You book appointments or support</p>
+                                    <p class="text-sm text-slate-500 mt-1 font-manrope">Your calendar is the lifeblood
+                                        of revenue.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round" class="text-purple-400">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="">
+                                    <p class="text-white font-medium font-manrope">You want fewer manual tasks</p>
+                                    <p class="text-sm text-slate-500 mt-1 font-manrope">Reduce busy work for your team.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round" class="text-purple-400">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-white font-medium font-manrope">You care about ROI, not hype</p>
+                                    <p class="text-sm text-slate-500 mt-1 font-manrope">We build for efficiency and
+                                        profit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Discovery Call -->
+    <section id="book" class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#030304] to-[#0a0a0c]"></div>
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none">
+        </div>
+
+        <div class="z-10 reveal text-center max-w-4xl mx-auto px-6 relative">
+            <h2 class="md:text-5xl text-4xl tracking-tight mb-8 text-white font-montserrat font-medium">Book a Discovery
+                Call</h2>
+
+            <div class="grid md:grid-cols-3 gap-6 text-left max-w-2xl mx-auto mb-12">
+                <div
+                    class="flex gap-3 items-center text-sm text-slate-300 font-manrope justify-center md:justify-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-purple-500">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    See which system fits
+                </div>
+                <div
+                    class="flex md:justify-start text-sm text-slate-300 font-manrope gap-x-3 gap-y-3 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-purple-500">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Identify immediate automation
+                </div>
+                <div
+                    class="flex gap-3 items-center text-sm text-slate-300 font-manrope justify-center md:justify-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-purple-500">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Map it in 15-30 minutes
+                </div>
+            </div>
+
+            <button
+                class="group transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/25 text-base font-semibold text-white bg-purple-700 rounded-full px-10 py-4 shadow-lg relative overflow-hidden font-manrope">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:animate-[shimmer_1.5s_infinite]">
+                </div>
+                Book Your Call Now
+            </button>
+            <p class="text-xs mt-6 text-slate-500 font-manrope">We'll map your custom solution in under 30 minutes.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t bg-[#020203] py-12 text-sm reveal border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div
+                            class="flex text-[9px] font-bold bg-gradient-to-tr from-indigo-500 to-purple-500 w-5 h-5 rounded items-center justify-center text-white font-manrope">
+                            A</div>
+                        <span class="font-medium tracking-tight text-white font-manrope">Agentify</span>
+                    </div>
+                    <p class="text-slate-500 text-xs leading-relaxed font-manrope">AI That Connects Your Team Smarter.
+                        Built for the future of remote work.</p>
+                    <p class="mt-4 text-xs font-medium text-slate-400 font-manrope">+1 469 757 7742</p>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4 text-white font-manrope">Product</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li><a href="#systems" class="transition-colors hover:text-white font-manrope">Systems</a></li>
+                        <li><a href="#bottlenecks" class="transition-colors hover:text-white font-manrope">Solutions</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4 text-white font-manrope">Company</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li><a href="#" class="transition-colors hover:text-white font-manrope">About</a></li>
+                        <li><a href="#" class="transition-colors hover:text-white font-manrope">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-medium mb-4 text-white font-manrope">Legal</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li><a href="#" class="transition-colors hover:text-white font-manrope">Privacy</a></li>
+                        <li><a href="#" class="transition-colors hover:text-white font-manrope">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row border-t pt-8 items-center justify-between border-white/5">
+                <p class="text-xs text-slate-600 font-manrope">© 2025 Agentify. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-500 transition-colors hover:text-white"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6c2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4c-.9-4.2 4-6.6 7-3.8c1.1 0 3-1.2 3-1.2">
+                            </path>
+                        </svg></a>
+                    <a href="#" class="text-slate-500 transition-colors hover:text-white"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+    <!-- Tidio Chat Widget -->
+    <script src="//code.tidio.co/80btxpkof6ywy0e7maqinqof79ue3b1j.js"></script>
+</body>
+
+</html>
