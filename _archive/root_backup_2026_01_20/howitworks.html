@@ -262,13 +262,6 @@
             font-family: 'Manrope', sans-serif !important;
         }
     </style>
-    <link id="all-fonts-link-font-montserrat" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-montserrat">
-        .font-montserrat {
-            font-family: 'Montserrat', sans-serif !important;
-        }
-    </style>
 </head>
 
 <body
@@ -322,46 +315,46 @@
 
 
 
-
-
-
-
-
-
     <!-- Background (component) added by Aura -->
-    <div class="aura-background-component fixed top-0 w-full h-screen mix-blend-normal opacity-50" data-alpha-mask="80"
+    <div class="aura-background-component fixed top-0 w-full h-screen -z-10 opacity-40 mix-blend-normal"
+        data-alpha-mask="80"
         style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)">
-        <div class="aura-background-component top-0 w-full -z-10 absolute h-full">
-            <div data-us-project="ILgOO23w4wEyPQOKyLO4" class="absolute w-full h-full left-0 top-0 -z-10"></div>
-            <script type="text/javascript">
-                !function () { if (!window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();
-            </script>
-        </div>
+        <div data-us-project="hk4GkXoEfSX9qZozoFL6" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+        <script type="text/javascript">
+            !function () { if (!window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.31/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();
+        </script>
     </div>
-    <!-- Tidio Chat Widget -->
-    <script src="//code.tidio.co/80btxpkof6ywy0e7maqinqof79ue3b1j.js"></script>
+
     <!-- Navigation -->
-    <nav
-        class="fixed z-50 transition-all duration-300 reveal active bg-[#030304]/80 w-full border-white/5 border-b top-0 backdrop-blur-md">
-        <div class="flex h-16 max-w-7xl mr-auto ml-auto pr-6 pl-6 items-center justify-between">
-            <a href="#" class="flex items-center gap-2 group">
-                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/76a0dad8-5826-4116-a2d1-d89514661099_320w.png"
-                    alt="Agentify Logo" class="w-8 h-8 object-contain">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b bg-[#030304]/80 backdrop-blur-md transition-all duration-300 reveal active border-white/5"
+        x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="flex text-[10px] font-bold text-white tracking-tighter font-manrope bg-purple-700 w-6 h-6 rounded items-center justify-center">
+                    A</div>
                 <span
-                    class="group-hover:opacity-80 transition-opacity text-base font-semibold text-white tracking-tight font-montserrat"
-                    onclick="window.location.href='index.html';window.location.href='index.html'"
-                    role="button">Agentify</span>
+                    class="group-hover:opacity-80 transition-opacity text-base font-medium text-white tracking-tight font-montserrat"
+                    style="transition: outline 0.1s ease-in-out">Agentify</span>
             </a>
+
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="case-studies.html" class="transition-colors hover:text-white font-manrope">Case Studies</a>
-                <a href="howitworks.html" class="transition-colors text-white font-manrope">How it Works</a>
+                <a href="howitworks.html" class="transition-colors hover:text-white font-manrope">How it Works</a>
                 <a href="index.html#pricing" class="transition-colors hover:text-white font-manrope">Pricing</a>
             </div>
+
             <div class="flex items-center gap-4">
-                <a href="#" class="hidden sm:block text-xs font-medium transition-colors hover:text-white font-manrope"
-                    style="">Sign in</a>
+                <a href="#"
+                    class="hidden sm:block text-xs font-medium transition-colors hover:text-white font-manrope">Sign
+                    in</a>
+                <a href="https://cal.com/weareagentify/agentify-calender-meetings" target="_blank"
+                    class="hidden sm:block transition-all duration-300 hover:bg-white/20 text-xs font-medium text-white bg-purple-700 border-white/10 border rounded-full pt-2 pr-4 pb-2 pl-4 backdrop-blur-sm font-manrope">Book
+                    a Call</a>
+
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none">
+                <button id="mobile-menu-toggle" class="md:hidden text-white p-2 focus:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -369,39 +362,53 @@
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
                 </button>
-                <a href="index.html#book"
-                    class="transition-all duration-300 hover:bg-white/20 text-xs font-medium text-white font-manrope bg-purple-700 border-white/10 border rounded-full pt-2 pr-4 pb-2 pl-4 backdrop-blur-sm">Book
-                    a Call</a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-[#030304] z-40 hidden flex-col pt-24 px-6 space-y-6 transform transition-transform duration-300 h-screen overflow-y-auto">
+            <a href="case-studies.html"
+                class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">Case Studies</a>
+            <a href="howitworks.html"
+                class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">How it Works</a>
+            <a href="index.html#pricing"
+                class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">Pricing</a>
+            <div class="pt-4 flex flex-col gap-4">
+                <a href="#"
+                    class="text-center w-full py-3 rounded-lg border border-white/10 text-white font-manrope">Sign
+                    in</a>
+                <a href="https://cal.com/weareagentify/agentify-calender-meetings" target="_blank"
+                    class="text-center w-full py-3 rounded-lg bg-purple-700 text-white font-manrope">Book a Call</a>
             </div>
         </div>
     </nav>
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-[#030304] z-40 hidden flex-col pt-24 px-6 space-y-6 transform transition-transform duration-300 h-screen overflow-y-auto">
-        <a href="case-studies.html"
-            class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">Case Studies</a>
-        <a href="howitworks.html"
-            class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">How it Works</a>
-        <a href="index.html#pricing"
-            class="text-xl font-medium text-white font-manrope border-b border-white/10 pb-4 block">Pricing</a>
-        <div class="pt-4 flex flex-col gap-4">
-            <a href="#" class="text-center w-full py-3 rounded-lg border border-white/10 text-white font-manrope">Sign
-                in</a>
-            <a href="https://cal.com/weareagentify/agentify-calender-meetings" target="_blank"
-                class="text-center w-full py-3 rounded-lg bg-purple-700 text-white font-manrope">Book a Call</a>
-        </div>
-    </div>
+
+    <script>
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
 
 
     <!-- Hero Section -->
-    <section class="overflow-hidden md:pt-48 md:pb-12 pt-32 pb-20 relative">
+    <section class="md:pt-48 md:pb-32 overflow-hidden pt-32 pb-20 relative">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] hero-glow pointer-events-none opacity-60">
         </div>
 
         <div class="max-w-7xl z-10 mr-auto ml-auto pr-6 pl-6 relative">
             <div class="flex flex-col text-center max-w-3xl mx-auto items-center">
                 <div
-                    class="reveal inline-flex gap-2 text-[11px] font-medium bg-emerald-500/10 border-emerald-500/30 border rounded-full mb-8 px-3 py-1 items-center text-emerald-400 font-manrope active">
+                    class="reveal inline-flex gap-2 text-[11px] font-medium bg-emerald-500/10 border-emerald-500/30 border rounded-full mb-8 px-3 py-1 items-center text-emerald-400 font-manrope">
                     <span class="relative flex h-2 w-2">
                         <span
                             class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -411,18 +418,21 @@
                 </div>
 
                 <h1
-                    class="reveal delay-100 leading-[1.1] title-gradient bg-clip-text md:text-7xl text-5xl font-medium text-transparent tracking-tight font-montserrat bg-gradient-to-r from-[#ffffff] to-purple-700 mb-6 active">
+                    class="reveal delay-100 leading-[1.1] title-gradient md:text-7xl text-5xl font-medium tracking-tight font-montserrat bg-gradient-to-b from-[#ffffff] to-slate-400 bg-clip-text text-transparent mb-6">
                     No bots. No scripts.<br>Just reliable systems.
                 </h1>
 
                 <p
-                    class="reveal delay-200 md:text-xl leading-relaxed text-lg font-light max-w-2xl mb-10 text-slate-400 font-manrope active">
+                    class="reveal delay-200 md:text-xl leading-relaxed text-lg font-light max-w-2xl mb-10 text-slate-400 font-manrope">
                     We design and deploy AI-powered phone and messaging systems that answer calls, follow up with leads,
                     and book appointments automatically.
                 </p>
 
-                <div class="reveal delay-300 flex flex-col sm:flex-row gap-4 active">
-
+                <div class="reveal delay-300 flex flex-col sm:flex-row gap-4">
+                    <a href="#bottlenecks"
+                        class="group transition-all duration-300 hover:bg-slate-100 text-sm font-semibold text-black bg-white border border-transparent rounded-full px-8 py-3.5 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] font-manrope">
+                        See How It Works
+                    </a>
                 </div>
             </div>
         </div>
@@ -432,12 +442,12 @@
     <section id="bottlenecks" class="py-24 border-t border-white/5 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row gap-12 items-start">
-                <div class="md:w-1/3 sticky top-32 reveal active">
+                <div class="md:w-1/3 sticky top-32 reveal">
                     <div class="text-xs font-bold tracking-wider text-purple-500 uppercase mb-4 font-manrope">Step 1
                     </div>
-                    <h2 class="md:text-4xl text-3xl font-medium text-white tracking-tight font-montserrat mb-6">We
+                    <h2 class="text-3xl md:text-4xl text-white tracking-tight font-montserrat font-medium mb-6">We
                         Identify the Bottleneck</h2>
-                    <p class="leading-relaxed text-lg text-slate-400 font-manrope mb-6">
+                    <p class="text-lg text-slate-400 font-manrope leading-relaxed mb-6">
                         On the discovery call, we identify where money or time is leaking. We only recommend systems
                         that directly fix that leak.
                     </p>
@@ -455,12 +465,13 @@
 
                 <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
                     <!-- Problem 1 -->
-                    <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+                    <div
+                        class="reveal delay-100 group p-6 rounded-2xl bg-[#08080a] border border-white/5 hover:border-red-500/30 transition-all duration-300">
                         <div
                             class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 mb-4 group-hover:scale-110 transition-transform">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" class="">
+                                stroke-linejoin="round">
                                 <path
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
                                 </path>
@@ -476,7 +487,8 @@
                     </div>
 
                     <!-- Problem 2 -->
-                    <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+                    <div
+                        class="reveal delay-200 group p-6 rounded-2xl bg-[#08080a] border border-white/5 hover:border-red-500/30 transition-all duration-300">
                         <div
                             class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 mb-4 group-hover:scale-110 transition-transform">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -492,12 +504,13 @@
                     </div>
 
                     <!-- Problem 3 -->
-                    <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+                    <div
+                        class="reveal delay-300 group p-6 rounded-2xl bg-[#08080a] border border-white/5 hover:border-red-500/30 transition-all duration-300">
                         <div
                             class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 mb-4 group-hover:scale-110 transition-transform">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" class="">
+                                stroke-linejoin="round">
                                 <path d="M21 21v-2a4 4 0 0 0-3-3.87"></path>
                                 <path d="M4 5a2 2 0 0 1 1-2h14a2 2 0 0 1 1.05.3"></path>
                                 <path d="M8.3 10a2 2 0 0 1 2-1.7h5.4a2 2 0 0 1 2 1.7"></path>
@@ -508,12 +521,12 @@
                         </div>
                         <h3 class="text-white font-medium text-lg mb-2 font-manrope">Staff Burnout</h3>
                         <p class="text-sm text-slate-500 font-manrope">High turnover from repetitive tasks and
-                            qualifying unqualified leads.
-                        </p>
+                            qualifying unqualified leads.</p>
                     </div>
 
                     <!-- Problem 4 -->
-                    <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+                    <div
+                        class="reveal delay-400 group p-6 rounded-2xl bg-[#08080a] border border-white/5 hover:border-red-500/30 transition-all duration-300">
                         <div
                             class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 mb-4 group-hover:scale-110 transition-transform">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -534,20 +547,20 @@
     </section>
 
     <!-- Step 2: The Systems (The Core Offering) -->
-    <section class="pt-24 pb-24 relative" id="systems">
-        <div class="z-10 max-w-7xl mx-auto px-6 relative">
-            <div class="reveal text-center max-w-7xl mr-auto mb-16 ml-auto">
-                <div class="uppercase text-xs font-bold text-purple-500 tracking-wider font-manrope text-left mb-4">Step
-                    2</div>
-                <h2 class="text-3xl font-medium text-white tracking-tight font-montserrat text-left mb-6 md:text-4xl">We
-                    Deploy the Right AI System</h2>
-                <p class="text-lg text-slate-400 font-manrope text-left">Most clients start with one core system and
-                    expand from there.</p>
+    <section id="systems" class="py-24 bg-[#050507] border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <div class="text-xs font-bold tracking-wider text-purple-500 uppercase mb-4 font-manrope">Step 2</div>
+                <h2 class="text-3xl md:text-5xl text-white tracking-tight font-montserrat font-medium mb-6">We Deploy
+                    the Right AI System</h2>
+                <p class="text-lg text-slate-400 font-manrope">Most clients start with one core system and expand from
+                    there.</p>
             </div>
 
             <div class="space-y-6">
                 <!-- System 1: Inbound Receptionist -->
-                <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+                <div
+                    class="reveal glass-panel rounded-2xl p-8 md:p-12 border border-white/10 hover:border-indigo-500/30 transition-all duration-300 relative overflow-hidden group">
                     <div
                         class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-indigo-500/10 transition-colors">
                     </div>
@@ -582,23 +595,18 @@
                         </div>
 
                         <div class="lg:w-2/3 grid md:grid-cols-3 gap-8">
-                            <div class="">
+                            <div>
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
-                                    What it does
-                                </h4>
+                                    What it does</h4>
                                 <ul class="space-y-3">
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-indigo-500">•</span>Answers every inbound call instantly
-                                    </li>
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-indigo-500">•</span>Understands caller intent
-                                    </li>
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-indigo-500">•</span>Routes, books, or escalates
-                                    </li>
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-indigo-500">•</span>Sends SMS follow-ups
-                                    </li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-indigo-500">•</span>Answers every inbound call instantly</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-indigo-500">•</span>Understands caller intent</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-indigo-500">•</span>Routes, books, or escalates</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-indigo-500">•</span>Sends SMS follow-ups</li>
                                 </ul>
                             </div>
                             <div class="">
@@ -623,15 +631,15 @@
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 font-manrope">
                                     Outcome</h4>
                                 <p class="text-sm leading-relaxed text-indigo-200 font-manrope">More answered calls.
-                                    Fewer
-                                    interruptions. Zero missed opportunities.</p>
+                                    Fewer interruptions. Zero missed opportunities.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- System 2: Booking Agent -->
-                <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+                <div
+                    class="reveal glass-panel rounded-2xl p-8 md:p-12 border border-white/10 hover:border-emerald-500/30 transition-all duration-300 relative overflow-hidden group">
                     <div
                         class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-emerald-500/10 transition-colors">
                     </div>
@@ -666,26 +674,21 @@
                         </div>
 
                         <div class="lg:w-2/3 grid md:grid-cols-3 gap-8">
-                            <div class="">
+                            <div>
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
-                                    What it does
-                                </h4>
+                                    What it does</h4>
                                 <ul class="space-y-3">
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-emerald-500">•</span>Answers inbound calls/texts
-                                    </li>
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-emerald-500">•</span>Asks qualification questions
-                                    </li>
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-emerald-500">•</span>Books directly to calendar
-                                    </li>
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-emerald-500">•</span>Sends reminders
-                                    </li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-emerald-500">•</span>Answers inbound calls/texts</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-emerald-500">•</span>Asks qualification questions</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-emerald-500">•</span>Books directly to calendar</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-emerald-500">•</span>Sends reminders</li>
                                 </ul>
                             </div>
-                            <div class="">
+                            <div>
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
                                     Best For</h4>
                                 <div class="flex flex-wrap gap-2">
@@ -704,15 +707,15 @@
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 font-manrope">
                                     Outcome</h4>
                                 <p class="text-sm leading-relaxed text-emerald-200 font-manrope">Higher booking rates.
-                                    Better-qualified
-                                    appointments. Less manual scheduling.</p>
+                                    Better-qualified appointments. Less manual scheduling.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- System 3: Speed to Lead -->
-                <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+                <div
+                    class="reveal glass-panel rounded-2xl p-8 md:p-12 border border-white/10 hover:border-amber-500/30 transition-all duration-300 relative overflow-hidden group">
                     <div
                         class="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-amber-500/10 transition-colors">
                     </div>
@@ -742,23 +745,18 @@
                         </div>
 
                         <div class="lg:w-2/3 grid md:grid-cols-3 gap-8">
-                            <div class="">
+                            <div>
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
-                                    What it does
-                                </h4>
+                                    What it does</h4>
                                 <ul class="space-y-3">
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-amber-500">•</span>Calls/texts leads instantly
-                                    </li>
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-amber-500">•</span>Follows up multiple times
-                                    </li>
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-amber-500">•</span>Escalates hot leads
-                                    </li>
                                     <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
-                                            class="text-amber-500">•</span>Logs
-                                        everything in CRM</li>
+                                            class="text-amber-500">•</span>Calls/texts leads instantly</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-amber-500">•</span>Follows up multiple times</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-amber-500">•</span>Escalates hot leads</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-amber-500">•</span>Logs everything in CRM</li>
                                 </ul>
                             </div>
                             <div class="">
@@ -781,15 +779,15 @@
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 font-manrope">
                                     Outcome</h4>
                                 <p class="text-sm leading-relaxed text-amber-200 font-manrope">Faster contact. Higher
-                                    conversion rates.
-                                    No lead left behind.</p>
+                                    conversion rates. No lead left behind.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- System 4: Lead Reactivation -->
-                <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+                <div
+                    class="reveal glass-panel rounded-2xl p-8 md:p-12 border border-white/10 hover:border-purple-500/30 transition-all duration-300 relative overflow-hidden group">
                     <div
                         class="absolute top-0 right-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-purple-500/10 transition-colors">
                     </div>
@@ -822,26 +820,21 @@
                         </div>
 
                         <div class="lg:w-2/3 grid md:grid-cols-3 gap-8">
-                            <div class="">
+                            <div>
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
-                                    What it does
-                                </h4>
+                                    What it does</h4>
                                 <ul class="space-y-3">
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-purple-500">•</span>Re-engages dormant leads
-                                    </li>
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-purple-500">•</span>Re-qualifies interest
-                                    </li>
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-purple-500">•</span>Books appointments
-                                    </li>
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-purple-500">•</span>Filters bad leads
-                                    </li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-purple-500">•</span>Re-engages dormant leads</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-purple-500">•</span>Re-qualifies interest</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-purple-500">•</span>Books appointments</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-purple-500">•</span>Filters bad leads</li>
                                 </ul>
                             </div>
-                            <div class="">
+                            <div>
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
                                     Best For</h4>
                                 <div class="flex flex-wrap gap-2">
@@ -861,15 +854,15 @@
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 font-manrope">
                                     Outcome</h4>
                                 <p class="text-sm leading-relaxed text-purple-200 font-manrope">Revenue from leads you
-                                    already paid for.
-                                    No pressure selling. Automated follow-up.</p>
+                                    already paid for. No pressure selling. Automated follow-up.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- System 5: Multi-Channel Hub -->
-                <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+                <div
+                    class="reveal glass-panel rounded-2xl p-8 md:p-12 border border-white/10 hover:border-cyan-500/30 transition-all duration-300 relative overflow-hidden group">
                     <div
                         class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-cyan-500/10 transition-colors">
                     </div>
@@ -901,26 +894,21 @@
                         </div>
 
                         <div class="lg:w-2/3 grid md:grid-cols-3 gap-8">
-                            <div class="">
+                            <div>
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
-                                    What it does
-                                </h4>
+                                    What it does</h4>
                                 <ul class="space-y-3">
-                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope">
-                                        <span class="text-cyan-500">•</span>Unifies Voice, SMS, Chat
-                                    </li>
                                     <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
-                                            class="text-cyan-500">•</span>Full
-                                        context awareness</li>
+                                            class="text-cyan-500">•</span>Unifies Voice, SMS, Chat</li>
                                     <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
-                                            class="text-cyan-500">•</span>Smart
-                                        routing</li>
+                                            class="text-cyan-500">•</span>Full context awareness</li>
                                     <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
-                                            class="text-cyan-500">•</span>Logs
-                                        and searchable</li>
+                                            class="text-cyan-500">•</span>Smart routing</li>
+                                    <li class="flex gap-3 text-sm text-slate-300 font-manrope"><span
+                                            class="text-cyan-500">•</span>Logs and searchable</li>
                                 </ul>
                             </div>
-                            <div class="">
+                            <div>
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 font-manrope">
                                     Best For</h4>
                                 <div class="flex flex-wrap gap-2">
@@ -940,8 +928,7 @@
                                 <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 font-manrope">
                                     Outcome</h4>
                                 <p class="text-sm leading-relaxed text-cyan-200 font-manrope">No lost context. Faster
-                                    responses. Cleaner
-                                    operations.</p>
+                                    responses. Cleaner operations.</p>
                             </div>
                         </div>
                     </div>
@@ -951,14 +938,14 @@
     </section>
 
     <!-- Step 3: Integration -->
-    <section class="pt-24 pb-24" id="integration">
+    <section id="integration" class="py-24 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 gap-x-16 gap-y-16 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div class="reveal">
-                    <div class="uppercase text-xs font-bold text-purple-500 tracking-wider font-manrope mb-4">Step 3
+                    <div class="text-xs font-bold tracking-wider text-purple-500 uppercase mb-4 font-manrope">Step 3
                     </div>
-                    <h2 class="text-3xl md:text-4xl text-white tracking-tight font-montserrat font-medium mb-6 -multi">
-                        We Integrate With Your Existing Tools</h2>
+                    <h2 class="text-3xl md:text-4xl text-white tracking-tight font-montserrat font-medium mb-6">We
+                        Integrate With Your Existing Tools</h2>
                     <p class="text-lg text-slate-400 font-manrope leading-relaxed mb-6">
                         We don’t replace your stack. We connect to it. Everything runs quietly in the background,
                         updating your Calendars, CRMs, and ticketing systems automatically.
@@ -1007,222 +994,71 @@
                     <div
                         class="relative glass-panel rounded-2xl p-8 border border-white/10 flex items-center justify-center aspect-square">
                         <!-- Abstract Integration Graphic -->
-                        <div class="w-full h-full relative group/container">
-                            <!-- Ambient Background Glow -->
+                        <div class="relative w-full h-full">
+                            <!-- Center Hub -->
                             <div
-                                class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(124,58,237,0.15)_0%,_transparent_60%)] pointer-events-none">
+                                class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-purple-700/20 border border-purple-500/50 flex items-center justify-center z-20 shadow-[0_0_30px_rgba(147,51,234,0.3)]">
+                                <div
+                                    class="text-[10px] font-bold text-white bg-purple-700 w-12 h-12 rounded flex items-center justify-center font-manrope">
+                                    AI</div>
                             </div>
 
-                            <!-- Animated Connection Rings -->
+                            <!-- Orbiting Icons -->
                             <div
-                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] border border-dashed border-indigo-500/20 rounded-full animate-[spin_60s_linear_infinite] pointer-events-none">
+                                class="absolute top-4 left-1/2 -translate-x-1/2 p-3 rounded-lg bg-[#111] border border-white/10 animate-[bounce_3s_infinite]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-orange-400">
+                                    <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                    <path d="M16 2v4"></path>
+                                    <path d="M8 2v4"></path>
+                                    <path d="M3 10h18"></path>
+                                </svg>
                             </div>
                             <div
-                                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%] border border-dashed border-white/5 rounded-full animate-[spin_80s_linear_infinite_reverse] pointer-events-none">
+                                class="absolute bottom-4 left-1/2 -translate-x-1/2 p-3 rounded-lg bg-[#111] border border-white/10 animate-[bounce_4s_infinite]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-blue-400">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
                             </div>
-
-                            <!-- Center Hub: Agentify -->
-                            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
-                                <div
-                                    class="relative flex items-center justify-center w-24 h-24 rounded-full bg-[#050507] border border-white/10 shadow-[0_0_50px_-10px_rgba(124,58,237,0.5)] z-20 group-hover/container:scale-105 transition-transform duration-500">
-                                    <div
-                                        class="absolute inset-0 rounded-full bg-gradient-to-b from-indigo-500/20 to-purple-500/20 animate-pulse">
-                                    </div>
-                                    <div
-                                        class="relative w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-700 rounded-lg flex items-center justify-center shadow-inner border border-white/20">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="text-white drop-shadow-md">
-                                            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
-                                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                                            <line x1="12" x2="12" y1="19" y2="22"></line>
-                                        </svg>
-                                    </div>
-                                    <!-- Connection Beams -->
-                                    <div
-                                        class="absolute inset-0 w-full h-full animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] rounded-full border border-indigo-500/30 opacity-20">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Orbiting Brand Logos -->
-
-                            <!-- Google (Top Left) -->
-                            <div class="absolute top-[15%] left-[20%] z-20 animate-[bounce_4s_infinite]">
-                                <div
-                                    class="p-3.5 bg-[#111] border border-white/10 rounded-2xl shadow-xl hover:scale-110 hover:border-white/30 hover:shadow-indigo-500/20 transition-all duration-300 cursor-default group">
-                                    <svg class="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                                            fill="#4285F4"></path>
-                                        <path
-                                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                                            fill="#34A853"></path>
-                                        <path
-                                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.21-1.19-.63z"
-                                            fill="#FBBC05"></path>
-                                        <path
-                                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                                            fill="#EA4335"></path>
-                                    </svg>
-                                    <div
-                                        class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-medium text-slate-400 bg-black/80 px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
-                                        Google</div>
-                                </div>
-                            </div>
-
-                            <!-- ChatGPT (Top Center) -->
-                            <div class="absolute top-[8%] left-1/2 -translate-x-1/2 z-20 animate-[bounce_5s_infinite]">
-                                <div
-                                    class="p-3.5 bg-[#111] border border-white/10 rounded-2xl shadow-xl hover:scale-110 hover:border-emerald-500/30 hover:shadow-emerald-500/20 transition-all duration-300 cursor-default group">
-                                    <svg class="w-6 h-6 text-white group-hover:text-emerald-400 transition-colors"
-                                        viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729ZM12.7186 21.78a4.0177 4.0177 0 0 1-2.0298.537c-.7507 0-1.4883-.1891-2.146-.5515l.0811-.4795 2.5034-1.3932a.507.507 0 0 0 .2432-.6196l-1.0583-3.1325 3.3934 1.9482a.498.498 0 0 0 .6678-.1768l1.4556-2.5284v2.7938a4.0416 4.0416 0 0 1-3.1105 3.6025Zm-5.3228-1.5273a4.0272 4.0272 0 0 1-.8433-2.6174 4.032 4.032 0 0 1 .5365-2.0153l.4263.2203 2.5992 1.3406a.5023.5023 0 0 0 .6339-.1485l1.9696-2.6174-1.5896 3.5682a.5023.5023 0 0 0 .1725.591l2.2017 1.3406-2.4556 1.3789a4.0511 4.0511 0 0 1-3.6511-.041Zm-2.543-7.0873a4.032 4.032 0 0 1 .3641-2.7323 4.0416 4.0416 0 0 1 2.823-1.9292l.067.489 1.106 3.0655a.4975.4975 0 0 0 .5861.316l3.2043-.9196-3.3742 2.0535a.5023.5023 0 0 0-.2251.5718l.891 2.5045-2.747-1.422a4.0416 4.0416 0 0 1-2.6953-2.022ZM9.043 5.158c.6741-.3544 1.4213-.5314 2.1747-.517a4.0463 4.0463 0 0 1 2.9283 1.2596l-.3736.3209-2.283 1.9338a.5023.5023 0 0 0-.0814.6436l1.6422 2.56-3.3407-2.0344a.4975.4975 0 0 0-.663.153l-1.3933 2.3992-.0287-2.88a4.0368 4.0368 0 0 1 1.4186-3.8387Zm7.7324 1.1638a4.0368 4.0368 0 0 1 1.4042 3.8674l-.4502-.1868-2.6518-1.1063a.5023.5023 0 0 0-.6291.2299L12.7808 12l3.4173-.8381a.5023.5023 0 0 0 .3689-.489l.1341-2.8592 2.3996 1.374a4.0177 4.0177 0 0 1 1.407 1.1342ZM18.2396 15.657a4.0558 4.0558 0 0 1-3.5267 1.4507l.3736-.3209 2.2878-1.9338a.5023.5023 0 0 0 .0814-.6436l-1.647-2.5552 3.3407 2.0344a.4975.4975 0 0 0 .663-.153l1.3933-2.3992.0239 2.8273a4.0129 4.0129 0 0 1-2.9901 1.6933Z">
-                                        </path>
-                                    </svg>
-                                    <div
-                                        class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-medium text-slate-400 bg-black/80 px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
-                                        ChatGPT</div>
-                                </div>
-                            </div>
-
-                            <!-- Apple (Top Right) -->
-                            <div class="absolute top-[15%] right-[20%] z-20 animate-[bounce_6s_infinite]">
-                                <div
-                                    class="p-3.5 bg-[#111] border border-white/10 rounded-2xl shadow-xl hover:scale-110 hover:border-white/30 transition-all duration-300 cursor-default group">
-                                    <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.1 2.69-1.01 3.93-.48 1.66.71 2.42 2.16 2.68 2.58-.07.03-1.6 1.1-1.63 3.93.04 2.88 2.04 3.84 2.1 3.88-.06.18-1.28 3.03-2.16 4.26zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z">
-                                        </path>
-                                    </svg>
-                                    <div
-                                        class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-medium text-slate-400 bg-black/80 px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
-                                        Apple</div>
-                                </div>
-                            </div>
-
-                            <!-- HubSpot (Right) -->
                             <div
-                                class="absolute top-1/2 right-[5%] -translate-y-1/2 z-20 animate-[bounce_4.5s_infinite]">
-                                <div
-                                    class="p-3.5 bg-[#111] border border-white/10 rounded-2xl shadow-xl hover:scale-110 hover:border-[#FF7A59]/50 hover:shadow-[#FF7A59]/20 transition-all duration-300 cursor-default group">
-                                    <svg class="w-6 h-6 text-[#FF7A59]" viewBox="0 0 24 24" fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.0002 4.8C12.8839 4.8 13.6002 4.08365 13.6002 3.2C13.6002 2.31635 12.8839 1.6 12.0002 1.6C11.1166 1.6 10.4002 2.31635 10.4002 3.2C10.4002 4.08365 11.1166 4.8 12.0002 4.8Z">
-                                        </path>
-                                        <path
-                                            d="M7.1998 12.8C8.08346 12.8 8.7998 12.0837 8.7998 11.2C8.7998 10.3163 8.08346 9.6 7.1998 9.6C6.31615 9.6 5.5998 10.3163 5.5998 11.2C5.5998 12.0837 6.31615 12.8 7.1998 12.8Z">
-                                        </path>
-                                        <path
-                                            d="M20.7998 10.4C21.6835 10.4 22.3998 9.68366 22.3998 8.8C22.3998 7.91634 21.6835 7.2 20.7998 7.2C19.9161 7.2 19.1998 7.91634 19.1998 8.8C19.1998 9.68366 19.9161 10.4 20.7998 10.4Z">
-                                        </path>
-                                        <path
-                                            d="M18.8 14.4L18.4 12.8C18.3375 12.55 18.2375 12.3 18.125 12.1125L17.2 10.8C16.8 10.2 16 10 15.2 10.2L12.8 10.8V6.4C12.8 5.95817 12.4418 5.6 12 5.6C11.5582 5.6 11.2 5.95817 11.2 6.4V12.8L10.4 12.2L9.2 11.6C8.8 11.4 8.2 11.6 8 12L7.2 13.6C7.05 13.9 7.05 14.25 7.2 14.55L8.4 17.2L9.6 20.8C9.8 21.4 10.4 22 11.2 22H16C16.8 22 17.6 21.6 18 21L19.2 18.8C19.3333 18.5333 19.4667 18.2667 19.6 18L19.8 17.6L20 17.2C20.4 16.4 20 15.4 19.2 15L18.8 14.4Z"
-                                            opacity="0.9"></path>
-                                    </svg>
-                                    <div
-                                        class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-medium text-slate-400 bg-black/80 px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
-                                        HubSpot</div>
-                                </div>
+                                class="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-lg bg-[#111] border border-white/10 animate-[pulse_3s_infinite]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-green-400">
+                                    <path d="M3 21l18-18"></path>
+                                    <path d="M3 21l10-10"></path>
+                                    <path d="M13 6h8"></path>
+                                    <path d="M13 11h8"></path>
+                                </svg>
                             </div>
-
-                            <!-- Airtable (Bottom Right) -->
-                            <div class="absolute top-[80%] right-[20%] z-20 animate-[bounce_5.5s_infinite]">
-                                <div
-                                    class="p-3.5 bg-[#111] border border-white/10 rounded-2xl shadow-xl hover:scale-110 hover:border-[#18BFFF]/50 hover:shadow-[#18BFFF]/20 transition-all duration-300 cursor-default group">
-                                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.9961 2.3999L2.3999 7.8L11.9961 13.2L21.5923 7.8L11.9961 2.3999Z"
-                                            fill="#FCB400"></path>
-                                        <path d="M2.3999 9.6001L11.0961 14.4923V21.6001L2.3999 16.7079V9.6001Z"
-                                            fill="#18BFFF"></path>
-                                        <path d="M12.8961 14.4923L21.5923 9.6001V16.7079L12.8961 21.6001V14.4923Z"
-                                            fill="#F82B60"></path>
-                                    </svg>
-                                    <div
-                                        class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-medium text-slate-400 bg-black/80 px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
-                                        AirTable</div>
-                                </div>
-                            </div>
-
-                            <!-- Calendly (Bottom Center) -->
                             <div
-                                class="absolute top-[88%] left-[60%] -translate-x-1/2 z-20 animate-[bounce_4s_infinite]">
-                                <div
-                                    class="p-3.5 bg-[#111] border border-white/10 rounded-2xl shadow-xl hover:scale-110 hover:border-blue-400/50 hover:shadow-blue-400/20 transition-all duration-300 cursor-default group">
-                                    <svg class="w-6 h-6 text-blue-400" viewBox="0 0 24 24" fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z">
-                                        </path>
-                                        <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor"
-                                            stroke-width="2"></circle>
-                                    </svg>
-                                    <div
-                                        class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-medium text-slate-400 bg-black/80 px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
-                                        Calendly</div>
-                                </div>
+                                class="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-lg bg-[#111] border border-white/10 animate-[pulse_4s_infinite]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-yellow-400">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
                             </div>
 
-                            <!-- iCal (Bottom Center Left) -->
-                            <div
-                                class="absolute top-[88%] left-[40%] -translate-x-1/2 z-20 animate-[bounce_5s_infinite]">
-                                <div
-                                    class="p-3.5 bg-[#111] border border-white/10 rounded-2xl shadow-xl hover:scale-110 hover:border-red-400/50 hover:shadow-red-400/20 transition-all duration-300 cursor-default group">
-                                    <svg class="w-6 h-6 text-slate-200" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                                        <path d="M8 14h.01"></path>
-                                        <path d="M12 14h.01"></path>
-                                        <path d="M16 14h.01"></path>
-                                        <path d="M8 18h.01"></path>
-                                        <path d="M12 18h.01"></path>
-                                        <path d="M16 18h.01"></path>
-                                    </svg>
-                                    <div
-                                        class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-medium text-slate-400 bg-black/80 px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
-                                        iCal</div>
-                                </div>
-                            </div>
-
-                            <!-- YouTube (Bottom Left) -->
-                            <div class="absolute top-[80%] left-[20%] z-20 animate-[bounce_3.5s_infinite]">
-                                <div
-                                    class="p-3.5 bg-[#111] border border-white/10 rounded-2xl shadow-xl hover:scale-110 hover:border-red-500/50 hover:shadow-red-500/20 transition-all duration-300 cursor-default group">
-                                    <svg class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z">
-                                        </path>
-                                    </svg>
-                                    <div
-                                        class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-medium text-slate-400 bg-black/80 px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
-                                        YouTube</div>
-                                </div>
-                            </div>
-
-                            <!-- Vapi (Left) -->
-                            <div class="absolute top-1/2 left-[5%] -translate-y-1/2 z-20 animate-[bounce_6s_infinite]">
-                                <div
-                                    class="p-3.5 bg-[#111] border border-white/10 rounded-2xl shadow-xl hover:scale-110 hover:border-purple-400/50 hover:shadow-purple-400/20 transition-all duration-300 cursor-default group">
-                                    <svg class="w-6 h-6 text-purple-400" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M12 2v20M17 5v14M7 5v14M22 8v8M2 8v8"></path>
-                                    </svg>
-                                    <div
-                                        class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-medium text-slate-400 bg-black/80 px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
-                                        Vapi</div>
-                                </div>
-                            </div>
+                            <!-- Connection Lines -->
+                            <svg class="absolute inset-0 w-full h-full pointer-events-none text-white/10"
+                                style="z-index: 10;">
+                                <line x1="50%" y1="50%" x2="50%" y2="15%" stroke="currentColor" stroke-dasharray="4 4">
+                                </line>
+                                <line x1="50%" y1="50%" x2="50%" y2="85%" stroke="currentColor" stroke-dasharray="4 4">
+                                </line>
+                                <line x1="50%" y1="50%" x2="15%" y2="50%" stroke="currentColor" stroke-dasharray="4 4">
+                                </line>
+                                <line x1="50%" y1="50%" x2="85%" y2="50%" stroke="currentColor" stroke-dasharray="4 4">
+                                </line>
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -1231,8 +1067,8 @@
     </section>
 
     <!-- Step 4 & Audience -->
-    <section id="optimization" class="rounded-none">
-        <div class="bg-black max-w-7xl mr-auto ml-auto pr-6 pl-6">
+    <section id="optimization" class="py-24 bg-[#050507] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
 
                 <!-- Step 4 -->
@@ -1240,12 +1076,10 @@
                     <div class="text-xs font-bold tracking-wider text-purple-500 uppercase mb-4 font-manrope">Step 4
                     </div>
                     <h2 class="text-3xl text-white tracking-tight font-montserrat font-medium mb-6">We Optimize &amp;
-                        Scale
-                    </h2>
+                        Scale</h2>
                     <p class="text-lg text-slate-400 font-manrope mb-8">
                         This isn’t a one-off build. It’s a managed system. After launch, we continuously refine prompts,
-                        add
-                        automations, and expand use cases.
+                        add automations, and expand use cases.
                     </p>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="p-4 rounded-xl bg-white/5 border border-white/5">
@@ -1269,7 +1103,7 @@
 
                 <!-- Who This Is For -->
                 <div class="reveal delay-200">
-                    <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+                    <div class="glass-panel p-8 rounded-2xl border border-white/10 h-full">
                         <h3 class="text-2xl text-white font-montserrat font-medium mb-8">Who This Is For</h3>
                         <div class="space-y-6">
                             <div class="flex gap-4">
@@ -1281,7 +1115,7 @@
                                         <polyline points="20 6 9 17 4 12"></polyline>
                                     </svg>
                                 </div>
-                                <div class="">
+                                <div>
                                     <p class="text-white font-medium font-manrope">You get inbound calls or leads</p>
                                     <p class="text-sm text-slate-500 mt-1 font-manrope">Volume that is hard to manage
                                         manually.</p>
@@ -1296,11 +1130,10 @@
                                         <polyline points="20 6 9 17 4 12"></polyline>
                                     </svg>
                                 </div>
-                                <div class="">
+                                <div>
                                     <p class="text-white font-medium font-manrope">You book appointments or support</p>
                                     <p class="text-sm text-slate-500 mt-1 font-manrope">Your calendar is the lifeblood
-                                        of
-                                        revenue.</p>
+                                        of revenue.</p>
                                 </div>
                             </div>
                             <div class="flex gap-4">
@@ -1330,8 +1163,7 @@
                                 <div>
                                     <p class="text-white font-medium font-manrope">You care about ROI, not hype</p>
                                     <p class="text-sm text-slate-500 mt-1 font-manrope">We build for efficiency and
-                                        profit.
-                                    </p>
+                                        profit.</p>
                                 </div>
                             </div>
                         </div>
@@ -1343,182 +1175,57 @@
     </section>
 
     <!-- Book Discovery Call -->
-    <section class="overflow-hidden pt-24 pb-24 relative" id="join">
-        <div class="reveal text-center max-w-7xl z-10 mr-auto ml-auto pr-6 pl-6 relative">
-            <h2 class="md:text-4xl text-4xl font-medium text-white tracking-tight font-montserrat mb-4 cursor-pointer"
-                onclick="window.location.href='/#bookadiscoverycall'" role="button">Book Your Discovery Call</h2>
-            <p class="text-lg text-slate-400 font-manrope max-w-full mr-auto mb-10 ml-auto">We’ll map your best
-                automation
-                opportunity in 15–30 minutes. No scripts, just strategy.</p>
+    <section id="book" class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#030304] to-[#0a0a0c]"></div>
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none">
+        </div>
 
-            <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
-                <!-- Section 1: Identity -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 gap-x-6 gap-y-6">
-                    <div class="space-y-1.5">
-                        <label for="full_name"
-                            class="block text-xs font-medium text-slate-300 font-manrope text-left">Full Name <span
-                                class="text-purple-500">*</span></label>
-                        <input type="text" name="full_name" required="" placeholder="Jane Doe"
-                            class="placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all text-sm text-white font-manrope bg-[#0E0E12] w-full border-white/10 border rounded-lg pt-2.5 pr-4 pb-2.5 pl-4"
-                            id="full_name">
-                    </div>
+        <div class="z-10 reveal text-center max-w-4xl mx-auto px-6 relative">
+            <h2 class="md:text-5xl text-4xl tracking-tight mb-8 text-white font-montserrat font-medium">Book a Discovery
+                Call</h2>
 
-                    <div class="space-y-1.5">
-                        <label for="email" class="block text-xs font-medium text-slate-300 font-manrope text-left">Work
-                            Email <span class="text-purple-500">*</span></label>
-                        <input type="email" name="email" required="" placeholder="jane@company.com"
-                            class="placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all text-sm text-white font-manrope bg-[#0E0E12] w-full border-white/10 border rounded-lg pt-2.5 pr-4 pb-2.5 pl-4"
-                            id="email">
-                    </div>
-
-                    <div class="space-y-1.5">
-                        <label for="company_name"
-                            class="block text-xs font-medium text-slate-300 font-manrope text-left">Company Name <span
-                                class="text-purple-500">*</span></label>
-                        <input type="text" id="company_name" name="company_name" required="" placeholder="Acme Inc."
-                            class="w-full bg-[#0E0E12] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all font-manrope">
-                    </div>
-
-                    <!-- Section 2: Context -->
-                    <div class="space-y-1.5">
-                        <label for="role" class="block text-xs font-medium text-slate-300 font-manrope text-left">Your
-                            Role <span class="text-purple-500">*</span></label>
-                        <div class="relative">
-                            <select id="role" name="role" required=""
-                                class="w-full appearance-none bg-[#0E0E12] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all font-manrope cursor-pointer">
-                                <option value="" disabled="" selected="">Select your role</option>
-                                <option value="founder">Founder / CEO</option>
-                                <option value="sales_leader">Sales Leader</option>
-                                <option value="ops_leader">Operations Leader</option>
-                                <option value="support">Support / CX</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <svg class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="m6 9 6 6 6-6"></path>
-                            </svg>
-                        </div>
-                    </div>
+            <div class="grid md:grid-cols-3 gap-6 text-left max-w-2xl mx-auto mb-12">
+                <div
+                    class="flex gap-3 items-center text-sm text-slate-300 font-manrope justify-center md:justify-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-purple-500">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    See which system fits
                 </div>
-
-                <!-- Section 3: Volume & Section 5: Timeline -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div class="space-y-1.5">
-                        <label for="monthly_volume"
-                            class="block text-xs font-medium text-slate-300 font-manrope text-left">Monthly Inbound
-                            Leads/Calls <span class="text-purple-500">*</span></label>
-                        <div class="relative">
-                            <select id="monthly_volume" name="monthly_volume_range" required=""
-                                class="w-full appearance-none bg-[#0E0E12] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all font-manrope cursor-pointer">
-                                <option value="" disabled="" selected="">Select volume range</option>
-                                <option value="under_50">Under 50</option>
-                                <option value="50_200">50 – 200</option>
-                                <option value="200_500">200 – 500</option>
-                                <option value="500_plus">500+</option>
-                                <option value="not_sure">Not sure</option>
-                            </select>
-                            <svg class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="m6 9 6 6 6-6"></path>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="space-y-1.5">
-                        <label for="timeline"
-                            class="block text-xs font-medium text-slate-300 font-manrope text-left">Timeline</label>
-                        <div class="relative">
-                            <select id="timeline" name="timeline"
-                                class="w-full appearance-none bg-[#0E0E12] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all font-manrope cursor-pointer">
-                                <option value="" disabled="" selected="">When to start?</option>
-                                <option value="immediately">Immediately</option>
-                                <option value="30_days">Next 30 days</option>
-                                <option value="exploring">Exploring options</option>
-                                <option value="not_sure">Not sure yet</option>
-                            </select>
-                            <svg class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="m6 9 6 6 6-6"></path>
-                            </svg>
-                        </div>
-                    </div>
+                <div
+                    class="flex md:justify-start text-sm text-slate-300 font-manrope gap-x-3 gap-y-3 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-purple-500">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Identify immediate automation
                 </div>
-
-                <!-- Section 2 Continued: Primary Problem -->
-                <div class="mb-6">
-                    <label class="block text-xs font-medium text-slate-300 font-manrope text-left mb-3">Primary Problem
-                        to Solve <span class="text-purple-500">*</span> <span
-                            class="text-slate-500 font-normal ml-1">(Select max 2)</span></label>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <label
-                            class="flex items-center gap-3 p-3 rounded-lg border border-white/5 bg-[#0E0E12] hover:bg-white/5 cursor-pointer transition-colors group">
-                            <input type="checkbox" name="primary_problem" value="missing_inbound"
-                                class="w-4 h-4 rounded border-slate-600 bg-transparent text-purple-600 focus:ring-offset-0 focus:ring-0">
-                            <span
-                                class="text-sm text-slate-300 group-hover:text-white transition-colors font-manrope">Missing
-                                inbound calls</span>
-                        </label>
-                        <label
-                            class="flex items-center gap-3 p-3 rounded-lg border border-white/5 bg-[#0E0E12] hover:bg-white/5 cursor-pointer transition-colors group">
-                            <input type="checkbox" name="primary_problem" value="slow_followup"
-                                class="w-4 h-4 rounded border-slate-600 bg-transparent text-purple-600 focus:ring-offset-0 focus:ring-0">
-                            <span
-                                class="text-sm text-slate-300 group-hover:text-white transition-colors font-manrope">Slow
-                                lead follow-up</span>
-                        </label>
-                        <label
-                            class="flex items-center gap-3 p-3 rounded-lg border border-white/5 bg-[#0E0E12] hover:bg-white/5 cursor-pointer transition-colors group">
-                            <input type="checkbox" name="primary_problem" value="low_booking"
-                                class="w-4 h-4 rounded border-slate-600 bg-transparent text-purple-600 focus:ring-offset-0 focus:ring-0">
-                            <span
-                                class="text-sm text-slate-300 group-hover:text-white transition-colors font-manrope">Low
-                                booking rates</span>
-                        </label>
-                        <label
-                            class="flex items-center gap-3 p-3 rounded-lg border border-white/5 bg-[#0E0E12] hover:bg-white/5 cursor-pointer transition-colors group">
-                            <input type="checkbox" name="primary_problem" value="old_leads"
-                                class="w-4 h-4 rounded border-slate-600 bg-transparent text-purple-600 focus:ring-offset-0 focus:ring-0">
-                            <span
-                                class="text-sm text-slate-300 group-hover:text-white transition-colors font-manrope">Old
-                                leads not converting</span>
-                        </label>
-                        <label
-                            class="flex items-center gap-3 p-3 rounded-lg border border-white/5 bg-[#0E0E12] hover:bg-white/5 cursor-pointer transition-colors group sm:col-span-2">
-                            <input type="checkbox" name="primary_problem" value="manual_comms"
-                                class="w-4 h-4 rounded border-slate-600 bg-transparent text-purple-600 focus:ring-offset-0 focus:ring-0">
-                            <span
-                                class="text-sm text-slate-300 group-hover:text-white transition-colors font-manrope">Too
-                                much manual communication</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Section 4: Intent -->
-                <div class="mb-8 space-y-1.5">
-                    <label for="success_definition"
-                        class="block text-xs font-medium text-slate-300 font-manrope text-left">What would success look
-                        like for you?</label>
-                    <input type="text" id="success_definition" name="success_definition"
-                        placeholder="E.g. Book 10 more calls/week, reduce admin time by 50%..."
-                        class="w-full bg-[#0E0E12] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all font-manrope">
-                </div>
-
-                <!-- Submit -->
-                <div class="text-center">
-                    <button type="button"
-                        class="min-w-[240px] transition-all duration-300 hover:bg-slate-200 sm:w-auto text-sm font-semibold text-slate-50 font-manrope bg-purple-700 w-full rounded-full px-8 py-3.5 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]">Book
-                        My Discovery Call</button>
-                    <p class="text-[10px] mt-3 text-slate-500 font-manrope">No spam. We’ll map your automation
-                        opportunity in 15–30
-                        minutes.</p>
+                <div
+                    class="flex gap-3 items-center text-sm text-slate-300 font-manrope justify-center md:justify-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="text-purple-500">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    Map it in 15-30 minutes
                 </div>
             </div>
+
+            <button
+                class="group transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/25 text-base font-semibold text-white bg-purple-700 rounded-full px-10 py-4 shadow-lg relative overflow-hidden font-manrope">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:animate-[shimmer_1.5s_infinite]">
+                </div>
+                Book Your Call Now
+            </button>
+            <p class="text-xs mt-6 text-slate-500 font-manrope">We'll map your custom solution in under 30 minutes.</p>
         </div>
     </section>
 
@@ -1535,6 +1242,7 @@
                     </div>
                     <p class="text-slate-500 text-xs leading-relaxed font-manrope">AI That Connects Your Team Smarter.
                         Built for the future of remote work.</p>
+                    <p class="mt-4 text-xs font-medium text-slate-400 font-manrope">+1 469 757 7742</p>
                 </div>
                 <div>
                     <h4 class="font-medium mb-4 text-white font-manrope">Product</h4>
@@ -1583,10 +1291,9 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scroll Animation Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Scroll Animation
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
@@ -1603,61 +1310,10 @@
 
             const revealElements = document.querySelectorAll('.reveal');
             revealElements.forEach(el => observer.observe(el));
-
-            // Mobile Menu Logic
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const closeBtn = document.getElementById('close-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
-
-            function toggleMenu() {
-                const isHidden = mobileMenu.classList.contains('hidden');
-                if (isHidden) {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenu.classList.add('flex');
-                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                } else {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                    document.body.style.overflow = '';
-                }
-            }
-
-            if (mobileBtn) mobileBtn.addEventListener('click', toggleMenu);
-            if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
-
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', toggleMenu);
-            });
         });
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            /* Mobile Menu Logic */
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            const body = document.body;
-
-            if (btn && menu) {
-                btn.addEventListener('click', () => {
-                    menu.classList.toggle('hidden');
-                    menu.classList.toggle('flex');
-                    if (!menu.classList.contains('hidden')) {
-                        body.style.overflow = 'hidden';
-                    } else {
-                        body.style.overflow = '';
-                    }
-                });
-                menu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        menu.classList.add('hidden');
-                        menu.classList.remove('flex');
-                        body.style.overflow = '';
-                    });
-                });
-            }
-        });
-    </script>
+    <!-- Tidio Chat Widget -->
+    <script src="//code.tidio.co/80btxpkof6ywy0e7maqinqof79ue3b1j.js"></script>
 </body>
 
 </html>
