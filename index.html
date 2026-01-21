@@ -415,12 +415,11 @@ scaleY(var(--tw-scale-y, 1))
                     voice and messaging.
                 </p>
                 <div class="reveal delay-300 flex flex-col sm:flex-row sm:w-auto w-full gap-x-4 gap-y-4 items-center">
-                    <button
-                        class="group transition-all duration-300 hover:bg-slate-100 sm:w-auto text-sm font-semibold text-[#000000] font-manrope bg-slate-50/75 w-full border-purple-700 rounded-full pt-3.5 pr-8 pb-3.5 pl-8 relative shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]"
-                        onclick="window.location.href='https://cal.com/weareagentify/agentify-calender-meetings'"
-                        target="_blank" role="button">
+                    <a href="https://cal.com/weareagentify/agentify-calender-meetings" target="_blank"
+                        rel="noopener noreferrer"
+                        class="group transition-all duration-300 hover:bg-slate-100 sm:w-auto text-sm font-semibold text-[#000000] font-manrope bg-slate-50/75 w-full border-purple-700 rounded-full pt-3.5 pr-8 pb-3.5 pl-8 relative shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] text-center">
                         Book a Discovery Call
-                    </button>
+                    </a>
                     <button id="retell-voice-agent-btn"
                         class="sm:w-auto transition-all duration-300 flex text-sm font-medium w-full border rounded-full pt-3.5 pr-8 pb-3.5 pl-8 gap-x-2 gap-y-2 items-center justify-center hover:border-white/20 text-white bg-purple-700/5 border-white/10 font-manrope"
                         style="">
@@ -2808,6 +2807,147 @@ scaleY(var(--tw-scale-y, 1))
         });
     </script>
 
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300"
+        aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity" id="login-backdrop"></div>
+
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                <!-- Modal Panel -->
+                <div
+                    class="relative transform overflow-hidden rounded-3xl bg-purple-900/10 backdrop-blur-xl border border-purple-500/20 shadow-2xl shadow-purple-900/20 text-left transition-all sm:my-8 sm:w-full sm:max-w-md p-8">
+
+                    <!-- Close Button -->
+                    <button type="button" id="close-login-btn"
+                        class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+
+                    <div class="text-center mb-8">
+                        <div
+                            class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/10 border border-purple-500/20 mb-4 text-purple-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                                <polyline points="10 17 15 12 10 7"></polyline>
+                                <line x1="15" y1="12" x2="3" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white font-montserrat" id="modal-title">Welcome Back</h3>
+                        <p class="mt-2 text-sm text-slate-400 font-manrope">Sign in to your Agentify account</p>
+                    </div>
+
+                    <form action="#" class="space-y-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-300 font-manrope mb-2">Email
+                                address</label>
+                            <input type="email" name="email" id="email" autocomplete="email" required
+                                class="block w-full rounded-lg border-0 bg-white/5 py-2.5 text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-purple-500 sm:text-sm sm:leading-6 text-base px-4 font-manrope">
+                        </div>
+
+                        <div>
+                            <label for="password"
+                                class="block text-sm font-medium text-slate-300 font-manrope mb-2">Password</label>
+                            <input type="password" name="password" id="password" autocomplete="current-password"
+                                required
+                                class="block w-full rounded-lg border-0 bg-white/5 py-2.5 text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-purple-500 sm:text-sm sm:leading-6 text-base px-4 font-manrope">
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input id="remember-me" name="remember-me" type="checkbox"
+                                    class="h-4 w-4 rounded border-white/10 bg-white/5 text-purple-600 focus:ring-purple-500">
+                                <label for="remember-me" class="ml-2 block text-sm text-slate-400 font-manrope">Remember
+                                    me</label>
+                            </div>
+
+                            <div class="text-sm">
+                                <a href="#"
+                                    class="font-medium text-purple-400 hover:text-purple-300 font-manrope">Forgot
+                                    password?</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="submit"
+                                class="flex w-full justify-center rounded-full bg-purple-600 px-3 py-3 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 font-manrope transition-all duration-300">Sign
+                                in</button>
+                        </div>
+                    </form>
+
+                    <p class="mt-8 text-center text-sm text-slate-400 font-manrope">
+                        Not a member?
+                        <a href="#" class="font-semibold text-purple-400 hover:text-purple-300">Start a free trial</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Login Modal Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('login-modal');
+            const backdrop = document.getElementById('login-backdrop');
+            const closeBtn = document.getElementById('close-login-btn');
+            const signInLinks = document.querySelectorAll('a[href="#"]'); // Target placeholder links temporarily
+
+            function openModal(e) {
+                // Only trigger for "Sign in" links
+                if (e.target.textContent.trim().toLowerCase().includes('sign in')) {
+                    e.preventDefault();
+                    modal.classList.remove('hidden');
+                    // Small timeout to allow display:block to apply before opacity transition
+                    setTimeout(() => {
+                        modal.classList.remove('opacity-0');
+                        modal.querySelector('div[class*="transform"]').classList.remove('scale-95');
+                        modal.querySelector('div[class*="transform"]').classList.add('scale-100');
+                    }, 10);
+                }
+            }
+
+            function closeModal() {
+                modal.classList.add('opacity-0');
+                modal.querySelector('div[class*="transform"]').classList.remove('scale-100');
+                modal.querySelector('div[class*="transform"]').classList.add('scale-95');
+
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+
+            // Attach event listeners to all links checking for "Sign in" text
+            signInLinks.forEach(link => {
+                link.addEventListener('click', openModal);
+            });
+
+            // Special handling for specific sign in buttons if they exist
+            const explicitSignInBtns = document.querySelectorAll('.sign-in-btn');
+            explicitSignInBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal(e);
+                });
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
