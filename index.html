@@ -2028,14 +2028,14 @@ scaleY(var(--tw-scale-y, 1))
         <div class="reveal text-center max-w-7xl z-10 mr-auto ml-auto pr-6 pl-6 relative">
             <h2 class="md:text-4xl text-4xl font-medium text-white tracking-tight font-montserrat mb-4 cursor-pointer"
                 onclick="window.location.href='/#bookadiscoverycall'" role="button">
-                Book Your Discovery Call
+                Tell Us About Your Business
             </h2>
             <p class="text-lg text-slate-400 font-manrope max-w-full mr-auto mb-10 ml-auto">
-                We’ll map your best automation opportunity in 15–30 minutes. No
-                scripts, just strategy.
+                This helps us prepare intelligently and determine the right next step together.
             </p>
 
-            <div class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+            <form id="discovery-call-form" action="https://formspree.io/f/xpqqjkqg" method="POST"
+                class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
                 <!-- Section 1: Identity -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 gap-x-6 gap-y-6">
                     <div class="space-y-1.5">
@@ -2216,15 +2216,21 @@ scaleY(var(--tw-scale-y, 1))
 
                 <!-- Submit -->
                 <div class="text-center">
-                    <button type="button"
+                    <button type="submit"
                         class="min-w-[240px] transition-all duration-300 hover:bg-slate-200 sm:w-auto text-sm font-semibold text-slate-50 font-manrope bg-purple-700 w-full rounded-full px-8 py-3.5 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]">
-                        Book My Discovery Call
+                        See If We’re a Fit
                     </button>
+                    <p id="form-error" class="text-[10px] mt-3 text-red-400 font-manrope hidden">
+                        Please fill in all required fields and select at least one problem.
+                    </p>
+                    <p id="form-success" class="text-[10px] mt-3 text-green-400 font-manrope hidden">
+                        Submitting...
+                    </p>
                     <p class="text-[10px] mt-3 text-slate-500 font-manrope">
                         No spam. We’ll map your automation opportunity in 15–30 minutes.
                     </p>
                 </div>
-            </div>
+            </form>
         </div>
     </section>
     <!-- Email Capture / CTA -->
@@ -2248,9 +2254,9 @@ scaleY(var(--tw-scale-y, 1))
                         <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                     </g>
                 </svg>
-                <input type="email" placeholder="Enter your email address"
+                <input type="email" name="email" required placeholder="Enter your email address"
                     class="w-full border rounded-full py-3.5 pl-11 pr-32 text-sm placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 transition-colors bg-white/5 border-white/10 text-white">
-                <button type="button"
+                <button type="submit"
                     class="transition-colors text-xs font-semibold rounded-full pr-5 pl-5 absolute top-1.5 right-1.5 bottom-1.5 hover:bg-slate-200 text-slate-50 bg-purple-700 font-manrope"
                     style="">
                     Join Now
@@ -2380,6 +2386,105 @@ scaleY(var(--tw-scale-y, 1))
             </div>
         </div>
     </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeSuccessModal()"></div>
+
+        <!-- Modal Content -->
+        <div
+            class="relative max-w-lg w-full bg-gradient-to-br from-[#0E0E12]/95 to-[#0A0A0C]/95 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl shadow-purple-500/10 animate-[fadeIn_0.3s_ease-out]">
+            <!-- Close Button -->
+            <button onclick="closeSuccessModal()"
+                class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
+            </button>
+
+            <!-- Glow Effect -->
+            <div
+                class="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-[80px] pointer-events-none">
+            </div>
+            <div
+                class="absolute -bottom-20 -left-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-[80px] pointer-events-none">
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10">
+                <!-- Success Icon -->
+                <div
+                    class="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-purple-500/30">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+
+                <!-- Title -->
+                <h3 class="text-2xl font-semibold text-white text-center font-montserrat mb-4">That's fantastic to hear!
+                </h3>
+
+                <!-- Message -->
+                <div class="text-slate-300 font-manrope text-sm leading-relaxed space-y-4">
+                    <p>We're excited you're interested in what we do!</p>
+
+                    <p>Since you want to get the full experience, I'd recommend booking a <span
+                            class="text-purple-400 font-medium">Discovery Call</span> with us. This way, our team can
+                        understand your specific business needs and show you exactly how our AI agents can help automate
+                        your operations and scale your productivity.</p>
+
+                    <p class="font-medium text-slate-200">You can also:</p>
+                    <ul class="space-y-2 ml-4">
+                        <li class="flex items-start gap-2">
+                            <span class="text-purple-500 mt-0.5">•</span>
+                            <span>Try our Voice Agent to see it in action</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-purple-500 mt-0.5">•</span>
+                            <span>Join the waiting list for our 'AI-First Productivity' guide</span>
+                        </li>
+                    </ul>
+
+                    <p>The Discovery Call would be the best starting point since we can customize our AI solutions based
+                        on your business requirements. You can book that directly from our homepage.</p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                    <a href="#join" onclick="closeSuccessModal()"
+                        class="flex-1 text-center py-3 px-6 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm hover:from-purple-500 hover:to-indigo-500 transition-all shadow-lg shadow-purple-500/20 font-manrope">
+                        Book Discovery Call
+                    </a>
+                    <button onclick="closeSuccessModal()"
+                        class="flex-1 py-3 px-6 rounded-full border border-white/10 text-slate-300 font-semibold text-sm hover:bg-white/5 transition-all font-manrope">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        #success-modal.flex>div:last-child {
+            animation: fadeIn 0.3s ease-out;
+        }
+    </style>
     <!-- Scroll Animation Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -2485,6 +2590,126 @@ scaleY(var(--tw-scale-y, 1))
 
     <!-- Tidio Chat Widget -->
     <script src="//code.tidio.co/80btxpkof6ywy0e7maqinqof79ue3b1j.js"></script>
+
+    <!-- Form Validation & AJAX Submission Script -->
+    <script>
+        // Modal Control Functions
+        function openSuccessModal() {
+            const modal = document.getElementById('success-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('success-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSuccessModal();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const discoveryForm = document.getElementById('discovery-call-form');
+            const formError = document.getElementById('form-error');
+            const formSuccess = document.getElementById('form-success');
+
+            if (discoveryForm) {
+                discoveryForm.addEventListener('submit', async function (e) {
+                    e.preventDefault(); // Always prevent default - we'll submit via AJAX
+
+                    // Check if at least one checkbox is selected
+                    const checkboxes = discoveryForm.querySelectorAll('input[name="primary_problem"]:checked');
+
+                    // Validate checkboxes - at least 1 required
+                    if (checkboxes.length === 0) {
+                        formError.textContent = 'Please select at least one primary problem to solve.';
+                        formError.classList.remove('hidden');
+                        formSuccess.classList.add('hidden');
+                        return false;
+                    }
+
+                    // Validate max 2 checkboxes
+                    if (checkboxes.length > 2) {
+                        formError.textContent = 'Please select a maximum of 2 primary problems.';
+                        formError.classList.remove('hidden');
+                        formSuccess.classList.add('hidden');
+                        return false;
+                    }
+
+                    // Check all required fields
+                    const requiredFields = discoveryForm.querySelectorAll('[required]');
+                    let allFilled = true;
+
+                    requiredFields.forEach(field => {
+                        if (!field.value || field.value === '') {
+                            allFilled = false;
+                            field.classList.add('border-red-500');
+                        } else {
+                            field.classList.remove('border-red-500');
+                        }
+                    });
+
+                    if (!allFilled) {
+                        formError.textContent = 'Please fill in all required fields.';
+                        formError.classList.remove('hidden');
+                        formSuccess.classList.add('hidden');
+                        return false;
+                    }
+
+                    // All validation passed - show submitting message
+                    formError.classList.add('hidden');
+                    formSuccess.textContent = 'Submitting...';
+                    formSuccess.classList.remove('hidden');
+
+                    // Submit form via AJAX
+                    try {
+                        const formData = new FormData(discoveryForm);
+                        const response = await fetch(discoveryForm.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            // Success! Show the modal
+                            formSuccess.classList.add('hidden');
+                            openSuccessModal();
+                            discoveryForm.reset(); // Reset the form
+                        } else {
+                            formSuccess.classList.add('hidden');
+                            formError.textContent = 'Something went wrong. Please try again.';
+                            formError.classList.remove('hidden');
+                        }
+                    } catch (error) {
+                        formSuccess.classList.add('hidden');
+                        formError.textContent = 'Network error. Please check your connection and try again.';
+                        formError.classList.remove('hidden');
+                    }
+                });
+
+                // Limit checkbox selection to max 2
+                const problemCheckboxes = discoveryForm.querySelectorAll('input[name="primary_problem"]');
+                problemCheckboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', function () {
+                        const checked = discoveryForm.querySelectorAll('input[name="primary_problem"]:checked');
+                        if (checked.length > 2) {
+                            this.checked = false;
+                            formError.textContent = 'You can select a maximum of 2 primary problems.';
+                            formError.classList.remove('hidden');
+                            setTimeout(() => formError.classList.add('hidden'), 3000);
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 
 </body>
 
