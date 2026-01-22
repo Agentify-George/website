@@ -6,7 +6,7 @@
 - Founder and CEO of Agentify, an AI agency specializing in Voice AI solutions for SMBs
 - Background in advertising and consulting (LinkedIn: linkedin.com/in/georgerhawkins)
 - Currently focused on launching Agentify with emphasis on Speed-to-Lead automation for local businesses
-- Based in DFW (Dallas-Fort Worth) area
+- **Location:** Fate, TX (DFW Area - Dallas-Fort Worth)
 - Transitioning from builder → operator → closer
 
 **Primary Goals for Agentify:**
