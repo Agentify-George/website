@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - Agentify</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .font-manrope {
+            font-family: 'Manrope', sans-serif !important;
+        }
+
+        /* Hero Glow */
+        .hero-glow {
+            background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(168, 85, 247, 0.2), transparent);
+            filter: blur(80px);
+        }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Text Gradients */
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #e9d5ff 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-gradient-header {
+            background: linear-gradient(to right, #ffffff, #d8b4fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title-gradient {
+            background: linear-gradient(to bottom, #ffffff, #e9d5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-400 {
+            transition-delay: 0.4s;
+        }
+
+        /* Team Card Hover Effects */
+        .team-glow {
+            background: radial-gradient(circle at center, rgba(168, 85, 247, 0.4), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .group:hover .team-glow {
+            opacity: 1;
+        }
+    </style>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" />
+    <!-- Additional fonts kept for compatibility -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" />
+    <!-- Lucide Icons Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style id="aura-editor-visibility-style">
+        .invisible {
+            visibility: hidden !important;
+        }
+    </style>
+
+    <script src="https://www.aura.build/FxFilter.js"></script>
+    <link id="all-fonts-link-font-geist" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-geist">
+        .font-geist {
+            font-family: 'Geist', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-roboto" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-roboto">
+        .font-roboto {
+            font-family: 'Roboto', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-poppins" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-poppins">
+        .font-poppins {
+            font-family: 'Poppins', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-playfair" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap" />
+    <style id="all-fonts-style-font-playfair">
+        .font-playfair {
+            font-family: 'Playfair Display', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-instrument-serif" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-instrument-serif">
+        .font-instrument-serif {
+            font-family: 'Instrument Serif', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-merriweather" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap" />
+    <style id="all-fonts-style-font-merriweather">
+        .font-merriweather {
+            font-family: 'Merriweather', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-bricolage" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-bricolage">
+        .font-bricolage {
+            font-family: 'Bricolage Grotesque', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-jakarta" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-jakarta">
+        .font-jakarta {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-manrope" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-manrope">
+        .font-manrope {
+            font-family: 'Manrope', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-space-grotesk" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-space-grotesk">
+        .font-space-grotesk {
+            font-family: 'Space Grotesk', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-work-sans" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-work-sans">
+        .font-work-sans {
+            font-family: 'Work Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-pt-serif" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap" />
+    <style id="all-fonts-style-font-pt-serif">
+        .font-pt-serif {
+            font-family: 'PT Serif', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-geist-mono" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-geist-mono">
+        .font-geist-mono {
+            font-family: 'Geist Mono', monospace !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-space-mono" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" />
+    <style id="all-fonts-style-font-space-mono">
+        .font-space-mono {
+            font-family: 'Space Mono', monospace !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-quicksand" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-quicksand">
+        .font-quicksand {
+            font-family: 'Quicksand', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-nunito" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-nunito">
+        .font-nunito {
+            font-family: 'Nunito', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-newsreader" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap" />
+    <style id="all-fonts-style-font-newsreader">
+        .font-newsreader {
+            font-family: 'Newsreader', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-google-sans-flex" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-google-sans-flex">
+        .font-google-sans-flex {
+            font-family: 'Google Sans Flex', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-oswald" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-oswald">
+        .font-oswald {
+            font-family: 'Oswald', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-dm-sans" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-dm-sans">
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-cormorant" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-cormorant">
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-montserrat" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-montserrat">
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden text-white bg-black">
+    <!-- Background (component) added by Aura -->
+    <div class="aura-background-component fixed top-0 w-full h-screen -z-10 saturate-200 hue-rotate-15 invert-0"
+        data-alpha-mask="80"
+        style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)">
+        <div class="aura-background-component top-0 w-full -z-10 absolute h-full">
+            <div data-us-project="ILgOO23w4wEyPQOKyLO4" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+            <script type="text/javascript">
+                !function () { if (!window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();
+            </script>
+        </div>
+    </div>
+
+    <!-- Background Gradient -->
+    <div class="fixed top-0 w-full h-screen -z-10">
+        <div class="absolute inset-0 hero-glow opacity-40"></div>
+        <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+        class="fixed z-50 transition-all duration-300 reveal active bg-black/40 w-full border-white/5 border-b top-0 backdrop-blur-xl">
+        <div class="flex h-16 max-w-7xl mr-auto ml-auto px-6 items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/76a0dad8-5826-4116-a2d1-d89514661099_320w.png"
+                    alt="Agentify Logo" class="w-8 h-8 object-contain" />
+                <span
+                    class="group-hover:opacity-80 transition-opacity text-base font-semibold text-white tracking-tight font-montserrat cursor-pointer"
+                    onclick="window.location.href='/index'" role="button">
+                    Agentify
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="case-studies.html" class="transition-colors hover:text-white text-slate-400 font-manrope">
+                    Case Studies
+                </a>
+                <a href="howitworks.html" class="transition-colors hover:text-white text-slate-400 font-manrope">
+                    How it Works
+                </a>
+                <a href="pricing.html" class="transition-colors hover:text-white text-slate-400 font-manrope">
+                    Pricing
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#"
+                    class="hidden sm:block text-xs font-medium transition-colors hover:text-white text-slate-400 font-manrope">
+                    Sign in
+                </a>
+                <a href="https://cal.com/weareagentify/agentify-calender-meetings"
+                    class="transition-all duration-300 hover:bg-white/20 text-xs font-medium text-white font-manrope bg-purple-700 border-white/10 border rounded-full pt-2 pr-4 pb-2 pl-4 backdrop-blur-sm">
+                    Book a Call
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="overflow-hidden pt-40 pb-20 relative">
+        <div class="z-10 text-center max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
+            <div
+                class="reveal inline-flex active text-xs font-medium text-purple-300 font-manrope bg-white/5 border-white/10 border rounded-full mb-8 pt-1 pr-3 pb-1 pl-3 gap-x-2 gap-y-2 items-center">
+                Effective Date: 01/01/2026
+            </div>
+            <h1
+                class="reveal delay-100 title-gradient leading-tight active md:text-7xl text-5xl font-semibold text-white tracking-tight font-montserrat mb-8 pt-2 pb-2">
+                Privacy Policy
+            </h1>
+            <p
+                class="reveal delay-200 md:text-xl leading-relaxed active text-lg text-slate-400 font-manrope max-w-5xl mr-auto mb-10 ml-auto">
+                Last Updated: 01/21/2026
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-black/50 py-24 relative">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="space-y-6 text-slate-400 font-manrope">
+                <p class="text-lg text-slate-300">
+                    <strong class="text-white">Agentify</strong>
+                    (“Agentify,” “we,” “us,” or “our”) values your privacy. This Privacy
+                    Policy explains how we collect, use, disclose, and protect
+                    information when you access or use our website, software,
+                    applications, AI agents, voice systems, and related services
+                    (collectively, the “Services”).
+                </p>
+                <p>
+                    By using the Services, you agree to the practices described in this
+                    Privacy Policy.
+                </p>
+                <div class="h-px bg-white/10 my-12"></div>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-4">
+                    1. Information We Collect
+                </h2>
+                <h3 class="text-xl font-medium text-white font-montserrat pt-6">
+                    a. Information You Provide
+                </h3>
+                <p>We may collect information you voluntarily provide, including:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Name, email address, phone number, and business information
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Account credentials and profile information</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Payment and billing details (processed via third-party payment
+                            providers)
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Communications with us (emails, support requests, feedback)
+                        </span>
+                    </li>
+                </ul>
+                <h3 class="text-xl font-medium text-white font-montserrat pt-6">
+                    b. Information Processed Through AI, Voice &amp; Messaging Systems
+                </h3>
+                <p>
+                    When you use Agentify’s automation, voice, or messaging features, we
+                    may process:
+                </p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Call metadata (date, time, duration, phone numbers)</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Message content and interaction data</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Transcriptions, summaries, or AI-generated outputs</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Configuration data and workflows you create</span>
+                    </li>
+                </ul>
+                <p>
+                    <strong class="text-white">Important:</strong>
+                    Agentify processes this data solely to provide and improve the
+                    Services and does not independently contact end users.
+                </p>
+                <h3 class="text-xl font-medium text-white font-montserrat pt-6">
+                    c. Automatically Collected Information
+                </h3>
+                <p>We may automatically collect:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>IP address, browser type, device information</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Usage data, logs, and performance metrics</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Cookies or similar technologies for functionality and analytics
+                        </span>
+                    </li>
+                </ul>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    2. How We Use Information
+                </h2>
+                <p>We use collected information to:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Provide, operate, and maintain the Services</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Process transactions and manage accounts</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Power AI agents, automation, and workflows</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Improve performance, reliability, and user experience</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Provide customer support and communicate with you</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Comply with legal obligations and enforce our Terms of Service
+                        </span>
+                    </li>
+                </ul>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    3. AI &amp; Automated Processing Disclosure
+                </h2>
+                <p>
+                    Agentify uses artificial intelligence and automated systems to
+                    process data and generate outputs based on user configuration.
+                </p>
+                <p>You acknowledge that:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            AI outputs are probabilistic and may not always be accurate
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            You are responsible for reviewing and approving outputs before
+                            use
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>You control how AI agents are configured and deployed</span>
+                    </li>
+                </ul>
+                <p>
+                    Agentify does not make automated decisions that produce legal or
+                    similarly significant effects about individuals without user
+                    direction.
+                </p>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    4. Voice, Messaging &amp; Consent Responsibility
+                </h2>
+                <p>If you use voice, SMS, or messaging features:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            You are responsible for obtaining all required consents and
+                            disclosures
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            You are responsible for compliance with applicable laws (e.g.,
+                            call recording, TCPA, CAN-SPAM)
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Agentify acts solely as a technology provider and does not
+                            initiate communications independently
+                        </span>
+                    </li>
+                </ul>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    5. Sharing of Information
+                </h2>
+                <p>We may share information:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            With trusted service providers (e.g., hosting, AI models,
+                            telephony, analytics) solely to operate the Services
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            To comply with legal obligations, court orders, or lawful
+                            requests
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            To protect the rights, safety, or property of Agentify or others
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            In connection with a merger, acquisition, or business transfer
+                        </span>
+                    </li>
+                </ul>
+                <p>
+                    We do
+                    <strong class="text-white">not</strong>
+                    sell personal information.
+                </p>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    6. Third-Party Services
+                </h2>
+                <p>
+                    The Services may integrate with third-party platforms. Their data
+                    handling practices are governed by their own privacy policies.
+                    Agentify is not responsible for third-party practices.
+                </p>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    7. Data Retention
+                </h2>
+                <p>We retain information only for as long as necessary to:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Provide the Services</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Fulfill legal, accounting, or contractual obligations</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Resolve disputes and enforce agreements</span>
+                    </li>
+                </ul>
+                <p>
+                    You may request deletion of your data, subject to legal and
+                    operational requirements.
+                </p>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    8. Data Security
+                </h2>
+                <p>
+                    We implement reasonable administrative, technical, and
+                    organizational measures to protect information. However, no system
+                    can be guaranteed to be 100% secure.
+                </p>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    9. Your Rights &amp; Choices
+                </h2>
+                <p>Depending on your location, you may have rights to:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Access, correct, or delete your personal information</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Object to or restrict certain processing</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Withdraw consent where applicable</span>
+                    </li>
+                </ul>
+                <p>Requests may be submitted using the contact information below.</p>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    10. Children’s Privacy
+                </h2>
+                <p>
+                    The Services are not intended for individuals under the age of 18.
+                    We do not knowingly collect personal information from children.
+                </p>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    11. International Data Transfers
+                </h2>
+                <p>
+                    Your information may be processed or stored in jurisdictions outside
+                    your own. By using the Services, you consent to such transfers where
+                    permitted by law.
+                </p>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    12. Changes to This Privacy Policy
+                </h2>
+                <p>
+                    We may update this Privacy Policy from time to time. Continued use
+                    of the Services after changes constitutes acceptance of the updated
+                    policy.
+                </p>
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    13. Contact Us
+                </h2>
+                <p>
+                    If you have questions about this Privacy Policy or our data
+                    practices, contact:
+                </p>
+                <p>
+                    <strong class="text-white">Agentify</strong>
+                    <br />
+                    Email:
+                    <a href="mailto:legal@weareagentify.com" class="text-purple-400 hover:text-white transition-colors">
+                        legal@weareagentify.com
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+
+    <!-- Context Section -->
+
+    <!-- System Architecture -->
+
+    <!-- Expertise Section -->
+
+    <!-- TEAM SECTION ADDITION -->
+
+    <!-- Long-Term Systems Partner CTA -->
+
+    <!-- Footer -->
+    <footer class="border-t bg-[#020203] py-12 text-sm reveal border-white/5">
+        <div class="max-w-7xl mr-auto ml-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <a href="#" class="flex items-center gap-2 group mb-4">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/76a0dad8-5826-4116-a2d1-d89514661099_320w.png"
+                            alt="Agentify Logo" class="w-8 h-8 object-contain" />
+                        <span
+                            class="group-hover:opacity-80 transition-opacity text-base font-semibold text-white tracking-tight font-montserrat">
+                            Agentify
+                        </span>
+                    </a>
+                    <p class="leading-relaxed text-xs text-slate-500 font-manrope">
+                        We build AI agents that eliminate manual work and scale
+                        productivity. Turning AI into a dependable operating system for
+                        your business.
+                    </p>
+                </div>
+                <div class="">
+                    <h4 class="font-medium text-white font-manrope mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li class="">
+                            <a href="howitworks.html" class="transition-colors hover:text-white font-manrope">
+                                How it Works
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="pricing.html" class="transition-colors hover:text-white font-manrope">
+                                Pricing
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h4 class="font-medium mb-4 text-white font-manrope">Company</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li class="">
+                            <a href="about.html" class="transition-colors hover:text-white font-manrope">
+                                About
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="blog.html" class="transition-colors hover:text-white font-manrope">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h4 class="font-medium mb-4 text-white font-manrope">Legal</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li class="">
+                            <a href="privacy.html" class="transition-colors hover:text-white font-manrope">
+                                Privacy
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="terms.html" class="transition-colors hover:text-white font-manrope">
+                                Terms
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row border-t pt-8 items-center justify-between border-white/5">
+                <p class="text-xs text-slate-600 font-manrope">
+                    © 2026 Agentify. All rights reserved.
+                </p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-500 transition-colors hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="twitter" class="lucide lucide-twitter w-4 h-4">
+                            <path
+                                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-slate-500 transition-colors hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="linkedin" class="lucide lucide-linkedin w-4 h-4">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect width="4" height="12" x="2" y="9"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-slate-500 transition-colors hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="github" class="lucide lucide-github w-4 h-4">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                            </path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal', 'active');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

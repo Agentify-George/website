@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service - Agentify</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .font-manrope {
+            font-family: 'Manrope', sans-serif !important;
+        }
+
+        /* Hero Glow */
+        .hero-glow {
+            background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(168, 85, 247, 0.2), transparent);
+            filter: blur(80px);
+        }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Text Gradients */
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #e9d5ff 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-gradient-header {
+            background: linear-gradient(to right, #ffffff, #d8b4fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title-gradient {
+            background: linear-gradient(to bottom, #ffffff, #e9d5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-400 {
+            transition-delay: 0.4s;
+        }
+
+        /* Team Card Hover Effects */
+        .team-glow {
+            background: radial-gradient(circle at center, rgba(168, 85, 247, 0.4), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .group:hover .team-glow {
+            opacity: 1;
+        }
+    </style>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" />
+    <!-- Additional fonts kept for compatibility -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" />
+    <!-- Lucide Icons Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style id="aura-editor-visibility-style">
+        .invisible {
+            visibility: hidden !important;
+        }
+    </style>
+
+    <script src="https://www.aura.build/FxFilter.js"></script>
+    <link id="all-fonts-link-font-geist" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-geist">
+        .font-geist {
+            font-family: 'Geist', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-roboto" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-roboto">
+        .font-roboto {
+            font-family: 'Roboto', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-poppins" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-poppins">
+        .font-poppins {
+            font-family: 'Poppins', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-playfair" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap" />
+    <style id="all-fonts-style-font-playfair">
+        .font-playfair {
+            font-family: 'Playfair Display', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-instrument-serif" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-instrument-serif">
+        .font-instrument-serif {
+            font-family: 'Instrument Serif', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-merriweather" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap" />
+    <style id="all-fonts-style-font-merriweather">
+        .font-merriweather {
+            font-family: 'Merriweather', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-bricolage" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-bricolage">
+        .font-bricolage {
+            font-family: 'Bricolage Grotesque', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-jakarta" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-jakarta">
+        .font-jakarta {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-manrope" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-manrope">
+        .font-manrope {
+            font-family: 'Manrope', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-space-grotesk" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-space-grotesk">
+        .font-space-grotesk {
+            font-family: 'Space Grotesk', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-work-sans" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-work-sans">
+        .font-work-sans {
+            font-family: 'Work Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-pt-serif" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap" />
+    <style id="all-fonts-style-font-pt-serif">
+        .font-pt-serif {
+            font-family: 'PT Serif', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-geist-mono" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-geist-mono">
+        .font-geist-mono {
+            font-family: 'Geist Mono', monospace !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-space-mono" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" />
+    <style id="all-fonts-style-font-space-mono">
+        .font-space-mono {
+            font-family: 'Space Mono', monospace !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-quicksand" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-quicksand">
+        .font-quicksand {
+            font-family: 'Quicksand', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-nunito" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap" />
+    <style id="all-fonts-style-font-nunito">
+        .font-nunito {
+            font-family: 'Nunito', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-newsreader" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap" />
+    <style id="all-fonts-style-font-newsreader">
+        .font-newsreader {
+            font-family: 'Newsreader', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-google-sans-flex" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-google-sans-flex">
+        .font-google-sans-flex {
+            font-family: 'Google Sans Flex', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-oswald" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-oswald">
+        .font-oswald {
+            font-family: 'Oswald', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-dm-sans" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-dm-sans">
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-cormorant" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-cormorant">
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-montserrat" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" />
+    <style id="all-fonts-style-font-montserrat">
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden text-white bg-black">
+    <!-- Background (component) added by Aura -->
+    <div class="aura-background-component fixed top-0 w-full h-screen -z-10 saturate-200 hue-rotate-15 invert-0"
+        data-alpha-mask="80"
+        style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)">
+        <div class="aura-background-component top-0 w-full -z-10 absolute h-full">
+            <div data-us-project="ILgOO23w4wEyPQOKyLO4" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+            <script type="text/javascript">
+                !function () { if (!window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();
+            </script>
+        </div>
+    </div>
+
+    <!-- Background Gradient -->
+    <div class="fixed top-0 w-full h-screen -z-10">
+        <div class="absolute inset-0 hero-glow opacity-40"></div>
+        <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+        class="fixed z-50 transition-all duration-300 reveal active bg-black/40 w-full border-white/5 border-b top-0 backdrop-blur-xl">
+        <div class="flex h-16 max-w-7xl mr-auto ml-auto px-6 items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/76a0dad8-5826-4116-a2d1-d89514661099_320w.png"
+                    alt="Agentify Logo" class="w-8 h-8 object-contain" />
+                <span
+                    class="group-hover:opacity-80 transition-opacity text-base font-semibold text-white tracking-tight font-montserrat cursor-pointer"
+                    onclick="window.location.href='/index'" role="button">
+                    Agentify
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="case-studies.html" class="transition-colors hover:text-white text-slate-400 font-manrope">
+                    Case Studies
+                </a>
+                <a href="howitworks.html" class="transition-colors hover:text-white text-slate-400 font-manrope">
+                    How it Works
+                </a>
+                <a href="pricing.html" class="transition-colors hover:text-white text-slate-400 font-manrope">
+                    Pricing
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#"
+                    class="hidden sm:block text-xs font-medium transition-colors hover:text-white text-slate-400 font-manrope">
+                    Sign in
+                </a>
+                <a href="https://cal.com/weareagentify/agentify-calender-meetings"
+                    class="transition-all duration-300 hover:bg-white/20 text-xs font-medium text-white font-manrope bg-purple-700 border-white/10 border rounded-full pt-2 pr-4 pb-2 pl-4 backdrop-blur-sm">
+                    Book a Call
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="overflow-hidden pt-40 pb-20 relative">
+        <div class="z-10 text-center max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
+            <div
+                class="reveal inline-flex active text-xs font-medium text-purple-300 font-manrope bg-white/5 border-white/10 border rounded-full mb-8 pt-1 pr-3 pb-1 pl-3 gap-x-2 gap-y-2 items-center">
+                Effective Date: 01/01/2026
+            </div>
+            <h1
+                class="reveal delay-100 title-gradient leading-tight active md:text-7xl text-5xl font-semibold text-white tracking-tight font-montserrat mb-8 pt-2 pb-2">
+                Terms of Service
+            </h1>
+            <p
+                class="reveal delay-200 md:text-xl leading-relaxed active text-lg text-slate-400 font-manrope max-w-5xl mr-auto mb-10 ml-auto">
+                Last Updated: 01/21/2026
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-black/50 py-24 relative">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="space-y-6 text-slate-400 font-manrope">
+                <p class="text-lg text-slate-300">
+                    Welcome to
+                    <strong class="text-white">Agentify</strong>
+                    (“Agentify,” “we,” “us,” or “our”). These Terms of Service (“Terms”)
+                    govern your access to and use of our website, software,
+                    applications, AI agents, voice systems, automation tools, and
+                    related services (collectively, the “Services”).
+                </p>
+                <p>
+                    By accessing or using the Services, you agree to be bound by these
+                    Terms.
+                    <br />
+                    If you do not agree, do not use the Services.
+                </p>
+
+                <div class="h-px bg-white/10 my-12"></div>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-4">
+                    1. About Agentify
+                </h2>
+                <p>
+                    Agentify provides AI-powered automation tools and enablement
+                    services, including but not limited to voice agents, messaging
+                    agents, workflow automation, intake systems, scheduling tools,
+                    analytics, and related support services.
+                </p>
+                <p>
+                    Agentify is a technology provider and does not act as your agent,
+                    representative, fiduciary, or advisor.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    2. Eligibility
+                </h2>
+                <p>
+                    You must be at least 18 years old and capable of forming a legally
+                    binding agreement to use the Services. By using the Services, you
+                    represent and warrant that you meet these requirements.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    3. Scope of Services &amp; AI Disclosure
+                </h2>
+                <p>
+                    Agentify provides
+                    <strong class="text-white">
+                        technology and automation systems
+                    </strong>
+                    , not legal, medical, financial, or other professional advice.
+                </p>
+                <p>You acknowledge and agree that:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            AI-generated outputs are probabilistic and may be inaccurate,
+                            incomplete, or inappropriate
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            You are solely responsible for reviewing, validating, and
+                            approving all outputs before use
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Agentify does not guarantee any business, financial,
+                            operational, or performance outcomes
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Any reliance on AI-generated outputs is at your own risk
+                        </span>
+                    </li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    4. Privacy &amp; Data Use
+                </h2>
+                <p>
+                    Your use of the Services is governed by our
+                    <strong class="text-white">Privacy Policy</strong>
+                    , which explains how we collect, use, store, and protect data. The
+                    Privacy Policy is incorporated into these Terms by reference.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    5. Account Responsibilities
+                </h2>
+                <p>If you create an account or submit information:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            You agree to provide accurate and complete information
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            You are responsible for maintaining the confidentiality of your
+                            credentials
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            You are responsible for all activity conducted under your
+                            account
+                        </span>
+                    </li>
+                </ul>
+                <p>
+                    Agentify is not liable for unauthorized access resulting from your
+                    failure to secure your credentials.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    6. Acceptable Use
+                </h2>
+                <p>You agree not to use the Services to:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Violate any applicable laws or regulations</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Infringe intellectual property, privacy, or publicity rights
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Transmit unlawful, deceptive, abusive, or harmful content
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Reverse engineer, disrupt, or exploit the Services</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Deploy AI agents for unlawful, unethical, or non-consensual
+                            activities
+                        </span>
+                    </li>
+                </ul>
+                <p>Agentify may suspend or terminate access for violations.</p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    7. Voice, Messaging &amp; Compliance Responsibility (IMPORTANT)
+                </h2>
+                <p>If you use voice, SMS, or messaging-based agents:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            You are solely responsible for complying with all applicable
+                            laws, including consent, disclosure, and recording requirements
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            You represent that you have obtained all required permissions
+                            from end users
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            You acknowledge that Agentify acts solely as a technology
+                            provider and not as the sender or caller
+                        </span>
+                    </li>
+                </ul>
+                <p>
+                    This includes, without limitation, compliance with call recording
+                    laws, TCPA, CAN-SPAM, and similar regulations.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    8. Intellectual Property
+                </h2>
+                <p>
+                    All software, systems, workflows, prompts, designs, documentation,
+                    and content provided by Agentify are owned by Agentify or its
+                    licensors unless otherwise stated.
+                </p>
+                <p>
+                    You are granted a
+                    <strong class="text-white">
+                        limited, non-exclusive, non-transferable, revocable license
+                    </strong>
+                    to use the Services for internal business purposes only.
+                </p>
+                <p>
+                    You may not copy, resell, sublicense, or redistribute the Services
+                    without written permission.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    9. Fees &amp; Payments
+                </h2>
+                <p>If applicable:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Fees are disclosed prior to purchase or engagement</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            All payments are non-refundable unless expressly stated
+                            otherwise in writing
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            Failure to pay may result in suspension or termination
+                        </span>
+                    </li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    10. Third-Party Services
+                </h2>
+                <p>
+                    The Services may integrate with third-party platforms or providers.
+                </p>
+                <p>Agentify is not responsible for:</p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Third-party outages or failures</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Changes to third-party pricing, features, or terms</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Third-party data handling or security practices</span>
+                    </li>
+                </ul>
+                <p>
+                    Your use of third-party services is subject to their respective
+                    terms.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    11. Confidentiality
+                </h2>
+                <p>
+                    Each party agrees to protect the other’s non-public, confidential
+                    business information and to use such information solely for purposes
+                    related to the Services.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    12. Service Availability
+                </h2>
+                <p>
+                    The Services are provided on an “as available” basis.
+                    <br />
+                    Agentify does not guarantee uninterrupted operation, uptime, or
+                    availability and may modify, suspend, or discontinue any portion of
+                    the Services at any time.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    13. Disclaimers
+                </h2>
+                <p class="uppercase font-semibold text-white">
+                    THE SERVICES ARE PROVIDED “AS IS” AND “AS AVAILABLE.”
+                </p>
+                <p class="uppercase font-semibold text-white">
+                    TO THE MAXIMUM EXTENT PERMITTED BY LAW, AGENTIFY DISCLAIMS ALL
+                    WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF
+                    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+                    NON-INFRINGEMENT.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    14. Limitation of Liability
+                </h2>
+                <p class="uppercase font-semibold text-white">
+                    TO THE MAXIMUM EXTENT PERMITTED BY LAW:
+                </p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            AGENTIFY SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL,
+                            CONSEQUENTIAL, OR PUNITIVE DAMAGES
+                        </span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>
+                            AGENTIFY’S TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT PAID BY
+                            YOU TO AGENTIFY IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM
+                        </span>
+                    </li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    15. Indemnification
+                </h2>
+                <p>
+                    You agree to indemnify and hold harmless Agentify from any claims,
+                    damages, losses, or liabilities arising from:
+                </p>
+                <ul class="space-y-3 pl-2">
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Your use or misuse of the Services</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Your AI agent configurations or deployments</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="mt-2 w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0"></span>
+                        <span>Your violation of these Terms or applicable laws</span>
+                    </li>
+                </ul>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    16. Termination
+                </h2>
+                <p>
+                    Agentify may suspend or terminate access to the Services at any
+                    time, with or without notice.
+                </p>
+                <p>
+                    Upon termination, your license to use the Services ends immediately.
+                    <br />
+                    Sections relating to IP, confidentiality, disclaimers, liability,
+                    and indemnification survive termination.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    17. Dispute Resolution &amp; Arbitration
+                </h2>
+                <p>
+                    Any dispute arising out of or relating to these Terms shall be
+                    resolved through
+                    <strong class="text-white">
+                        binding arbitration on an individual basis
+                    </strong>
+                    , and not as a class action, except where prohibited by law.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    18. Governing Law
+                </h2>
+                <p>
+                    These Terms are governed by the laws of the State of Texas, without
+                    regard to conflict of law principles.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    19. Changes to These Terms
+                </h2>
+                <p>
+                    We may update these Terms from time to time. Continued use of the
+                    Services constitutes acceptance of the updated Terms.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-white font-montserrat pt-8">
+                    20. Contact
+                </h2>
+                <p>
+                    <strong class="text-white">Agentify</strong>
+                    <br />
+                    Email:
+                    <a href="mailto:legal@weareagentify.com" class="text-purple-400 hover:text-white transition-colors">
+                        legal@weareagentify.com
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+
+    <!-- Context Section -->
+
+    <!-- System Architecture -->
+
+    <!-- Expertise Section -->
+
+    <!-- TEAM SECTION ADDITION -->
+
+    <!-- Long-Term Systems Partner CTA -->
+
+    <!-- Footer -->
+    <footer class="border-t bg-[#020203] py-12 text-sm reveal border-white/5">
+        <div class="max-w-7xl mr-auto ml-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <a href="#" class="flex items-center gap-2 group mb-4">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/76a0dad8-5826-4116-a2d1-d89514661099_320w.png"
+                            alt="Agentify Logo" class="w-8 h-8 object-contain" />
+                        <span
+                            class="group-hover:opacity-80 transition-opacity text-base font-semibold text-white tracking-tight font-montserrat">
+                            Agentify
+                        </span>
+                    </a>
+                    <p class="leading-relaxed text-xs text-slate-500 font-manrope">
+                        We build AI agents that eliminate manual work and scale
+                        productivity. Turning AI into a dependable operating system for
+                        your business.
+                    </p>
+                </div>
+                <div class="">
+                    <h4 class="font-medium text-white font-manrope mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li class="">
+                            <a href="howitworks.html" class="transition-colors hover:text-white font-manrope">
+                                How it Works
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="pricing.html" class="transition-colors hover:text-white font-manrope">
+                                Pricing
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h4 class="font-medium mb-4 text-white font-manrope">Company</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li class="">
+                            <a href="about.html" class="transition-colors hover:text-white font-manrope">
+                                About
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="blog.html" class="transition-colors hover:text-white font-manrope">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h4 class="font-medium mb-4 text-white font-manrope">Legal</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li class="">
+                            <a href="privacy.html" class="transition-colors hover:text-white font-manrope">
+                                Privacy
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="terms.html" class="transition-colors hover:text-white font-manrope">
+                                Terms
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row border-t pt-8 items-center justify-between border-white/5">
+                <p class="text-xs text-slate-600 font-manrope">
+                    © 2026 Agentify. All rights reserved.
+                </p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-500 transition-colors hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="twitter" class="lucide lucide-twitter w-4 h-4">
+                            <path
+                                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-slate-500 transition-colors hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="linkedin" class="lucide lucide-linkedin w-4 h-4">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect width="4" height="12" x="2" y="9"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-slate-500 transition-colors hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="github" class="lucide lucide-github w-4 h-4">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                            </path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal', 'active');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

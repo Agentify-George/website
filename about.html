@@ -1,0 +1,851 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Agentify | The Intelligent Operating System</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .font-manrope {
+            font-family: 'Manrope', sans-serif !important;
+        }
+
+        /* Hero Glow */
+        .hero-glow {
+            background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(168, 85, 247, 0.2), transparent);
+            filter: blur(80px);
+        }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Text Gradients */
+        .text-gradient-purple {
+            background: linear-gradient(135deg, #e9d5ff 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-gradient-header {
+            background: linear-gradient(to right, #ffffff, #d8b4fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .title-gradient {
+            background: linear-gradient(to bottom, #ffffff, #e9d5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-400 {
+            transition-delay: 0.4s;
+        }
+
+        /* Team Card Hover Effects */
+        .team-glow {
+            background: radial-gradient(circle at center, rgba(168, 85, 247, 0.4), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .group:hover .team-glow {
+            opacity: 1;
+        }
+    </style>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap">
+    <!-- Additional fonts kept for compatibility -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap">
+    <!-- Lucide Icons Script -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style id="aura-editor-visibility-style">
+        .invisible {
+            visibility: hidden !important;
+        }
+    </style>
+
+
+
+
+
+
+    <script src="https://www.aura.build/FxFilter.js"></script>
+    <link id="all-fonts-link-font-geist" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-geist">
+        .font-geist {
+            font-family: 'Geist', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-roboto" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-roboto">
+        .font-roboto {
+            font-family: 'Roboto', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-poppins" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-poppins">
+        .font-poppins {
+            font-family: 'Poppins', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-playfair" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap">
+    <style id="all-fonts-style-font-playfair">
+        .font-playfair {
+            font-family: 'Playfair Display', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-instrument-serif" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-instrument-serif">
+        .font-instrument-serif {
+            font-family: 'Instrument Serif', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-merriweather" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap">
+    <style id="all-fonts-style-font-merriweather">
+        .font-merriweather {
+            font-family: 'Merriweather', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-bricolage" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-bricolage">
+        .font-bricolage {
+            font-family: 'Bricolage Grotesque', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-jakarta" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-jakarta">
+        .font-jakarta {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-manrope" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-manrope">
+        .font-manrope {
+            font-family: 'Manrope', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-space-grotesk" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-space-grotesk">
+        .font-space-grotesk {
+            font-family: 'Space Grotesk', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-work-sans" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-work-sans">
+        .font-work-sans {
+            font-family: 'Work Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-pt-serif" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap">
+    <style id="all-fonts-style-font-pt-serif">
+        .font-pt-serif {
+            font-family: 'PT Serif', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-geist-mono" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-geist-mono">
+        .font-geist-mono {
+            font-family: 'Geist Mono', monospace !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-space-mono" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap">
+    <style id="all-fonts-style-font-space-mono">
+        .font-space-mono {
+            font-family: 'Space Mono', monospace !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-quicksand" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-quicksand">
+        .font-quicksand {
+            font-family: 'Quicksand', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-nunito" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap">
+    <style id="all-fonts-style-font-nunito">
+        .font-nunito {
+            font-family: 'Nunito', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-newsreader" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap">
+    <style id="all-fonts-style-font-newsreader">
+        .font-newsreader {
+            font-family: 'Newsreader', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-google-sans-flex" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-google-sans-flex">
+        .font-google-sans-flex {
+            font-family: 'Google Sans Flex', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-oswald" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-oswald">
+        .font-oswald {
+            font-family: 'Oswald', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-dm-sans" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-dm-sans">
+        .font-dm-sans {
+            font-family: 'DM Sans', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-cormorant" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-cormorant">
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-montserrat" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-montserrat">
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden text-white bg-black">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Background (component) added by Aura -->
+    <div class="aura-background-component fixed top-0 w-full h-screen -z-10 saturate-200 hue-rotate-15 invert-0"
+        data-alpha-mask="80"
+        style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)">
+        <div class="aura-background-component top-0 w-full -z-10 absolute h-full">
+            <div data-us-project="ILgOO23w4wEyPQOKyLO4" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+            <script type="text/javascript">
+                !function () { if (!window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();
+            </script>
+        </div>
+    </div>
+
+    <!-- Background Gradient -->
+    <div class="fixed top-0 w-full h-screen -z-10">
+        <div class="absolute inset-0 hero-glow opacity-40"></div>
+        <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+        class="fixed z-50 transition-all duration-300 reveal active bg-black/40 w-full border-white/5 border-b top-0 backdrop-blur-xl">
+        <div class="flex h-16 max-w-7xl mr-auto ml-auto px-6 items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/76a0dad8-5826-4116-a2d1-d89514661099_320w.png"
+                    alt="Agentify Logo" class="w-8 h-8 object-contain">
+                <span
+                    class="group-hover:opacity-80 transition-opacity text-base font-semibold text-white tracking-tight font-montserrat cursor-pointer"
+                    onclick="window.location.href='/index'" role="button">
+                    Agentify
+                </span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="case-studies.html" class="transition-colors hover:text-white text-slate-400 font-manrope">
+                    Case Studies
+                </a>
+                <a href="howitworks.html" class="transition-colors hover:text-white text-slate-400 font-manrope">
+                    How it Works
+                </a>
+                <a href="pricing.html" class="transition-colors hover:text-white text-slate-400 font-manrope">
+                    Pricing
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#"
+                    class="hidden sm:block text-xs font-medium transition-colors hover:text-white text-slate-400 font-manrope">
+                    Sign in
+                </a>
+                <a href="https://cal.com/weareagentify/agentify-calender-meetings"
+                    class="transition-all duration-300 hover:bg-white/20 text-xs font-medium text-white font-manrope bg-purple-700 border-white/10 border rounded-full pt-2 pr-4 pb-2 pl-4 backdrop-blur-sm">
+                    Book a Call
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="overflow-hidden pt-40 pb-20 relative">
+        <div class="z-10 text-center max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
+            <div
+                class="reveal inline-flex active text-xs font-medium text-purple-300 font-manrope bg-white/5 border-white/10 border rounded-full mb-8 pt-1 pr-3 pb-1 pl-3 gap-x-2 gap-y-2 items-center">
+                We the People</div>
+            <h1
+                class="reveal delay-100 title-gradient leading-tight active md:text-7xl text-5xl font-semibold text-white tracking-tight font-montserrat mb-8 pt-2 pb-2">
+                Culture. Intelligence. Purpose</h1>
+            <p
+                class="reveal delay-200 md:text-xl leading-relaxed active text-lg text-slate-400 font-manrope max-w-5xl mr-auto mb-10 ml-auto">
+                Agentify builds the voice and workflow infrastructure that powers
+                high-performance teams. We turn artificial intelligence into a
+                reliable competitive advantage.
+            </p>
+            <div class="reveal delay-300 flex gap-6 active gap-x-6 gap-y-6 items-center justify-center">
+                <div class="flex items-center gap-2 text-sm text-slate-300 font-manrope">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        data-lucide="shield-check" class="lucide lucide-shield-check w-[16px] h-[16px]"
+                        data-icon-replaced="true" style="color: rgb(192, 132, 252); width: 16px; height: 16px;">
+                        <path
+                            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                        </path>
+                        <path d="m9 12 2 2 4-4"></path>
+                    </svg>
+                    <span class="">Humans and Machines</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-slate-300 font-manrope">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        data-lucide="clock" class="lucide lucide-clock w-4 h-4 text-purple-400">
+                        <path d="M12 6v6l4 2"></path>
+                        <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                    <span class="">Working in Harmoney</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-slate-300 font-manrope">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        data-lucide="clock" class="lucide lucide-clock w-4 h-4 text-purple-400">
+                        <path d="M12 6v6l4 2"></path>
+                        <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                    <span class="">24/7 Reliabily</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-black/50 py-24 relative">
+        <div class="max-w-7xl mr-auto ml-auto pr-6 pl-6">
+            <div class="text-center mb-16">
+                <h2
+                    class="reveal md:text-4xl active text-3xl font-semibold text-white tracking-tight font-montserrat mb-4">
+                    Our Philosophy
+                </h2>
+                <p class="reveal delay-100 text-slate-400 font-manrope active">
+                    How we think about the future of work.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div
+                    class="reveal delay-100 glass-card p-8 rounded-3xl hover:-translate-y-1 transition-transform duration-300 active">
+                    <h3 class="text-xl font-semibold text-white font-montserrat mb-3 tracking-tight">
+                        Quiet Intelligence
+                    </h3>
+                    <p class="text-slate-400 text-sm font-manrope leading-relaxed">
+                        The best technology is invisible. Our agents work in the
+                        background, ensuring your operations run smoothly without
+                        demanding your attention.
+                    </p>
+                </div>
+                <div
+                    class="reveal delay-200 glass-card p-8 rounded-3xl hover:-translate-y-1 transition-transform duration-300 active">
+                    <h3 class="text-xl font-semibold text-white font-montserrat mb-3 tracking-tight">
+                        Human-Centric Design
+                    </h3>
+                    <p class="text-slate-400 text-sm font-manrope leading-relaxed">
+                        Automation shouldn't feel robotic. We design interactions that are
+                        empathetic, context-aware, and indistinguishable from your best
+                        staff.
+                    </p>
+                </div>
+                <div
+                    class="reveal delay-300 glass-card p-8 rounded-3xl hover:-translate-y-1 transition-transform duration-300 active">
+                    <h3 class="text-xl font-semibold text-white font-montserrat mb-3 tracking-tight">
+                        Compounding Value
+                    </h3>
+                    <p class="text-slate-400 text-sm font-manrope leading-relaxed">
+                        Software depreciates; systems appreciate. Our AI models learn from
+                        every interaction, getting smarter and more valuable over time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="border-white/5 border-b pt-32 pb-32 relative">
+        <div class="text-center max-w-7xl mr-auto ml-auto pr-6 pl-6">
+            <h2 class="reveal text-sm font-semibold text-purple-400 font-manrope mb-8 uppercase tracking-widest">
+                Our Mission
+            </h2>
+            <p
+                class="reveal delay-100 md:text-5xl leading-tight text-3xl font-medium text-white tracking-tight font-montserrat max-w-none">
+                "We build AI agents that eliminate manual work and scale productivity turning artificial intelligence
+                into a dependable operating system for your business."</p>
+        </div>
+    </section>
+
+    <!-- Context Section -->
+    <section class="bg-black/50 border-white/5 border-t pt-24 pb-24 relative">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-7xl mr-auto ml-auto pr-6 pl-6 gap-x-16 gap-y-16">
+            <div class="reveal">
+                <h2 class="text-2xl font-semibold text-white font-montserrat mb-6 tracking-tight">
+                    Who We Are
+                </h2>
+                <p class="leading-relaxed text-lg text-slate-400 font-manrope">
+                    Agentify is a systems-first AI automation company. We don't sell
+                    chatbots or tech demos. We engineer intelligent voice, messaging,
+                    and workflow infrastructure designed to replace manual effort, not
+                    just augment it. We build for real businesses that demand
+                    operational excellence.
+                </p>
+            </div>
+            <div class="reveal delay-100">
+                <h2 class="text-2xl font-semibold text-white font-montserrat mb-6 tracking-tight">
+                    Where We Are Going
+                </h2>
+                <p class="text-slate-400 text-lg font-manrope leading-relaxed">
+                    We are moving towards a future of autonomous reliability. Our
+                    systems are designed to compound in value—learning from every
+                    interaction to become more efficient, more accurate, and more human
+                    over time. We prioritize stability and long-term utility over
+                    fleeting trends.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Architecture -->
+    <section class="py-24 relative bg-white/[0.02]">
+        <div class="max-w-7xl mr-auto ml-auto pr-6 pl-6">
+            <div class="mb-16">
+                <h2 class="reveal text-3xl font-semibold text-white font-montserrat mb-4 tracking-tight">
+                    System Architecture
+                </h2>
+                <p class="reveal delay-100 text-slate-400 font-manrope max-w-2xl">
+                    The core components of the Agentify operating system.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="reveal glass-card p-8 rounded-2xl">
+                    <div
+                        class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center mb-6 text-purple-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="mic" class="lucide lucide-mic w-5 h-5">
+                            <path d="M12 19v3"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <rect x="9" y="2" width="6" height="13" rx="3"></rect>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white font-montserrat mb-3">
+                        Voice Intelligence
+                    </h3>
+                    <p class="text-slate-400 text-sm font-manrope leading-relaxed">
+                        Reception, intake, and lead qualification handled by voice agents
+                        indistinguishable from human staff.
+                    </p>
+                </div>
+                <div class="reveal delay-100 glass-card p-8 rounded-2xl">
+                    <div
+                        class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center mb-6 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="workflow" class="lucide lucide-workflow w-5 h-5">
+                            <rect width="8" height="8" x="3" y="3" rx="2"></rect>
+                            <path d="M7 11v4a2 2 0 0 0 2 2h4"></path>
+                            <rect width="8" height="8" x="13" y="13" rx="2"></rect>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white font-montserrat mb-3">
+                        Workflow Orchestration
+                    </h3>
+                    <p class="text-slate-400 text-sm font-manrope leading-relaxed">
+                        Seamlessly connecting calls to CRMs, calendars, and support
+                        tickets without manual data entry.
+                    </p>
+                </div>
+                <div class="reveal delay-200 glass-card p-8 rounded-2xl">
+                    <div
+                        class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mb-6 text-emerald-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="cpu" class="lucide lucide-cpu w-5 h-5">
+                            <path d="M12 20v2"></path>
+                            <path d="M12 2v2"></path>
+                            <path d="M17 20v2"></path>
+                            <path d="M17 2v2"></path>
+                            <path d="M2 12h2"></path>
+                            <path d="M2 17h2"></path>
+                            <path d="M2 7h2"></path>
+                            <path d="M20 12h2"></path>
+                            <path d="M20 17h2"></path>
+                            <path d="M20 7h2"></path>
+                            <path d="M7 20v2"></path>
+                            <path d="M7 2v2"></path>
+                            <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                            <rect x="8" y="8" width="8" height="8" rx="1"></rect>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white font-montserrat mb-3">
+                        Operational Logic
+                    </h3>
+                    <p class="text-slate-400 text-sm font-manrope leading-relaxed">
+                        Decision engines that qualify leads, route inquiries, and manage
+                        complex scheduling scenarios.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="border-white/5 border-t pt-24 pb-24 relative">
+        <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 max-w-7xl mr-auto ml-auto pr-6 pl-6 gap-x-12 gap-y-12">
+            <div class="lg:col-span-5 reveal">
+                <h2 class="text-3xl font-semibold text-white tracking-tight font-montserrat mb-6">
+                    Our Expertise
+                </h2>
+                <p class="text-slate-400 font-manrope leading-relaxed mb-8">
+                    We aren't theorists. We are operators and system architects. Our
+                    team is composed of engineers who have built high-scale voice
+                    infrastructure and workflow automations for enterprise environments.
+                    We build what we know works in the real world.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 text-sm text-slate-300 font-manrope">
+                        <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        Built for 24/7 reliability
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-slate-300 font-manrope">
+                        <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        Zero-hallucination protocols
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-slate-300 font-manrope">
+                        <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
+                        Enterprise-grade security
+                    </li>
+                </ul>
+            </div>
+            <div class="lg:col-span-7 reveal delay-100">
+                <div class="glass-panel border-white/10 border rounded-3xl pt-10 pr-10 pb-10 pl-10">
+                    <h3 class="text-xl font-semibold text-white font-montserrat mb-6 tracking-tight">
+                        Who We Partner With
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <div class="">
+                            <h4 class="text-sm font-medium text-purple-400 uppercase tracking-wider mb-4 font-manrope">
+                                Best Fit
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="text-slate-300 text-sm font-manrope">
+                                    Service-based Businesses
+                                </li>
+                                <li class="text-slate-300 text-sm font-manrope">
+                                    High-volume Medical Clinics
+                                </li>
+                                <li class="text-slate-300 text-sm font-manrope">
+                                    Growth-stage Tech Teams
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="opacity-60">
+                            <h4 class="text-sm font-medium text-slate-500 uppercase tracking-wider mb-4 font-manrope">
+                                Not a Fit
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="text-slate-500 text-sm font-manrope">
+                                    Short-term promo campaigns
+                                </li>
+                                <li class="text-slate-500 text-sm font-manrope">
+                                    Unethical / Spam use cases
+                                </li>
+                                <li class="text-slate-500 text-sm font-manrope">
+                                    "Get rich quick" schemes
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION ADDITION -->
+
+
+    <!-- Long-Term Systems Partner CTA -->
+    <section class="pt-32 pb-32 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="reveal md:text-5xl text-3xl font-semibold text-white tracking-tight font-montserrat mb-8">
+                Your Long-Term Systems Partner
+            </h2>
+            <p class="reveal delay-100 text-lg text-slate-400 font-manrope mb-12 leading-relaxed">
+                We aren't just selling software credentials. We are architects for
+                founder-led service businesses, clinics, and growth teams who value
+                execution over hype. When you partner with Agentify, you're building
+                the foundation for your next decade of growth.
+            </p>
+            <div class="reveal delay-200 glass-panel p-12 rounded-3xl border border-white/10 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-transparent -z-10"></div>
+                <h3 class="text-2xl font-semibold text-white font-montserrat mb-4 tracking-tight">
+                    Ready to operate smarter?
+                </h3>
+                <p class="text-slate-400 font-manrope mb-8">
+                    See the system that runs while you sleep.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://cal.com/weareagentify/agentify-calender-meetings"
+                        class="hover:bg-slate-200 transition-colors font-semibold text-black font-manrope bg-white rounded-full pt-3 pr-8 pb-3 pl-8">
+                        Book a Discovery Call
+                    </a>
+                    <a href="case-studies.html"
+                        class="hover:bg-white/5 transition-colors font-medium text-white font-manrope bg-transparent border-white/20 border rounded-full pt-3 pr-8 pb-3 pl-8">
+                        View Case Studies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t bg-[#020203] py-12 text-sm reveal border-white/5">
+        <div class="max-w-7xl mr-auto ml-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <a href="#" class="flex items-center gap-2 group mb-4">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/76a0dad8-5826-4116-a2d1-d89514661099_320w.png"
+                            alt="Agentify Logo" class="w-8 h-8 object-contain">
+                        <span
+                            class="group-hover:opacity-80 transition-opacity text-base font-semibold text-white tracking-tight font-montserrat">
+                            Agentify
+                        </span>
+                    </a>
+                    <p class="leading-relaxed text-xs text-slate-500 font-manrope">
+                        We build AI agents that eliminate manual work and scale
+                        productivity. Turning AI into a dependable operating system for
+                        your business.
+                    </p>
+                </div>
+                <div class="">
+                    <h4 class="font-medium text-white font-manrope mb-4">Solutions</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li class="">
+                            <a href="howitworks.html" class="transition-colors hover:text-white font-manrope">
+                                How it Works
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="pricing.html" class="transition-colors hover:text-white font-manrope">
+                                Pricing
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h4 class="font-medium mb-4 text-white font-manrope">Company</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li class="">
+                            <a href="/about" class="transition-colors hover:text-white font-manrope">
+                                About
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="blog.html" class="transition-colors hover:text-white font-manrope">
+                                Blog
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h4 class="font-medium mb-4 text-white font-manrope">Legal</h4>
+                    <ul class="space-y-2 text-slate-500">
+                        <li class="">
+                            <a href="privacy.html" class="transition-colors hover:text-white font-manrope">
+                                Privacy
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="terms.html" class="transition-colors hover:text-white font-manrope">
+                                Terms
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row border-t pt-8 items-center justify-between border-white/5">
+                <p class="text-xs text-slate-600 font-manrope">
+                    © 2026 Agentify. All rights reserved.
+                </p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-500 transition-colors hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="twitter" class="lucide lucide-twitter w-4 h-4">
+                            <path
+                                d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-slate-500 transition-colors hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="linkedin" class="lucide lucide-linkedin w-4 h-4">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
+                            <rect width="4" height="12" x="2" y="9"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-slate-500 transition-colors hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            data-lucide="github" class="lucide lucide-github w-4 h-4">
+                            <path
+                                d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                            </path>
+                            <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal', 'active');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+
+</html>
