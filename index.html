@@ -313,13 +313,8 @@ scaleY(var(--tw-scale-y, 1))
             transform-style: flat !important;
         }
     </style>
-    <!-- Retell AI SDK - Loaded via NPM package inline -->
-    <script type="module">
-        // Import and initialize Retell Web SDK
-        import { RetellWebClient } from 'https://cdn.jsdelivr.net/npm/retell-client-js-sdk@3/+esm';
-        window.RetellWebClient = RetellWebClient;
-        window.retellSDKLoaded = true;
-    </script>
+    <!-- Retell AI SDK -->
+    <script src="https://unpkg.com/retell-client-js-sdk@3.1.2/dist/retell-client.min.js"></script>
 </head>
 
 <body

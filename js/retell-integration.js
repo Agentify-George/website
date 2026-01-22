@@ -11,8 +11,9 @@
  */
 
 class RetellVoiceAgent {
-    constructor(agentId) {
+    constructor(agentId, clientClass) {
         this.agentId = agentId;
+        this.clientClass = clientClass;
         this.client = null;
         this.isCallActive = false;
         this.callId = null;
@@ -21,13 +22,8 @@ class RetellVoiceAgent {
     }
 
     init() {
-        // Initialize Retell Web Client
-        if (typeof RetellWebClient === 'undefined') {
-            console.error('Retell SDK not loaded');
-            return;
-        }
-
-        this.client = new RetellWebClient();
+        // Initialize Retell Client with the provided class
+        this.client = new this.clientClass();
         this.setupEventListeners();
         this.setupCallHandlers();
     }
@@ -223,24 +219,26 @@ class RetellVoiceAgent {
 
 // Wait for SDK to load, then initialize
 function initializeRetellAgent() {
-    // Check if SDK is loaded
-    if (typeof RetellWebClient === 'undefined') {
+    // Determine which class name the SDK is using
+    const ClientClass = window.RetellWebClient || window.RetellClient;
+
+    if (!ClientClass) {
         // If not loaded yet, wait and try again
-        console.log('Waiting for Retell SDK to load...');
-        setTimeout(initializeRetellAgent, 100);
+        console.log('Searching for Retell SDK (window.RetellWebClient or window.RetellClient)...');
+        setTimeout(initializeRetellAgent, 250);
         return;
     }
 
+    console.log('✅ Retell SDK found. Initializing...');
+
     // ⚠️ Web Call Agent for website voice widget
-    // This is different from your outbound phone agent (agent_8285ad54c45327332b3f374ed5)
     const RETELL_AGENT_ID = 'agent_01629b287dbd3ece145e2244d8';
 
-    // Only initialize if we have an agent ID
+    // Update the class instantiation to use the found class
     if (RETELL_AGENT_ID && RETELL_AGENT_ID !== 'agent_REPLACE_WITH_WEB_CALL_AGENT_ID') {
-        window.retellAgent = new RetellVoiceAgent(RETELL_AGENT_ID);
-        console.log('✅ Retell Voice Agent initialized');
-    } else {
-        console.warn('⚠️ Retell Web Call Agent ID not configured. Create a Web Call agent in Retell dashboard and update this ID.');
+        // We modify the class constructor slightly below to handle this dynamically
+        window.retellAgent = new RetellVoiceAgent(RETELL_AGENT_ID, ClientClass);
+        console.log('🚀 Retell Voice Agent initialized for agent:', RETELL_AGENT_ID);
     }
 }
 
