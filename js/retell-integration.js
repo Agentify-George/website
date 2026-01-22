@@ -221,8 +221,16 @@ class RetellVoiceAgent {
     }
 }
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+// Wait for SDK to load, then initialize
+function initializeRetellAgent() {
+    // Check if SDK is loaded
+    if (typeof RetellWebClient === 'undefined') {
+        // If not loaded yet, wait and try again
+        console.log('Waiting for Retell SDK to load...');
+        setTimeout(initializeRetellAgent, 100);
+        return;
+    }
+
     // ⚠️ Web Call Agent for website voice widget
     // This is different from your outbound phone agent (agent_8285ad54c45327332b3f374ed5)
     const RETELL_AGENT_ID = 'agent_01629b287dbd3ece145e2244d8';
@@ -230,7 +238,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Only initialize if we have an agent ID
     if (RETELL_AGENT_ID && RETELL_AGENT_ID !== 'agent_REPLACE_WITH_WEB_CALL_AGENT_ID') {
         window.retellAgent = new RetellVoiceAgent(RETELL_AGENT_ID);
+        console.log('✅ Retell Voice Agent initialized');
     } else {
         console.warn('⚠️ Retell Web Call Agent ID not configured. Create a Web Call agent in Retell dashboard and update this ID.');
     }
-});
+}
+
+// Start trying to initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', initializeRetellAgent);
