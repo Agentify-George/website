@@ -75,7 +75,19 @@ const CallInterface: React.FC<Props> = ({
       audioContextIn.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
       audioContextOut.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
 
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      // Request microphone with better error handling
+      let stream;
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      } catch (micError: any) {
+        if (micError.name === 'NotAllowedError' || micError.name === 'PermissionDeniedError') {
+          throw new Error("Microphone access denied. Please allow microphone access and try again.");
+        } else if (micError.name === 'NotFoundError') {
+          throw new Error("No microphone found. Please connect a microphone and try again.");
+        } else {
+          throw new Error(`Microphone error: ${micError.message}`);
+        }
+      }
 
       const sessionPromise = ai.live.connect({
         model: 'gemini-2.5-flash-native-audio-preview-12-2025',
