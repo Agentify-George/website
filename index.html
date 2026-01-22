@@ -2844,45 +2844,33 @@ scaleY(var(--tw-scale-y, 1))
     </div>
 
     <!-- Megan Voice Agent Modal -->
-    <div id="megan-modal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300"
+    <div id="megan-modal" class="fixed inset-0 z-[100] hidden opacity-0 transition-opacity duration-300"
         aria-labelledby="megan-modal-title" role="dialog" aria-modal="true">
         <!-- Backdrop -->
         <div class="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity" id="megan-backdrop"></div>
 
         <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-6">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
                 <!-- Modal Panel -->
                 <div
-                    class="relative transform overflow-hidden rounded-[2.5rem] bg-[#04010a]/90 backdrop-blur-2xl border border-white/10 shadow-[0_0_100px_rgba(168,85,247,0.15)] text-left transition-all sm:my-8 w-full max-w-2xl h-[80vh] flex flex-col scale-95 duration-300">
+                    class="relative transform overflow-hidden rounded-3xl bg-purple-900/10 backdrop-blur-xl border border-purple-500/20 text-left transition-all sm:my-8 sm:w-full sm:max-w-sm p-6 scale-95 duration-300">
 
-                    <!-- Header -->
-                    <div class="flex items-center justify-between p-6 border-b border-white/5">
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
-                            <h3 class="text-lg font-semibold text-white font-montserrat tracking-tight">Megan Voice
-                                Assistant</h3>
-                        </div>
-                        <button type="button" id="close-megan-btn"
-                            class="text-slate-400 hover:text-white transition-all hover:rotate-90 p-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </button>
+                    <!-- Close Button -->
+                    <button type="button" id="close-megan-btn"
+                        class="absolute top-4 right-4 text-slate-400 hover:text-white transition-all hover:rotate-90 z-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+
+                    <!-- Content Container -->
+                    <div class="flex flex-col items-center justify-center w-full">
+                        <iframe id="megan-iframe" src="" class="w-full h-[360px] border-none bg-transparent"
+                            allow="microphone"></iframe>
                     </div>
 
-                    <!-- Iframe Container -->
-                    <div class="flex-1 w-full relative bg-black/20">
-                        <iframe id="megan-iframe" src="" class="w-full h-full border-none" allow="microphone"></iframe>
-                    </div>
-
-                    <!-- Footer -->
-                    <div class="p-4 text-center border-t border-white/5 bg-white/5">
-                        <p class="text-[10px] text-slate-500 uppercase tracking-[0.3em] font-bold">Powered by Agentify
-                            AI Intelligence</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -2962,8 +2950,8 @@ scaleY(var(--tw-scale-y, 1))
                 modal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
 
-                // Set iframe src only when opening to save resources/prevent background noise
-                if (!iframe.src || iframe.src === 'about:blank') {
+                // Set iframe src only if it's not already set to the megan url
+                if (iframe.getAttribute('src') !== MEGAN_URL) {
                     iframe.src = MEGAN_URL;
                 }
 

@@ -65,9 +65,9 @@ const App: React.FC = () => {
             >
               Select Paid API Key
             </button>
-            <a 
-              href="https://ai.google.dev/gemini-api/docs/billing" 
-              target="_blank" 
+            <a
+              href="https://ai.google.dev/gemini-api/docs/billing"
+              target="_blank"
               rel="noopener noreferrer"
               className="block text-[10px] text-white/20 uppercase tracking-[0.2em] hover:text-white/40 transition-colors"
             >
@@ -80,19 +80,13 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-transparent">
-      <CallInterface 
-        status={status} 
+    <div className="flex items-center justify-center bg-transparent">
+      <CallInterface
+        status={status}
         setStatus={setStatus}
         onEnd={handleEndCall}
         setSession={setSession}
       />
-      
-      {/* Dynamic Footer */}
-      <div className="fixed bottom-10 left-0 right-0 flex flex-col items-center space-y-2 pointer-events-none">
-        <p className="text-white/10 text-[9px] tracking-[0.5em] uppercase font-bold">Agentify AI Automation</p>
-        <p className="text-white/5 text-[8px] tracking-[0.2em] uppercase font-medium">Rockwall, TX &bull; DFW Area</p>
-      </div>
     </div>
   );
 };

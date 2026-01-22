@@ -11,16 +11,17 @@ interface Props {
   setSession: (s: any) => void;
 }
 
-const MEGAN_AVATAR_URL = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800";
+const AGENTIFY_LOGO_URL = "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/76a0dad8-5826-4116-a2d1-d89514661099_320w.png";
+const MEGAN_AVATAR_URL = "./Agentify_Staff_1.png";
 
-const CallInterface: React.FC<Props> = ({ 
-  status, 
-  setStatus, 
-  onEnd, 
+const CallInterface: React.FC<Props> = ({
+  status,
+  setStatus,
+  onEnd,
   setSession
 }) => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  
+
   // Audio state refs
   const audioContextIn = useRef<AudioContext | null>(null);
   const audioContextOut = useRef<AudioContext | null>(null);
@@ -59,13 +60,13 @@ const CallInterface: React.FC<Props> = ({
     try {
       setErrorMessage(null);
       setStatus(CallStatus.CONNECTING);
-      
+
       // Initialize fresh instance with latest key
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      
+
       audioContextIn.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
       audioContextOut.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
-      
+
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
       const sessionPromise = ai.live.connect({
@@ -120,7 +121,7 @@ Otherwise, explain the team is away and collect details for follow-up.
             setStatus(CallStatus.ACTIVE);
             const source = audioContextIn.current!.createMediaStreamSource(stream);
             const processor = audioContextIn.current!.createScriptProcessor(4096, 1, 1);
-            
+
             processor.onaudioprocess = (e) => {
               const inputData = e.inputBuffer.getChannelData(0);
               const l = inputData.length;
@@ -132,9 +133,9 @@ Otherwise, explain the team is away and collect details for follow-up.
                 data: encode(new Uint8Array(int16.buffer)),
                 mimeType: 'audio/pcm;rate=16000'
               };
-              sessionPromise.then(s => s.sendRealtimeInput({ media: pcmBlob })).catch(() => {});
+              sessionPromise.then(s => s.sendRealtimeInput({ media: pcmBlob })).catch(() => { });
             };
-            
+
             source.connect(processor);
             processor.connect(audioContextIn.current!.destination);
           },
@@ -184,7 +185,7 @@ Otherwise, explain the team is away and collect details for follow-up.
           }
         }
       });
-      
+
       setSession(await sessionPromise);
 
     } catch (err: any) {
@@ -193,40 +194,46 @@ Otherwise, explain the team is away and collect details for follow-up.
     }
   };
 
+  // Auto-start session on mount
+  useEffect(() => {
+    // Small delay to ensure everything is ready
+    const timer = setTimeout(() => {
+      if (status === CallStatus.IDLE) {
+        startVoiceSession();
+      }
+    }, 800);
+    return () => clearTimeout(timer);
+  }, []);
+
   const isConnecting = status === CallStatus.CONNECTING;
   const isActive = status === CallStatus.ACTIVE;
 
   return (
-    <div className="flex flex-col items-center justify-center p-4 space-y-12 select-none">
+    <div className="flex flex-col items-center justify-center p-2 space-y-8 select-none">
       <div className="relative flex items-center justify-center">
-        {/* Animated Rings */}
-        <div className={`absolute w-[340px] h-[340px] rounded-full border border-white/5 transition-all duration-1000 ${isActive ? 'scale-110 rotate-180 opacity-100' : 'scale-100 opacity-20'}`} />
-        <div className={`absolute w-[290px] h-[290px] rounded-full border border-purple-500/20 transition-all duration-700 ${isActive ? 'animate-pulse opacity-100' : 'opacity-0'}`} />
-        
         {/* Main Avatar / Trigger Button */}
         <button
           onClick={isActive ? onEnd : startVoiceSession}
           disabled={isConnecting}
-          className={`relative w-[220px] h-[220px] rounded-full overflow-hidden flex items-center justify-center transition-all duration-700 transform active:scale-95 shadow-2xl ${
-            isActive 
-              ? 'scale-110 ring-[6px] ring-white/10' 
-              : 'hover:scale-105'
-          } ${isConnecting ? 'animate-pulse' : ''}`}
+          className={`relative w-[144px] h-[144px] rounded-full overflow-hidden flex items-center justify-center transition-all duration-700 transform active:scale-95 shadow-2xl ${isActive
+            ? 'scale-110 ring-[6px] ring-white/10'
+            : 'hover:scale-105'
+            } ${isConnecting ? 'animate-pulse' : ''}`}
         >
           {isActive ? (
             <div className="w-full h-full relative group">
-              <img 
-                src={MEGAN_AVATAR_URL} 
-                alt="Megan" 
+              <img
+                src={MEGAN_AVATAR_URL}
+                alt="Megan"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 backdrop-blur-sm">
-                <span className="text-white text-xs font-bold tracking-[0.2em] uppercase">End Call</span>
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 backdrop-blur-sm">
+                <span className="text-white text-[10px] font-bold tracking-[0.2em] uppercase">End Call</span>
               </div>
             </div>
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-tr from-[#6366f1] via-[#a855f7] to-[#ec4899]">
-              <svg className="w-16 h-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#7e22ce' }}>
+              <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
               </svg>
             </div>
@@ -235,18 +242,14 @@ Otherwise, explain the team is away and collect details for follow-up.
       </div>
 
       {/* Brand & Action Text */}
-      <div className="flex flex-col items-center space-y-4 text-center">
-        <h2 className="text-4xl font-bold text-white tracking-tight">Talk to Megan!</h2>
-        
-        <div className="flex flex-col items-center space-y-2">
-          <p className={`text-[10px] tracking-[0.4em] uppercase font-bold transition-all duration-500 ${isActive ? 'text-green-400' : 'text-white/20'}`}>
-            {isActive ? 'Live from Rockwall, TX' : isConnecting ? 'Connecting to Agentify AI...' : 'Agentify AI Voice Assistant'}
-          </p>
-          <div className={`h-1 w-12 rounded-full transition-all duration-500 ${isActive ? 'bg-green-400' : 'bg-white/5'}`}></div>
+      <div className="flex flex-col items-center space-y-3 text-center">
+        <div className="flex items-center justify-center gap-3">
+          <img src={AGENTIFY_LOGO_URL} alt="Logo" className="w-7 h-7 object-contain" />
+          <h2 className="text-2xl font-medium text-white tracking-tight font-montserrat">Talk to Megan!</h2>
         </div>
 
         {errorMessage && (
-          <div className="mt-4 px-4 py-2 rounded-lg bg-red-500/10 border border-red-500/20">
+          <div className="mt-2 px-4 py-2 rounded-lg bg-red-500/10 border border-red-500/20">
             <p className="text-red-400 text-[9px] uppercase font-mono tracking-tighter">{errorMessage}</p>
           </div>
         )}
