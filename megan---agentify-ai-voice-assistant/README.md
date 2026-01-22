@@ -15,6 +15,6 @@ View your app in AI Studio: https://ai.studio/apps/drive/1fuu94YBS8NuMFqItvz5Izh
 
 1. Install dependencies:
    `npm install`
-2. Set the `AIzaSyD90pnWJk62u5xIfQN-zlFq-Y1VF5Hxwkw` in [.env.local](.env.local) to your Gemini API key
+2. Set your Gemini API key in [.env.local](.env.local)
 3. Run the app:
    `npm run dev`

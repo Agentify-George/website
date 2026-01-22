@@ -61,8 +61,16 @@ const CallInterface: React.FC<Props> = ({
       setErrorMessage(null);
       setStatus(CallStatus.CONNECTING);
 
-      // Initialize fresh instance with latest key
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      // Look for key in local window or parent window (if in iframe)
+      const apiKey = (window as any).AGENTIFY_API_KEY ||
+        (window.parent as any).AGENTIFY_API_KEY ||
+        (process as any).env.API_KEY;
+
+      if (!apiKey) {
+        throw new Error("Missing API Key. Please set window.AGENTIFY_API_KEY in the main site.");
+      }
+
+      const ai = new GoogleGenAI({ apiKey });
 
       audioContextIn.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
       audioContextOut.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
