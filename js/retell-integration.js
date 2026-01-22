@@ -22,12 +22,12 @@ class RetellVoiceAgent {
 
     init() {
         // Initialize Retell Web Client
-        if (typeof RetellClient === 'undefined') {
+        if (typeof RetellWebClient === 'undefined') {
             console.error('Retell SDK not loaded');
             return;
         }
 
-        this.client = new RetellClient();
+        this.client = new RetellWebClient();
         this.setupEventListeners();
         this.setupCallHandlers();
     }
