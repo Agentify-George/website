@@ -1,0 +1,7 @@
+{
+  "name": "Megan - Agentify AI Voice Assistant",
+  "description": "A high-performance outbound AI voice agent for Agentify AI, specializing in business automation and discovery call booking.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

@@ -419,9 +419,8 @@ scaleY(var(--tw-scale-y, 1))
                         class="group transition-all duration-300 hover:bg-slate-100 sm:w-auto text-sm font-semibold text-[#000000] font-manrope bg-slate-50/75 w-full border-purple-700 rounded-full pt-3.5 pr-8 pb-3.5 pl-8 relative shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] text-center">
                         Book a Discovery Call
                     </a>
-                    <button id="retell-voice-agent-btn"
-                        class="sm:w-auto transition-all duration-300 flex text-sm font-medium w-full border rounded-full pt-3.5 pr-8 pb-3.5 pl-8 gap-x-2 gap-y-2 items-center justify-center hover:border-white/20 text-white bg-purple-700/5 border-white/10 font-manrope"
-                        style="">
+                    <button id="open-megan-btn"
+                        class="sm:w-auto transition-all duration-300 flex text-sm font-medium w-full border rounded-full pt-3.5 pr-8 pb-3.5 pl-8 gap-x-2 gap-y-2 items-center justify-center hover:border-white/20 text-white bg-purple-700/5 border-white/10 font-manrope">
                         Try Our Voice Agent
                     </button>
                 </div>
@@ -2844,6 +2843,51 @@ scaleY(var(--tw-scale-y, 1))
         </div>
     </div>
 
+    <!-- Megan Voice Agent Modal -->
+    <div id="megan-modal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300"
+        aria-labelledby="megan-modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity" id="megan-backdrop"></div>
+
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-6">
+                <!-- Modal Panel -->
+                <div
+                    class="relative transform overflow-hidden rounded-[2.5rem] bg-[#04010a]/90 backdrop-blur-2xl border border-white/10 shadow-[0_0_100px_rgba(168,85,247,0.15)] text-left transition-all sm:my-8 w-full max-w-2xl h-[80vh] flex flex-col scale-95 duration-300">
+
+                    <!-- Header -->
+                    <div class="flex items-center justify-between p-6 border-b border-white/5">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
+                            <h3 class="text-lg font-semibold text-white font-montserrat tracking-tight">Megan Voice
+                                Assistant</h3>
+                        </div>
+                        <button type="button" id="close-megan-btn"
+                            class="text-slate-400 hover:text-white transition-all hover:rotate-90 p-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Iframe Container -->
+                    <div class="flex-1 w-full relative bg-black/20">
+                        <iframe id="megan-iframe" src="" class="w-full h-full border-none" allow="microphone"></iframe>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="p-4 text-center border-t border-white/5 bg-white/5">
+                        <p class="text-[10px] text-slate-500 uppercase tracking-[0.3em] font-bold">Powered by Agentify
+                            AI Intelligence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Login Modal Logic
         document.addEventListener('DOMContentLoaded', () => {
@@ -2899,6 +2943,60 @@ scaleY(var(--tw-scale-y, 1))
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                     closeModal();
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Megan Modal Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('megan-modal');
+            const backdrop = document.getElementById('megan-backdrop');
+            const closeBtn = document.getElementById('close-megan-btn');
+            const openBtn = document.getElementById('open-megan-btn');
+            const iframe = document.getElementById('megan-iframe');
+            const MEGAN_URL = '/megan-agent/';
+
+            function openMegan() {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+
+                // Set iframe src only when opening to save resources/prevent background noise
+                if (!iframe.src || iframe.src === 'about:blank') {
+                    iframe.src = MEGAN_URL;
+                }
+
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    const panel = modal.querySelector('div[class*="transform"]');
+                    panel.classList.remove('scale-95');
+                    panel.classList.add('scale-100');
+                }, 10);
+            }
+
+            function closeMegan() {
+                modal.classList.add('opacity-0');
+                const panel = modal.querySelector('div[class*="transform"]');
+                panel.classList.remove('scale-100');
+                panel.classList.add('scale-95');
+
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = '';
+                    // Stop audio by resetting iframe
+                    iframe.src = 'about:blank';
+                }, 300);
+            }
+
+            if (openBtn) openBtn.addEventListener('click', openMegan);
+            if (closeBtn) closeBtn.addEventListener('click', closeMegan);
+            if (backdrop) backdrop.addEventListener('click', closeMegan);
+
+            // Close on Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeMegan();
                 }
             });
         });
