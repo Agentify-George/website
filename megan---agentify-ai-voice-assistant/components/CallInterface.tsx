@@ -313,68 +313,61 @@ A successful interaction:
     }
   };
 
-  // Auto-start session on mount
-  useEffect(() => {
-    // Small delay to ensure everything is ready
-    const timer = setTimeout(() => {
-      if (status === CallStatus.IDLE) {
-        startVoiceSession();
-      }
-    }, 800);
-    return () => clearTimeout(timer);
-  }, []);
+      const isConnecting = status === CallStatus.CONNECTING;
+      const isActive = status === CallStatus.ACTIVE;
 
-  const isConnecting = status === CallStatus.CONNECTING;
-  const isActive = status === CallStatus.ACTIVE;
-
-  return (
-    <div className="flex flex-col items-center justify-center p-2 space-y-8 select-none">
-      <div className="relative flex items-center justify-center">
-        {/* Main Avatar / Trigger Button */}
-        <button
-          onClick={isActive ? onEnd : startVoiceSession}
-          disabled={isConnecting}
-          className={`relative w-[144px] h-[144px] rounded-full overflow-hidden flex items-center justify-center transition-all duration-700 transform active:scale-95 shadow-2xl ${isActive
-            ? 'scale-110 ring-[6px] ring-white/10'
-            : 'hover:scale-105'
-            } ${isConnecting ? 'animate-pulse' : ''}`}
-        >
-          {isActive ? (
-            <div className="w-full h-full relative group">
-              <img
-                src={MEGAN_AVATAR_URL}
-                alt="Megan"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 backdrop-blur-sm">
-                <span className="text-white text-[10px] font-bold tracking-[0.2em] uppercase">End Call</span>
-              </div>
-            </div>
-          ) : (
-            <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#7e22ce' }}>
-              <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-              </svg>
-            </div>
-          )}
-        </button>
-      </div>
-
-      {/* Brand & Action Text */}
-      <div className="flex flex-col items-center space-y-3 text-center">
-        <div className="flex items-center justify-center gap-3">
-          <img src={AGENTIFY_LOGO_URL} alt="Logo" className="w-7 h-7 object-contain" />
-          <h2 className="text-2xl font-medium text-white tracking-tight font-montserrat">Talk to Megan!</h2>
-        </div>
-
-        {errorMessage && (
-          <div className="mt-2 px-4 py-2 rounded-lg bg-red-500/10 border border-red-500/20">
-            <p className="text-red-400 text-[9px] uppercase font-mono tracking-tighter">{errorMessage}</p>
+      return (
+        <div className="flex flex-col items-center justify-center p-2 space-y-8 select-none">
+          <div className="relative flex items-center justify-center">
+            {/* Main Avatar / Trigger Button */}
+            <button
+              onClick={isActive ? onEnd : startVoiceSession}
+              disabled={isConnecting}
+              className={`relative w-[144px] h-[144px] rounded-full overflow-hidden flex items-center justify-center transition-all duration-700 transform active:scale-95 shadow-2xl ${isActive
+                ? 'scale-110 ring-[6px] ring-white/10'
+                : 'hover:scale-105'
+                } ${isConnecting ? 'animate-pulse' : ''}`}
+            >
+              {isActive ? (
+                <div className="w-full h-full relative group">
+                  <img
+                    src={MEGAN_AVATAR_URL}
+                    alt="Megan"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300 backdrop-blur-sm">
+                    <span className="text-white text-[10px] font-bold tracking-[0.2em] uppercase">End Call</span>
+                  </div>
+                </div>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#7e22ce' }}>
+                  <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                  </svg>
+                </div>
+              )}
+            </button>
           </div>
-        )}
-      </div>
-    </div>
-  );
-};
 
-export default CallInterface;
+          {/* Brand & Action Text */}
+          <div className="flex flex-col items-center space-y-3 text-center">
+            <div className="flex items-center justify-center gap-3">
+              <img src={AGENTIFY_LOGO_URL} alt="Logo" className="w-7 h-7 object-contain" />
+              <h2 className="text-2xl font-medium text-white tracking-tight font-montserrat">Talk to Megan!</h2>
+            </div>
+
+            {!isActive && !isConnecting && (
+              <p className="text-sm text-slate-400 font-manrope">Click the microphone to start</p>
+            )}
+
+            {errorMessage && (
+              <div className="mt-2 px-4 py-2 rounded-lg bg-red-500/10 border border-red-500/20">
+                <p className="text-red-400 text-[9px] uppercase font-mono tracking-tighter">{errorMessage}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    };
+
+    export default CallInterface;
