@@ -314,7 +314,7 @@ scaleY(var(--tw-scale-y, 1))
         }
     </style>
     <!-- Retell AI SDK -->
-    <script src="https://unpkg.com/retell-client-js-sdk@3.1.2/dist/retell-client.min.js"></script>
+    <script src="/js/retell-client.min.js"></script>
 </head>
 
 <body
@@ -333,12 +333,11 @@ scaleY(var(--tw-scale-y, 1))
     <nav
         class="fixed z-50 transition-all duration-300 reveal active bg-[#030304]/80 w-full border-white/5 border-b top-0 backdrop-blur-md">
         <div class="flex h-16 max-w-7xl mr-auto ml-auto pr-6 pl-6 items-center justify-between">
-            <a href="#" class="flex items-center gap-2 group">
+            <a href="index.html" class="flex items-center gap-2 group">
                 <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/76a0dad8-5826-4116-a2d1-d89514661099_320w.png"
                     alt="Agentify Logo" class="w-8 h-8 object-contain">
                 <span
-                    class="group-hover:opacity-80 transition-opacity text-base font-semibold text-white tracking-tight font-montserrat"
-                    onclick="window.location.href='index.html'" role="button">
+                    class="group-hover:opacity-80 transition-opacity text-base font-semibold text-white tracking-tight font-montserrat">
                     Agentify
                 </span>
             </a>
@@ -790,7 +789,7 @@ scaleY(var(--tw-scale-y, 1))
                 <h2 class="md:text-4xl text-3xl font-semibold text-white tracking-tight font-montserrat mb-4">
                     AI Systems That Run Your Front Line
                 </h2>
-                <p class="-multi text-lg text-slate-400 font-manrope">
+                <p class="text-lg text-slate-400 font-manrope">
                     Start with one system. Add more as you scale.
                 </p>
             </div>
@@ -1442,7 +1441,7 @@ scaleY(var(--tw-scale-y, 1))
             <h2 class="md:text-4xl text-3xl font-semibold text-white tracking-tight font-montserrat mb-4">
                 The future is already here.
             </h2>
-            <p class="-multi text-lg text-slate-400 font-manrope">
+            <p class="text-lg text-slate-400 font-manrope">
                 Real feedback from customers.
             </p>
         </div>
@@ -1629,7 +1628,7 @@ scaleY(var(--tw-scale-y, 1))
                     outsourced SDR team."
                 </blockquote>
                 <div class="flex gap-4 border-white/5 rounded-md border-t pt-4 gap-x-4 gap-y-4 items-center">
-                    <img src="https://images.unsplash.com/photo-1684262855355-7e3ff866e6a6?q=80&amp;w=1287&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D;w=200&amp;auto=format&amp;fit=crop"
+                    <img src="https://images.unsplash.com/photo-1684262855355-7e3ff866e6a6?q=80&amp;w=1287&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;w=200&amp;auto=format&amp;fit=crop"
                         alt="Elena White" class="w-12 h-12 rounded-full object-cover ring-2 ring-white/5 shadow-sm">
                     <div class="rounded-md">
                         <div class="text-sm font-semibold text-white font-manrope rounded-md">
@@ -2118,10 +2117,9 @@ scaleY(var(--tw-scale-y, 1))
             </div>
         </div>
     </section>
-    <section class="overflow-hidden pt-24 pb-24 relative" id="join">
+    <section class="overflow-hidden pt-24 pb-24 relative" id="discovery-call">
         <div class="reveal text-center max-w-7xl z-10 mr-auto ml-auto pr-6 pl-6 relative">
-            <h2 class="md:text-4xl text-4xl font-semibold text-white tracking-tight font-montserrat mb-4 cursor-pointer"
-                onclick="window.location.href='/#bookadiscoverycall'" role="button">
+            <h2 class="md:text-4xl text-4xl font-semibold text-white tracking-tight font-montserrat mb-4">
                 Tell Us About Your Business
             </h2>
             <p class="text-lg text-slate-400 font-manrope max-w-full mr-auto mb-10 ml-auto">
@@ -2144,13 +2142,14 @@ scaleY(var(--tw-scale-y, 1))
                     </div>
 
                     <div class="space-y-1.5">
-                        <label for="email" class="block text-xs font-semibold text-slate-300 font-manrope text-left">
+                        <label for="discovery-email"
+                            class="block text-xs font-semibold text-slate-300 font-manrope text-left">
                             Work Email
                             <span class="text-purple-500">*</span>
                         </label>
                         <input type="email" name="email" required="" placeholder="jane@company.com"
                             class="placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all text-sm text-white font-manrope bg-[#0E0E12] w-full border-white/10 border rounded-lg pt-2.5 pr-4 pb-2.5 pl-4"
-                            id="email">
+                            id="discovery-email">
                     </div>
 
                     <div class="space-y-1.5">
@@ -2536,7 +2535,7 @@ scaleY(var(--tw-scale-y, 1))
                     <ul class="space-y-2 ml-4">
                         <li class="flex items-start gap-2">
                             <span class="text-purple-500 mt-0.5">•</span>
-                            <span>Try our Voice Agent to see it in action</span>
+                            <span>Try our Voice Agent</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-purple-500 mt-0.5">•</span>
@@ -2550,7 +2549,7 @@ scaleY(var(--tw-scale-y, 1))
 
                 <!-- Action Buttons -->
                 <div class="mt-8 flex flex-col sm:flex-row gap-3">
-                    <a href="#join" onclick="closeSuccessModal()"
+                    <a href="#discovery-call" onclick="closeSuccessModal()"
                         class="flex-1 text-center py-3 px-6 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm hover:from-purple-500 hover:to-indigo-500 transition-all shadow-lg shadow-purple-500/20 font-manrope">
                         Book Discovery Call
                     </a>
@@ -2634,52 +2633,7 @@ scaleY(var(--tw-scale-y, 1))
                 });
             }
 
-            /* Retell Voice Demo Logic */
-            const retellBtn = document.getElementById('retell-voice-agent-btn');
-            if (retellBtn && typeof RetellWebClient !== 'undefined') {
-                const retellClient = new RetellWebClient();
-                const agentId = 'agent_460900b5141aaf0ffe84f6512e';
-                let isCalling = false;
 
-                // Event Listeners
-                retellClient.on('call_started', () => {
-                    console.log('Call started');
-                    isCalling = true;
-                    retellBtn.textContent = 'Listening... (Click to End)';
-                    retellBtn.classList.add('bg-red-500/20', 'border-red-500/50', 'text-red-100');
-                    retellBtn.classList.remove('bg-purple-700/5', 'text-white');
-                });
-
-                retellClient.on('call_ended', () => {
-                    console.log('Call ended');
-                    isCalling = false;
-                    retellBtn.textContent = 'Try Our Voice Agent';
-                    retellBtn.classList.remove('bg-red-500/20', 'border-red-500/50', 'text-red-100');
-                    retellBtn.classList.add('bg-purple-700/5', 'text-white');
-                });
-
-                retellClient.on('error', (error) => {
-                    console.error('Retell error:', error);
-                    isCalling = false;
-                    retellBtn.textContent = 'Try Our Voice Agent';
-                    alert('Microphone access failed or error occurred.');
-                });
-
-                retellBtn.addEventListener('click', async () => {
-                    if (isCalling) {
-                        retellClient.stopCall();
-                    } else {
-                        // In production, fetch ephemeral token from backend
-                        // For demo/prototype:
-                        const registerCallResponse = await retellClient.startCall({
-                            accessToken: "YOUR_ACCESS_TOKEN_HERE" // Needs backend to function fully
-                        }).catch(e => {
-                            console.log("Backend required for token generation");
-                            alert("Demo Mode: Backend required to fetch access token.");
-                        });
-                    }
-                });
-            }
         });
     </script>
 
@@ -2903,6 +2857,7 @@ scaleY(var(--tw-scale-y, 1))
                 if (e.target.textContent.trim().toLowerCase().includes('sign in')) {
                     e.preventDefault();
                     modal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
                     // Small timeout to allow display:block to apply before opacity transition
                     setTimeout(() => {
                         modal.classList.remove('opacity-0');
@@ -2919,6 +2874,7 @@ scaleY(var(--tw-scale-y, 1))
 
                 setTimeout(() => {
                     modal.classList.add('hidden');
+                    document.body.style.overflow = '';
                 }, 300);
             }
 

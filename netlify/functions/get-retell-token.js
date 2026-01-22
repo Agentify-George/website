@@ -10,7 +10,7 @@
  * 3. Function will be available at: /.netlify/functions/get-retell-token
  */
 
-exports.handler = async function(event, context) {
+exports.handler = async function (event, context) {
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
     return {
@@ -36,7 +36,7 @@ exports.handler = async function(event, context) {
         'Authorization': `Bearer ${process.env.RETELL_API_KEY}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         agent_id: agentId,
         // Optional: Add metadata for tracking
         metadata: {
@@ -60,9 +60,9 @@ exports.handler = async function(event, context) {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
       },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         accessToken: data.access_token,
-        callId: data.call_id 
+        callId: data.call_id
       })
     };
 
@@ -70,9 +70,9 @@ exports.handler = async function(event, context) {
     console.error('Error:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         error: 'Failed to generate access token',
-        message: error.message 
+        message: error.message
       })
     };
   }
