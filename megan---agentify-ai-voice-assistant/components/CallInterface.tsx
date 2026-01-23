@@ -72,10 +72,7 @@ const CallInterface: React.FC<Props> = ({
 
       const ai = new GoogleGenAI({ apiKey });
 
-      audioContextIn.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
-      audioContextOut.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
-
-      // Request microphone with better error handling
+      // CRITICAL: Request microphone FIRST (within user gesture context)
       let stream;
       try {
         stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -88,6 +85,14 @@ const CallInterface: React.FC<Props> = ({
           throw new Error(`Microphone error: ${micError.message}`);
         }
       }
+
+      // CRITICAL: Create AudioContexts AFTER getUserMedia succeeds (still in user gesture)
+      audioContextIn.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
+      audioContextOut.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
+
+      // CRITICAL: Explicitly resume both contexts (required for autoplay policy)
+      await audioContextIn.current.resume();
+      await audioContextOut.current.resume();
 
       const sessionPromise = ai.live.connect({
         model: 'gemini-2.5-flash-native-audio-preview-12-2025',
