@@ -420,7 +420,7 @@ scaleY(var(--tw-scale-y, 1))
                         Book a Discovery Call
                     </a>
                     <button id="open-megan-btn"
-                        class="sm:w-auto transition-all duration-300 flex text-sm font-medium w-full border rounded-full pt-3.5 pr-8 pb-3.5 pl-8 gap-x-2 gap-y-2 items-center justify-center hover:border-white/20 text-white bg-purple-700/5 border-white/10 font-manrope">
+                        class="hidden sm:w-auto transition-all duration-300 flex text-sm font-medium w-full border rounded-full pt-3.5 pr-8 pb-3.5 pl-8 gap-x-2 gap-y-2 items-center justify-center hover:border-white/20 text-white bg-purple-700/5 border-white/10 font-manrope">
                         Try Our Voice Agent
                     </button>
                 </div>
@@ -2534,10 +2534,6 @@ scaleY(var(--tw-scale-y, 1))
                     <ul class="space-y-2 ml-4">
                         <li class="flex items-start gap-2">
                             <span class="text-purple-500 mt-0.5">•</span>
-                            <span>Try our Voice Agent</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="text-purple-500 mt-0.5">•</span>
                             <span>Join the waiting list for our 'AI-First Productivity' guide</span>
                         </li>
                     </ul>
@@ -2947,6 +2943,9 @@ scaleY(var(--tw-scale-y, 1))
             const MEGAN_URL = '/megan/';
 
             function openMegan() {
+                // Temporarily disabled
+                console.log("Voice Agent is temporarily disabled");
+                return;
                 modal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
 
