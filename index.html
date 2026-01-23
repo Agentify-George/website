@@ -101,6 +101,28 @@ though explicit classes work better for control */
         .delay-300 {
             transition-delay: 300ms;
         }
+
+        /* Autofill styles */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0px 1000px #0E0E12 inset !important;
+            -webkit-text-fill-color: #ffffff !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        /* Noticeable but unobtrusive filled state */
+        input:not(:placeholder-shown):not(:focus),
+        textarea:not(:placeholder-shown):not(:focus) {
+            background-color: rgba(99, 102, 241, 0.05) !important;
+            border-color: rgba(99, 102, 241, 0.3) !important;
+        }
     </style>
     <script>
         // Configure Tailwind to include our custom 3D transform utilities
@@ -390,7 +412,8 @@ scaleY(var(--tw-scale-y, 1))
             <a href="#" class="text-center w-full py-3 rounded-lg border border-white/10 text-white font-manrope">Sign
                 in</a>
             <a href="https://cal.com/weareagentify/agentify-calender-meetings" target="_blank"
-                class="text-center w-full py-3 rounded-lg bg-purple-700 text-white font-manrope">Book a Call</a>
+                class="text-center w-full py-3 rounded-lg bg-purple-700 text-white font-manrope hover:bg-purple-600 transition-all">Book
+                a Call</a>
         </div>
     </div>
     <!-- Hero Section -->
@@ -1841,7 +1864,7 @@ scaleY(var(--tw-scale-y, 1))
                             Best for: Sales and support teams scaling execution
                         </p>
                         <button
-                            class="hover:bg-indigo-500 transition-colors shadow-indigo-500/20 text-sm text-white font-manrope bg-purple-700 w-full rounded-lg pt-2 pb-2 shadow-lg">
+                            class="hover:bg-purple-600 transition-colors shadow-purple-500/20 text-sm text-white font-manrope bg-purple-700 w-full rounded-lg pt-2 pb-2 shadow-lg">
                             Book Now
                         </button>
                     </div>
@@ -2309,7 +2332,7 @@ scaleY(var(--tw-scale-y, 1))
                 <!-- Submit -->
                 <div class="text-center">
                     <button type="submit"
-                        class="min-w-[240px] transition-all duration-300 hover:bg-slate-200 sm:w-auto text-sm font-semibold text-slate-50 font-manrope bg-purple-700 w-full rounded-full px-8 py-3.5 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]">
+                        class="min-w-[240px] transition-all duration-300 hover:bg-purple-600 sm:w-auto text-sm font-semibold text-slate-50 font-manrope bg-purple-700 w-full rounded-full px-8 py-3.5 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]">
                         See If We’re a Fit
                     </button>
                     <p id="form-error" class="text-[10px] mt-3 text-red-400 font-manrope hidden">
@@ -2349,7 +2372,7 @@ scaleY(var(--tw-scale-y, 1))
                 <input type="email" name="email" required placeholder="Enter your email address"
                     class="w-full border rounded-full py-3.5 pl-11 pr-32 text-sm placeholder:text-slate-500 focus:outline-none focus:border-indigo-500 transition-colors bg-white/5 border-white/10 text-white">
                 <button type="submit"
-                    class="transition-colors text-xs font-semibold rounded-full pr-5 pl-5 absolute top-1.5 right-1.5 bottom-1.5 hover:bg-slate-200 text-slate-50 bg-purple-700 font-manrope"
+                    class="transition-colors text-xs font-semibold rounded-full pr-5 pl-5 absolute top-1.5 right-1.5 bottom-1.5 hover:bg-purple-600 text-slate-50 bg-purple-700 font-manrope"
                     style="">
                     Join Now
                 </button>

@@ -114,6 +114,28 @@
                 left: 1rem;
             }
         }
+
+        /* Autofill styles */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0px 1000px #0E0E12 inset !important;
+            -webkit-text-fill-color: #ffffff !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        /* Noticeable but unobtrusive filled state */
+        input:not(:placeholder-shown):not(:focus),
+        textarea:not(:placeholder-shown):not(:focus) {
+            background-color: rgba(99, 102, 241, 0.05) !important;
+            border-color: rgba(99, 102, 241, 0.3) !important;
+        }
     </style>
     <link id="all-fonts-link-font-geist" rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
@@ -390,7 +412,8 @@
             <a href="#" class="text-center w-full py-3 rounded-lg border border-white/10 text-white font-manrope">Sign
                 in</a>
             <a href="https://cal.com/weareagentify/agentify-calender-meetings" target="_blank"
-                class="text-center w-full py-3 rounded-lg bg-purple-700 text-white font-manrope">Book a Call</a>
+                class="text-center w-full py-3 rounded-lg bg-purple-700 text-white font-manrope hover:bg-purple-600 transition-all">Book
+                a Call</a>
         </div>
     </div>
 
@@ -1524,7 +1547,7 @@
                 <!-- Submit -->
                 <div class="text-center">
                     <button type="submit"
-                        class="min-w-[240px] transition-all duration-300 hover:bg-slate-200 sm:w-auto text-sm font-semibold text-slate-50 font-manrope bg-purple-700 w-full rounded-full px-8 py-3.5 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]">See
+                        class="min-w-[240px] transition-all duration-300 hover:bg-purple-600 sm:w-auto text-sm font-semibold text-slate-50 font-manrope bg-purple-700 w-full rounded-full px-8 py-3.5 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]">See
                         If We’re a Fit</button>
                     <p id="form-error" class="text-[10px] mt-3 text-red-400 font-manrope hidden">
                         Please fill in all required fields and select at least one problem.
