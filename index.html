@@ -2944,14 +2944,15 @@ scaleY(var(--tw-scale-y, 1))
             const closeBtn = document.getElementById('close-megan-btn');
             const openBtn = document.getElementById('open-megan-btn');
             const iframe = document.getElementById('megan-iframe');
-            const MEGAN_URL = '/megan-agent/';
+            const MEGAN_URL = '/megan/';
 
             function openMegan() {
                 modal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
 
-                // Set iframe src only if it's not already set to the megan url
-                if (iframe.getAttribute('src') !== MEGAN_URL) {
+                // Load iframe
+                const iframe = document.getElementById('megan-iframe');
+                if (iframe && iframe.getAttribute('src') !== MEGAN_URL) {
                     iframe.src = MEGAN_URL;
                 }
 
@@ -2995,6 +2996,19 @@ scaleY(var(--tw-scale-y, 1))
         // We split the key to bypass Netlify's secret scanner while still making it available to Megan
         window.AGENTIFY_API_KEY = "AIzaSy" + "D90pnWJk62u5xIfQN-zlFq-Y1VF5Hxwkw";
     </script>
+
+    <!-- Gemini Voice Agent Scripts -->
+    <script type="importmap">
+    {
+      "imports": {
+        "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+      }
+    }
+    </script>
+    <script type="module" crossorigin src="/megan/assets/index-BE-QCb8U.js"></script>
 
     <!-- Retell AI Voice Agent Integration -->
     <script src="/js/retell-integration.js"></script>

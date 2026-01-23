@@ -1,16 +1,6 @@
-/**
- * Netlify Function: Generate Retell AI Access Token
- * 
- * This serverless function creates a secure access token for Retell AI web calls.
- * The token is generated server-side to keep your API key secure.
- * 
- * Setup:
- * 1. Add RETELL_API_KEY to your Netlify environment variables
- * 2. Deploy this function
- * 3. Function will be available at: /.netlify/functions/get-retell-token
- */
+const fetch = require('node-fetch');
 
-exports.handler = async function (event, context) {
+exports.handler = async (event, context) => {
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
     return {
@@ -29,27 +19,36 @@ exports.handler = async function (event, context) {
       };
     }
 
-    // Call Retell API to create web call
+    // Get Retell API key from environment variables
+    const RETELL_API_KEY = process.env.RETELL_API_KEY;
+
+    if (!RETELL_API_KEY) {
+      console.error('RETELL_API_KEY not found in environment variables');
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'Server configuration error' })
+      };
+    }
+
+    // Call Retell API to get access token
     const response = await fetch('https://api.retellai.com/v2/create-web-call', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.RETELL_API_KEY}`,
+        'Authorization': `Bearer ${RETELL_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         agent_id: agentId,
-        // Optional: Add metadata for tracking
-        metadata: {
-          source: 'website',
-          timestamp: new Date().toISOString()
-        }
       })
     });
 
     if (!response.ok) {
-      const errorData = await response.text();
-      console.error('Retell API error:', errorData);
-      throw new Error(`Retell API error: ${response.status}`);
+      const errorText = await response.text();
+      console.error('Retell API error:', errorText);
+      return {
+        statusCode: response.status,
+        body: JSON.stringify({ error: 'Failed to create web call' })
+      };
     }
 
     const data = await response.json();
@@ -62,18 +61,15 @@ exports.handler = async function (event, context) {
       },
       body: JSON.stringify({
         accessToken: data.access_token,
-        callId: data.call_id
+        callId: data.call_id,
       })
     };
 
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Error in get-retell-token function:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({
-        error: 'Failed to generate access token',
-        message: error.message
-      })
+      body: JSON.stringify({ error: 'Internal server error' })
     };
   }
 };
