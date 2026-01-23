@@ -1,17 +1,16 @@
 #!/bin/bash
-# Inject API key into megan/index.html from environment variable
+# Inject API key into megan/index.html from Netlify environment variable
 
 if [ -z "$AGENTIFY_API_KEY" ]; then
-  echo "Warning: AGENTIFY_API_KEY environment variable not set"
+  echo "⚠️  Warning: AGENTIFY_API_KEY environment variable not set"
+  echo "The voice agent will not work without an API key"
   exit 0
 fi
 
-# Create a temporary script tag with the API key
-SCRIPT_TAG="  <script>\n    window.AGENTIFY_API_KEY = '$AGENTIFY_API_KEY';\n  </script>"
+# Replace the placeholder with the actual API key
+sed -i.bak "s/__AGENTIFY_API_KEY__/$AGENTIFY_API_KEY/g" megan/index.html
 
-# Insert the script tag before the React app script in megan/index.html
-sed -i.bak "/<script type=\"module\" crossorigin src=\".\/assets\/index-/i\\
-$SCRIPT_TAG
-" megan/index.html
+# Clean up backup file
+rm -f megan/index.html.bak
 
-echo "✓ API key injected into megan/index.html"
+echo "✅ API key injected into megan/index.html"

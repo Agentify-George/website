@@ -1,0 +1,6 @@
+[build]
+  command = "chmod +x inject-api-key.sh && ./inject-api-key.sh"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"

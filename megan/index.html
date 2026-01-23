@@ -40,7 +40,14 @@
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
 }
-</script>
+  </script>
+  <script>
+    // API key - will be injected by Netlify environment variable
+    // For local testing, set window.AGENTIFY_API_KEY in parent page
+    if (typeof window.AGENTIFY_API_KEY === 'undefined') {
+      window.AGENTIFY_API_KEY = '__AGENTIFY_API_KEY__'; // Placeholder for build-time replacement
+    }
+  </script>
   <script type="module" crossorigin src="./assets/index-B8tj0iUk.js"></script>
 </head>
 
