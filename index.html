@@ -2752,7 +2752,10 @@ scaleY(var(--tw-scale-y, 1))
 
                         console.log('Sending payload:', payload);
 
-                        const response = await fetch(discoveryForm.action + '?t=' + Date.now(), { // Cache buster
+                        // Direct URL since form action might be messy
+                        const webhookUrl = "https://n8n.srv1210213.hstgr.cloud/webhook/agentify-intake";
+
+                        const response = await fetch(webhookUrl + '?t=' + Date.now(), { // Cache buster
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
