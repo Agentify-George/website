@@ -2341,7 +2341,7 @@ scaleY(var(--tw-scale-y, 1))
 
                 <!-- Submit -->
                 <div class="text-center">
-                    <button type="button" id="manual-submit-btn"
+                    <button type="submit"
                         class="min-w-[240px] transition-all duration-300 hover:bg-purple-600 sm:w-auto text-sm font-semibold text-slate-50 font-manrope bg-purple-700 w-full rounded-full px-8 py-3.5 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)]">
                         See If We’re a Fit
                     </button>
@@ -2752,10 +2752,7 @@ scaleY(var(--tw-scale-y, 1))
 
                         console.log('Sending payload:', payload);
 
-                        // Direct URL since form action might be messy
-                        const webhookUrl = "https://n8n.srv1210213.hstgr.cloud/webhook/agentify-intake";
-
-                        const response = await fetch(webhookUrl + '?t=' + Date.now(), { // Cache buster
+                        const response = await fetch(discoveryForm.action + '?t=' + Date.now(), { // Cache buster
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
