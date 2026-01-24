@@ -2147,8 +2147,8 @@ scaleY(var(--tw-scale-y, 1))
                 This helps us prepare intelligently and determine the right next step together.
             </p>
 
-            <form id="discovery-call-form" action="https://n8n.srv1210213.hstgr.cloud/webhook/agentify-intake"
-                method="POST" class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
+            <form id="discovery-call-form" action="https://formspree.io/f/xpqqjkqg" method="POST"
+                class="glass-panel h-full border-white/10 border rounded-2xl pt-8 pr-8 pb-8 pl-8">
                 <!-- Section 1: Identity -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 gap-x-6 gap-y-6">
                     <div class="space-y-1.5">
@@ -2181,16 +2181,6 @@ scaleY(var(--tw-scale-y, 1))
                         </label>
                         <input type="text" id="company_name" name="company_name" required="" placeholder="Acme Inc."
                             class="w-full bg-[#0E0E12] border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all font-manrope">
-                    </div>
-
-                    <div class="space-y-1.5">
-                        <label for="phone" class="block text-xs font-semibold text-slate-300 font-manrope text-left">
-                            Phone Number
-                            <span class="text-purple-500">*</span>
-                        </label>
-                        <input type="tel" name="phone" required="" placeholder="+1 (555) 000-0000"
-                            class="placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 transition-all text-sm text-white font-manrope bg-[#0E0E12] w-full border-white/10 border rounded-lg pt-2.5 pr-4 pb-2.5 pl-4"
-                            id="phone">
                     </div>
 
                     <!-- Section 2: Context -->
@@ -2368,8 +2358,8 @@ scaleY(var(--tw-scale-y, 1))
                 Join the waiting list today and get our free guide on "AI-First
                 Productivity".
             </p>
-            <form id="waiting-list-form" action="https://n8n.srv1210213.hstgr.cloud/webhook/agentify-intake"
-                method="POST" class="max-w-md mx-auto relative flex items-center">
+            <form action="https://formspree.io/f/xpqqjkqg" method="POST"
+                class="max-w-md mx-auto relative flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16"
                     viewBox="0 0 24 24" data-icon="lucide:mail" data-width="16"
                     class="iconify absolute left-4 text-slate-500 iconify--lucide">
@@ -2573,7 +2563,7 @@ scaleY(var(--tw-scale-y, 1))
                     </button>
                 </div>
             </div>
-        </div>ƒ
+        </div>
     </div>
 
     <style>
@@ -2683,10 +2673,7 @@ scaleY(var(--tw-scale-y, 1))
 
             if (discoveryForm) {
                 discoveryForm.addEventListener('submit', async function (e) {
-                    e.preventDefault(); // Always prevent default
-                    e.stopImmediatePropagation(); // Prevent Tidio from hijacking
-
-                    console.log('Discovery form submitting...');
+                    e.preventDefault(); // Always prevent default - we'll submit via AJAX
 
                     // Check if at least one checkbox is selected
                     const checkboxes = discoveryForm.querySelectorAll('input[name="primary_problem"]:checked');
@@ -2735,30 +2722,12 @@ scaleY(var(--tw-scale-y, 1))
                     // Submit form via AJAX
                     try {
                         const formData = new FormData(discoveryForm);
-                        const problems = Array.from(checkboxes).map(cb => cb.value).join(', ');
-
-                        const payload = {
-                            name: formData.get('full_name'),
-                            email: formData.get('email'),
-                            phone: formData.get('phone'),
-                            role: formData.get('role'),
-                            volume: formData.get('monthly_volume_range'),
-                            problems: problems,
-                            success: formData.get('success_definition'),
-                            company: formData.get('company_name'),
-                            timeline: formData.get('timeline'),
-                            source: 'website-discovery'
-                        };
-
-                        console.log('Sending payload:', payload);
-
-                        const response = await fetch(discoveryForm.action + '?t=' + Date.now(), { // Cache buster
+                        const response = await fetch(discoveryForm.action, {
                             method: 'POST',
+                            body: formData,
                             headers: {
-                                'Content-Type': 'application/json',
                                 'Accept': 'application/json'
-                            },
-                            body: JSON.stringify(payload)
+                            }
                         });
 
                         if (response.ok) {
@@ -2790,42 +2759,6 @@ scaleY(var(--tw-scale-y, 1))
                             setTimeout(() => formError.classList.add('hidden'), 3000);
                         }
                     });
-                });
-            }
-
-            const waitingListForm = document.getElementById('waiting-list-form');
-            if (waitingListForm) {
-                waitingListForm.addEventListener('submit', async function (e) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation(); // Prevent Tidio from hijacking
-
-                    console.log('Waiting list form submitting...');
-                    const formData = new FormData(waitingListForm);
-                    const payload = {
-                        email: formData.get('email'),
-                        source: 'waiting-list'
-                    };
-
-                    try {
-                        console.log('Sending waiting list payload:', payload);
-                        const response = await fetch(waitingListForm.action + '?t=' + Date.now(), { // Cache buster
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json'
-                            },
-                            body: JSON.stringify(payload)
-                        });
-
-                        if (response.ok) {
-                            openSuccessModal();
-                            waitingListForm.reset();
-                        } else {
-                            alert("Something went wrong. Please try again.");
-                        }
-                    } catch (error) {
-                        alert("Network error. Please try again.");
-                    }
                 });
             }
         });
