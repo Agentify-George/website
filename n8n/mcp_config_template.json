@@ -1,0 +1,15 @@
+{
+    "mcpServers": {
+        "n8n-mcp": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "supergateway",
+                "--streamableHttp",
+                "https://n8n.srv1210213.hstgr.cloud/mcp-server/http",
+                "--header",
+                "authorization:Bearer <YOUR_ACCESS_TOKEN_HERE>"
+            ]
+        }
+    }
+}

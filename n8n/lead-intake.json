@@ -1,0 +1,232 @@
+{
+    "name": "Agentify - Lead Intake",
+    "nodes": [
+        {
+            "parameters": {
+                "path": "agentify-intake",
+                "method": "POST"
+            },
+            "name": "Webhook - Website Form",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                -600,
+                200
+            ]
+        },
+        {
+            "parameters": {
+                "path": "calcom-intake",
+                "method": "POST"
+            },
+            "name": "Webhook - cal.com",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                -600,
+                0
+            ]
+        },
+        {
+            "parameters": {
+                "functionCode": "const crypto = require('crypto');\n\n// Detect cal.com vs website\nconst isCal = !!$json.payload;\n\nconst name = isCal\n  ? $json.payload.attendees[0].name\n  : ($json.name || 'Anonymous');\nconst email = isCal\n  ? $json.payload.attendees[0].email.toLowerCase()\n  : ($json.email ? $json.email.toLowerCase() : '');\nconst phoneClean = val => (val || '').toString().replace(/\\D/g, '');\nconst phone = isCal\n  ? phoneClean($json.payload.responses['Phone Number'])\n  : phoneClean($json.phone);\nconst role = isCal\n  ? $json.payload.responses['Role']\n  : $json.role;\nconst volume = isCal\n  ? $json.payload.responses['Monthly Call Volume']\n  : $json.volume;\nconst problems = isCal\n  ? $json.payload.responses['Biggest Problem']\n  : $json.problems;\nconst success = isCal\n  ? $json.payload.responses['Success Looks Like']\n  : $json.success;\nconst company = isCal\n  ? ($json.payload.responses['Company Name'] || '')\n  : ($json.company || '');\nconst timeline = isCal\n  ? ($json.payload.responses['Timeline'] || '')\n  : ($json.timeline || '');\n\n// lead_id\nconst leadId = crypto\n  .createHash('sha256')\n  .update(`${email}|${phone}`)\n  .digest('hex')\n  .slice(0, 16);\n\nreturn [{\n  json: {\n    lead_id: leadId,\n    name,\n    email,\n    phone,\n    role,\n    volume,\n    problems,\n    success_definition: success,\n    company,\n    timeline,\n    source: isCal ? 'cal.com' : ($json.source || 'website'),\n    workflow_status: 'new',\n    created_at: new Date().toISOString()\n  }\n}];"
+            },
+            "name": "Normalize Lead",
+            "type": "n8n-nodes-base.function",
+            "typeVersion": 1,
+            "position": [
+                -400,
+                100
+            ]
+        },
+        {
+            "parameters": {
+                "sheetId": "GOOGLE_SHEET_ID",
+                "range": "Leads",
+                "lookupColumn": "lead_id",
+                "lookupValue": "={{$json.lead_id}}"
+            },
+            "name": "Google Sheets - Lookup Lead",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 1,
+            "position": [
+                -200,
+                100
+            ]
+        },
+        {
+            "parameters": {
+                "conditions": {
+                    "boolean": [
+                        {
+                            "value1": "={{!!$node[\"Google Sheets - Lookup Lead\"].json[0]}}",
+                            "value2": true
+                        }
+                    ]
+                }
+            },
+            "name": "IF - Duplicate?",
+            "type": "n8n-nodes-base.if",
+            "typeVersion": 1,
+            "position": [
+                0,
+                100
+            ]
+        },
+        {
+            "parameters": {
+                "sheetId": "GOOGLE_SHEET_ID",
+                "range": "Leads",
+                "options": {}
+            },
+            "name": "Google Sheets - Append Lead",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 1,
+            "position": [
+                200,
+                -50
+            ]
+        },
+        {
+            "parameters": {
+                "updateFields": {
+                    "workflow_status": "new"
+                },
+                "row": "={{$node[\"Google Sheets - Append Lead\"].json[\"rowNumber\"]}}",
+                "sheetId": "GOOGLE_SHEET_ID",
+                "range": "Leads"
+            },
+            "name": "Google Sheets - Update Status",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 1,
+            "position": [
+                400,
+                -50
+            ]
+        },
+        {
+            "parameters": {
+                "url": "https://api.retell.ai/v1/calls",
+                "method": "POST",
+                "jsonParameters": true,
+                "options": {},
+                "bodyJson": "={\n  \"phone_number\": \"{{$json.phone}}\",\n  \"agent_id\": \"RETELL_AGENT_ID\",\n  \"metadata\": {\n    \"lead_id\": \"{{$json.lead_id}}\",\n    \"sheet_row\": \"{{$node[\"Google Sheets - Append Lead\"].json[\"rowNumber\"]}}\"\n  },\n  \"webhook_url\": \"https://YOUR-SUBDOMAIN.n8n.cloud/webhook/retell-callback\"\n}"
+            },
+            "name": "Retell - Trigger Call",
+            "type": "n8n-nodes-base.httpRequest",
+            "typeVersion": 1,
+            "position": [
+                600,
+                -50
+            ]
+        },
+        {
+            "parameters": {
+                "updateFields": {
+                    "workflow_status": "calling"
+                },
+                "row": "={{$node[\"Google Sheets - Append Lead\"].json[\"rowNumber\"]}}",
+                "sheetId": "GOOGLE_SHEET_ID",
+                "range": "Leads"
+            },
+            "name": "Google Sheets - Mark Calling",
+            "type": "n8n-nodes-base.googleSheets",
+            "typeVersion": 1,
+            "position": [
+                800,
+                -50
+            ]
+        }
+    ],
+    "connections": {
+        "Webhook - Website Form": {
+            "main": [
+                [
+                    {
+                        "node": "Normalize Lead",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Webhook - cal.com": {
+            "main": [
+                [
+                    {
+                        "node": "Normalize Lead",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Normalize Lead": {
+            "main": [
+                [
+                    {
+                        "node": "Google Sheets - Lookup Lead",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Google Sheets - Lookup Lead": {
+            "main": [
+                [
+                    {
+                        "node": "IF - Duplicate?",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "IF - Duplicate?": {
+            "main": [
+                [
+                    {
+                        "node": "Google Sheets - Append Lead",
+                        "type": "main",
+                        "index": 0
+                    }
+                ],
+                []
+            ]
+        },
+        "Google Sheets - Append Lead": {
+            "main": [
+                [
+                    {
+                        "node": "Google Sheets - Update Status",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Google Sheets - Update Status": {
+            "main": [
+                [
+                    {
+                        "node": "Retell - Trigger Call",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Retell - Trigger Call": {
+            "main": [
+                [
+                    {
+                        "node": "Google Sheets - Mark Calling",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}
