@@ -1323,10 +1323,11 @@ font-family: 'Newsreader', serif !important;
           <div class="relative transform overflow-hidden rounded-3xl bg-[#0A0A0C]/95 backdrop-blur-xl border border-white/10 text-left transition-all sm:my-8 w-full max-w-lg p-6 scale-95 duration-300">
 
 <!-- Gemini Voice UI Mount -->
-<div id="megan-voice-root"
-  class="w-full h-[420px] rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center text-slate-400 font-manrope text-sm">
-  Initializing voice agent…
-</div>
+<div
+  id="root"
+  class="w-full h-[420px] rounded-2xl bg-black/60 border border-white/10"
+></div>
+
 
             <!-- Close Button -->
             <button type="button" id="close-megan-btn" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-all hover:rotate-90 z-20">
@@ -1467,7 +1468,6 @@ font-family: 'Newsreader', serif !important;
       }
     </script>
     <script type="module" src="/assets/gemini/index-BE-QCb8U.js"></script>
-
 
   
 <iframe id="tidio-chat-code" title="Tidio Chat code" style="display: none;"></iframe><div id="tidio-chat" style="z-index: 999999999 !important; position: fixed; width: 100%; height: 100%; bottom: 0px; right: 0px; pointer-events: none;"><style>
