@@ -6,8 +6,7 @@
                 "-y",
                 "supergateway",
                 "--streamableHttp",
-                "https://n8n.srv1210213.hstgr.cloud/mcp-server/http",
-                "--header",
+                "https://n8n.srv1210213.hstgr.cloud/mcp-server/http,"--header",
                 "authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwM2I1NGFjOS01NjA5LTQ4NGItYWEwNy00NjFjZjJiZDE3NGUiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzY5MjE2NDk0fQ.kKoR7z5EBCCvBdP1jL0pypNdmHVRvDs90w-v8iSOL50"
             ]
         }
