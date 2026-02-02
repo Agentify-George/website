@@ -1,6 +1,9 @@
 <html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agentify AI</title>
+<link rel="preconnect" href="https://esm.sh" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
@@ -79,6 +82,13 @@ transition-delay: 200ms;
 }
 .delay-300 {
 transition-delay: 300ms;
+}
+.skeleton-fade {
+transition: opacity 300ms ease, transform 300ms ease;
+}
+.skeleton-fade.is-hiding {
+opacity: 0;
+transform: translateY(4px);
 }
 </style>
 <script>
@@ -504,36 +514,47 @@ font-family: 'Newsreader', serif !important;
         </a>
       </div>
     </div>
-    <!-- Floating Demo Button -->
-    <div class="fixed -translate-x-1/2 z-[60] hidden flex gap-4 shadow-purple-500/20 hover:scale-105 transition-all duration-300 cursor-pointer group bg-black/80 border-white/10 border rounded-full pt-2 pr-6 pb-2 pl-2 bottom-8 left-1/2 shadow-2xl backdrop-blur-xl gap-x-4 gap-y-4 items-center" id="open-megan-btn">
-  <div class="flex text-white bg-gradient-to-br from-purple-600 to-indigo-600 w-10 h-10 rounded-full relative shadow-lg items-center justify-center">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
-      <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-      <line x1="12" x2="12" y1="19" y2="22"></line>
-    </svg>
-    <span class="animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] opacity-50 border-white/30 border rounded-full absolute top-0 right-0 bottom-0 left-0"></span>
-  </div>
-  <div class="flex flex-col">
-    <span class="text-sm font-semibold text-white font-manrope leading-tight">
-          Start Voice Demo
-        </span>
-    <div class="flex items-center gap-1.5">
-      <span class="relative flex h-1.5 w-1.5">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-      <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-      </span>
-      <span class="text-[10px] text-emerald-400 font-medium font-manrope uppercase tracking-wider">
-            Agent Ready
-          </span>
+    <!-- Voice Demo Island -->
+    <div class="fixed -translate-x-1/2 z-[60] hidden bg-black/80 border-white/10 border rounded-3xl bottom-6 left-1/2 shadow-2xl shadow-purple-500/20 backdrop-blur-xl w-[92vw] max-w-md p-3" id="open-megan-btn">
+  <button type="button" class="w-full flex items-center gap-3 pb-2 px-2 text-left" id="megan-toggle" aria-expanded="false">
+    <div class="flex text-white bg-gradient-to-br from-purple-600 to-indigo-600 w-9 h-9 rounded-full relative shadow-lg items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+        <line x1="12" x2="12" y1="19" y2="22"></line>
+      </svg>
+      <span class="animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] opacity-40 border-white/30 border rounded-full absolute top-0 right-0 bottom-0 left-0"></span>
     </div>
-  </div>
-  <!-- Waveform -->
-  <div class="flex items-center gap-0.5 h-4 ml-2 opacity-50 group-hover:opacity-100 transition-opacity">
-    <div class="w-0.5 h-2 bg-white rounded-full animate-pulse"></div>
-    <div class="w-0.5 h-4 bg-white rounded-full animate-[pulse_1s_infinite]"></div>
-    <div class="w-0.5 h-3 bg-white rounded-full animate-[pulse_0.5s_infinite]"></div>
-    <div class="w-0.5 h-2 bg-white rounded-full animate-pulse"></div>
+    <div class="flex flex-col">
+      <span class="text-xs font-semibold text-white font-manrope leading-tight">
+        Voice Demo
+      </span>
+      <div class="flex items-center gap-1.5">
+        <span class="relative flex h-1.5 w-1.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+        </span>
+        <span id="megan-status" class="text-[10px] text-emerald-400 font-medium font-manrope uppercase tracking-wider">
+          Agent Ready
+        </span>
+      </div>
+    </div>
+  </button>
+  <div id="root" class="w-full h-[240px] rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center text-slate-400 font-manrope text-xs">
+    <div id="megan-skeleton" class="w-full h-full flex flex-col gap-3 p-4 skeleton-fade">
+      <div class="flex items-center gap-3">
+        <div class="h-12 w-12 rounded-full bg-white/10 animate-pulse"></div>
+        <div class="flex-1 space-y-2">
+          <div class="h-3 w-1/2 rounded bg-white/10 animate-pulse"></div>
+          <div class="h-2 w-1/3 rounded bg-white/10 animate-pulse"></div>
+        </div>
+      </div>
+      <div class="h-24 rounded-xl bg-white/5 border border-white/10 animate-pulse"></div>
+      <div class="flex items-center justify-between">
+        <div class="h-3 w-24 rounded bg-white/10 animate-pulse"></div>
+        <div class="h-3 w-12 rounded bg-white/10 animate-pulse"></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1310,36 +1331,6 @@ font-family: 'Newsreader', serif !important;
       </div>
     </div>
 
-    <!-- Megan Voice Agent Modal -->
-    <div id="megan-modal" class="fixed inset-0 z-[100] hidden opacity-0 transition-opacity duration-300" aria-labelledby="megan-modal-title" role="dialog" aria-modal="true">
-      <!-- Backdrop -->
-      <div class="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity" id="megan-backdrop"></div>
-
-      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
-          
-          <!-- Modal Panel -->
-          <div class="relative transform overflow-hidden rounded-3xl bg-[#0A0A0C]/95 backdrop-blur-xl border border-white/10 text-left transition-all sm:my-8 w-full max-w-lg p-6 scale-95 duration-300">
-
-<!-- Gemini Voice UI Mount -->
-<div id="root" class="w-full h-[420px] rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center text-slate-400 font-manrope text-sm">
-  Initializing voice agent…
-</div>
-
-            <!-- Close Button -->
-            <button type="button" id="close-megan-btn" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-all hover:rotate-90 z-20">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
     <script>
       // Login Modal Logic
       document.addEventListener('DOMContentLoaded', () => {
@@ -1400,54 +1391,87 @@ font-family: 'Newsreader', serif !important;
       });
     </script>
 
- <script>
-  // Megan Modal Logic
-  document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('megan-modal');
-      const backdrop = document.getElementById('megan-backdrop');
-      const closeBtn = document.getElementById('close-megan-btn');
-      const openBtn = document.getElementById('open-megan-btn');
+    <script>
+      // Megan Island Logic
+      document.addEventListener('DOMContentLoaded', () => {
+          const openBtn = document.getElementById('open-megan-btn');
+          const toggleBtn = document.getElementById('megan-toggle');
+          const statusEl = document.getElementById('megan-status');
 
-      function openMegan() {
-          if (openBtn) {
-              openBtn.classList.remove('hidden');
-          }
-          modal.classList.remove('hidden');
-          document.body.style.overflow = 'hidden';
-          setTimeout(() => {
-              modal.classList.remove('opacity-0');
-              const panel = modal.querySelector('div[class*="transform"]');
-              if (panel) {
-                  panel.classList.remove('scale-95');
-                  panel.classList.add('scale-100');
+          const tryStartVoice = () => {
+              let attempts = 0;
+              const maxAttempts = 12;
+              const attemptClick = () => {
+                  attempts += 1;
+                  const root = document.getElementById('root');
+                  if (!root) return;
+                  const micButton = root.querySelector('button');
+                  if (micButton) {
+                      const skeleton = document.getElementById('megan-skeleton');
+                      if (skeleton) {
+                          skeleton.classList.add('is-hiding');
+                          setTimeout(() => skeleton.remove(), 320);
+                      }
+                      micButton.click();
+                      return;
+                  }
+                  if (attempts < maxAttempts) {
+                      setTimeout(attemptClick, 200);
+                  }
+              };
+              attemptClick();
+          };
+
+          const tryEndVoice = () => {
+              const root = document.getElementById('root');
+              if (!root) return;
+              const micButton = root.querySelector('button');
+              if (micButton) {
+                  micButton.click();
               }
-          }, 10);
-      }
+          };
 
-      function closeMegan() {
-          modal.classList.add('opacity-0');
-          const panel = modal.querySelector('div[class*="transform"]');
-          if (panel) {
-              panel.classList.remove('scale-100');
-              panel.classList.add('scale-95');
+          function openMegan({ autoStart = true } = {}) {
+              if (openBtn) {
+                  openBtn.classList.remove('hidden');
+                  if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+                  if (statusEl) statusEl.textContent = 'Live';
+                  if (autoStart) {
+                      tryStartVoice();
+                  }
+              }
           }
-          setTimeout(() => {
-              modal.classList.add('hidden');
-              document.body.style.overflow = '';
-          }, 300);
-      }
 
-      if (openBtn) openBtn.addEventListener('click', openMegan);
-      if (closeBtn) closeBtn.addEventListener('click', closeMegan);
-      if (backdrop) backdrop.addEventListener('click', closeMegan);
-
-      document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-              closeMegan();
+          function closeMegan() {
+              if (!openBtn) return;
+              tryEndVoice();
+              openBtn.classList.add('hidden');
+              if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+              if (statusEl) statusEl.textContent = 'Agent Ready';
           }
+
+          if (openBtn) openBtn.addEventListener('click', () => openMegan({ autoStart: true }));
+          if (toggleBtn) {
+              toggleBtn.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  if (openBtn && openBtn.classList.contains('hidden')) {
+                      openMegan({ autoStart: true });
+                  } else {
+                      closeMegan();
+                  }
+              });
+          }
+
+          document.addEventListener('keydown', (e) => {
+              if (e.key === 'Escape' && openBtn) {
+                  closeMegan();
+              }
+          });
+
+          // Auto-open island without auto-starting the mic (avoids autoplay blocks)
+          openMegan({ autoStart: false });
       });
-  });
-</script>
+    </script>
 
 
     <!-- Megan API Key Bridge -->
@@ -1467,6 +1491,7 @@ font-family: 'Newsreader', serif !important;
         }
       }
     </script>
+    <link rel="preload" as="script" href="/assets/gemini/index-BE-QCb8U.js">
     <script type="module" src="/assets/gemini/index-BE-QCb8U.js"></script>
 
     <script src="/assets/js/voice-demo-gemini.js" defer=""></script>
