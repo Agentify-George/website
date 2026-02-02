@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 <html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agentify AI</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <style>
 body {
 font-family: 'Inter', sans-serif;
@@ -244,15 +243,15 @@ visibility: hidden !important;
 
 
 
-<link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"><style id="all-fonts-style-font-montserrat">
+<link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">
 .font-montserrat {
 font-family: 'Montserrat', sans-serif !important;
 }
-</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"><style id="all-fonts-style-font-manrope">
+</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">
 .font-manrope {
 font-family: 'Manrope', sans-serif !important;
 }
-</style><link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&display=swap"><style id="all-fonts-style-font-newsreader">
+</style><link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap"><style id="all-fonts-style-font-newsreader">
 .font-newsreader {
 font-family: 'Newsreader', serif !important;
 }
@@ -505,9 +504,8 @@ font-family: 'Newsreader', serif !important;
         </a>
       </div>
     </div>
-
     <!-- Floating Demo Button -->
-    <div class="fixed -translate-x-1/2 z-[60] flex gap-4 shadow-purple-500/20 hover:scale-105 transition-all duration-300 cursor-pointer group bg-black/80 border-white/10 border rounded-full pt-2 pr-6 pb-2 pl-2 bottom-8 left-1/2 shadow-2xl backdrop-blur-xl gap-x-4 gap-y-4 items-center" id="open-megan-btn">
+    <div class="fixed -translate-x-1/2 z-[60] hidden flex gap-4 shadow-purple-500/20 hover:scale-105 transition-all duration-300 cursor-pointer group bg-black/80 border-white/10 border rounded-full pt-2 pr-6 pb-2 pl-2 bottom-8 left-1/2 shadow-2xl backdrop-blur-xl gap-x-4 gap-y-4 items-center" id="open-megan-btn">
   <div class="flex text-white bg-gradient-to-br from-purple-600 to-indigo-600 w-10 h-10 rounded-full relative shadow-lg items-center justify-center">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
@@ -538,56 +536,6 @@ font-family: 'Newsreader', serif !important;
     <div class="w-0.5 h-2 bg-white rounded-full animate-pulse"></div>
   </div>
 </div>
-
-    <!-- Megan Dynamic Island (NEW - replaces modal behavior) -->
-    <div
-      id="megan-island"
-      class="fixed left-1/2 -translate-x-1/2 z-[80]
-             bottom-6
-             w-[74px] h-[74px]
-             rounded-full
-             bg-black/80 backdrop-blur-xl
-             border border-white/10
-             shadow-2xl shadow-purple-900/20
-             overflow-hidden
-             opacity-0 pointer-events-none scale-95
-             transition-all duration-300 ease-out"
-      aria-label="Megan Voice Island"
-    >
-      <!-- Top row when expanded -->
-      <div id="megan-island-topbar" class="hidden w-full h-12 px-3 items-center justify-between border-b border-white/10 bg-black/30">
-        <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-full bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white text-xs font-semibold">
-            M
-          </div>
-          <div class="flex flex-col leading-none">
-            <span class="text-[12px] font-semibold text-white font-manrope">Megan</span>
-            <span class="text-[10px] text-slate-400 font-manrope">Live voice demo</span>
-          </div>
-        </div>
-
-        <button type="button" id="close-megan-btn" class="text-slate-400 hover:text-white transition-all hover:rotate-90">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Gemini Voice UI Mount (keep id="root" for your bundle) -->
-      <div id="root" class="w-full h-full"></div>
-
-      <!-- Idle hint overlay (only when collapsed) -->
-      <div id="megan-island-idle" class="absolute inset-0 flex items-center justify-center">
-        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white shadow-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
-            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-            <line x1="12" x2="12" y1="19" y2="22"></line>
-          </svg>
-        </div>
-      </div>
-    </div>
 
 
     <!-- Testimonials -->
@@ -1362,6 +1310,36 @@ font-family: 'Newsreader', serif !important;
       </div>
     </div>
 
+    <!-- Megan Voice Agent Modal -->
+    <div id="megan-modal" class="fixed inset-0 z-[100] hidden opacity-0 transition-opacity duration-300" aria-labelledby="megan-modal-title" role="dialog" aria-modal="true">
+      <!-- Backdrop -->
+      <div class="fixed inset-0 bg-black/80 backdrop-blur-md transition-opacity" id="megan-backdrop"></div>
+
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+          
+          <!-- Modal Panel -->
+          <div class="relative transform overflow-hidden rounded-3xl bg-[#0A0A0C]/95 backdrop-blur-xl border border-white/10 text-left transition-all sm:my-8 w-full max-w-lg p-6 scale-95 duration-300">
+
+<!-- Gemini Voice UI Mount -->
+<div id="root" class="w-full h-[420px] rounded-2xl bg-black/60 border border-white/10 flex items-center justify-center text-slate-400 font-manrope text-sm">
+  Initializing voice agent…
+</div>
+
+            <!-- Close Button -->
+            <button type="button" id="close-megan-btn" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-all hover:rotate-90 z-20">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
     <script>
       // Login Modal Logic
       document.addEventListener('DOMContentLoaded', () => {
@@ -1422,85 +1400,54 @@ font-family: 'Newsreader', serif !important;
       });
     </script>
 
-    <!-- Megan Voice Agent Modal REMOVED (replaced by Island) -->
+ <script>
+  // Megan Modal Logic
+  document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('megan-modal');
+      const backdrop = document.getElementById('megan-backdrop');
+      const closeBtn = document.getElementById('close-megan-btn');
+      const openBtn = document.getElementById('open-megan-btn');
 
-    <script>
-      // Megan Dynamic Island Logic (NEW)
-      document.addEventListener('DOMContentLoaded', () => {
-          const island = document.getElementById('megan-island');
-          const idle = document.getElementById('megan-island-idle');
-          const topbar = document.getElementById('megan-island-topbar');
-          const openBtn = document.getElementById('open-megan-btn');
-          const closeBtn = document.getElementById('close-megan-btn');
-
-          // Start only once to prevent WS spam / reconnect loops
-          window.__MEGAN_STARTED__ = false;
-
-          function openMeganIsland() {
-              if (!island) return;
-
-              // show island
-              island.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
-              island.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
-
-              // expand to "island panel"
-              island.classList.remove('w-[74px]', 'h-[74px]', 'rounded-full');
-              island.classList.add('w-[380px]', 'h-[440px]', 'rounded-2xl');
-
-              // UI
-              if (idle) idle.classList.add('hidden');
-              if (topbar) topbar.classList.remove('hidden'), topbar.classList.add('flex');
-
-              // hide launcher button (optional)
-              if (openBtn) openBtn.classList.add('opacity-0', 'pointer-events-none');
-
-              // boot app once (IF your bundle exposes a boot function)
-              if (!window.__MEGAN_STARTED__) {
-                  window.__MEGAN_STARTED__ = true;
-
-                  // Try common boot hooks without breaking anything if missing
-                  try {
-                      if (typeof window.startApp === 'function') {
-                          window.startApp();
-                      } else if (typeof window.bootMegan === 'function') {
-                          window.bootMegan();
-                      } else {
-                          // no-op: bundle may auto-init on module load
-                      }
-                  } catch (e) {
-                      // keep UI up even if boot throws
-                      console.error(e);
-                  }
+      function openMegan() {
+          if (openBtn) {
+              openBtn.classList.remove('hidden');
+          }
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+          setTimeout(() => {
+              modal.classList.remove('opacity-0');
+              const panel = modal.querySelector('div[class*="transform"]');
+              if (panel) {
+                  panel.classList.remove('scale-95');
+                  panel.classList.add('scale-100');
               }
+          }, 10);
+      }
+
+      function closeMegan() {
+          modal.classList.add('opacity-0');
+          const panel = modal.querySelector('div[class*="transform"]');
+          if (panel) {
+              panel.classList.remove('scale-100');
+              panel.classList.add('scale-95');
           }
+          setTimeout(() => {
+              modal.classList.add('hidden');
+              document.body.style.overflow = '';
+          }, 300);
+      }
 
-          function closeMeganIsland() {
-              if (!island) return;
+      if (openBtn) openBtn.addEventListener('click', openMegan);
+      if (closeBtn) closeBtn.addEventListener('click', closeMegan);
+      if (backdrop) backdrop.addEventListener('click', closeMegan);
 
-              // collapse size
-              island.classList.remove('w-[380px]', 'h-[440px]', 'rounded-2xl');
-              island.classList.add('w-[74px]', 'h-[74px]', 'rounded-full');
-
-              // UI
-              if (topbar) topbar.classList.add('hidden'), topbar.classList.remove('flex');
-              if (idle) idle.classList.remove('hidden');
-
-              // show launcher button back
-              if (openBtn) openBtn.classList.remove('opacity-0', 'pointer-events-none');
-
-              // keep island visible collapsed (like iOS)
-              // (If you want it to fully disappear, uncomment next line)
-              // island.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+      document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+              closeMegan();
           }
-
-          if (openBtn) openBtn.addEventListener('click', openMeganIsland);
-          if (closeBtn) closeBtn.addEventListener('click', closeMeganIsland);
-
-          document.addEventListener('keydown', (e) => {
-              if (e.key === 'Escape') closeMeganIsland();
-          });
       });
-    </script>
+  });
+</script>
 
 
     <!-- Megan API Key Bridge -->
@@ -1522,6 +1469,11 @@ font-family: 'Newsreader', serif !important;
     </script>
     <script type="module" src="/assets/gemini/index-BE-QCb8U.js"></script>
 
+    <script src="/assets/js/voice-demo-gemini.js" defer=""></script>
+
+
+    <!-- Retell AI Voice Agent Integration -->
+    <script src="/js/retell-integration.js"></script>
   
 <iframe id="tidio-chat-code" title="Tidio Chat code" style="display: none;"></iframe><div id="tidio-chat" style="z-index: 999999999 !important; position: fixed; width: 100%; height: 100%; bottom: 0px; right: 0px; pointer-events: none;"><style>
 /* cyrillic-ext */
