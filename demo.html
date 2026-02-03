@@ -39,6 +39,23 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus,
+    select:-webkit-autofill:active,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    textarea:-webkit-autofill:active {
+      -webkit-text-fill-color: #ffffff;
+      box-shadow: 0 0 0 1000px #0E0E12 inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
     .text-gradient {
       background: linear-gradient(to right, #e2e8f0, #94a3b8);
       -webkit-background-clip: text;
@@ -605,8 +622,11 @@ scaleY(var(--tw-scale-y, 1))
                 Phone Number
                 <span class="text-purple-500">*</span>
               </label>
-              <input type="tel" name="phone" id="user_number" required="" placeholder="+1 (___) ___-____"
+              <input type="tel" name="phone" id="user_number" required="" inputmode="numeric" placeholder="15551234567"
                 class="placeholder:text-slate-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500/50 focus:text-white transition-all text-sm text-white font-manrope bg-[#0E0E12] w-full border-white/10 border rounded-lg pt-2.5 pr-4 pb-2.5 pl-4 caret-white">
+              <p class="text-[11px] text-slate-500 font-manrope">
+                US only. Enter digits only (e.g., 15551234567).
+              </p>
             </div>
 
             <div class="space-y-1.5">
@@ -1587,9 +1607,32 @@ scaleY(var(--tw-scale-y, 1))
         }
       });
 
+      function formatUsPhoneToE164(value) {
+        const digits = (value || '').replace(/\D/g, '');
+        if (!digits) return '';
+        if (digits.length === 10) return `+1${digits}`;
+        if (digits.length === 11 && digits.startsWith('1')) return `+${digits}`;
+        return null;
+      }
+
       if (demoForm) {
         demoForm.addEventListener('submit', async function (e) {
           e.preventDefault();
+
+          const phoneField = demoForm.querySelector('input[name="phone"]');
+          if (phoneField) {
+            const formattedPhone = formatUsPhoneToE164(phoneField.value);
+            if (!formattedPhone) {
+              phoneField.classList.add('border-red-500');
+              if (formError) {
+                formError.textContent = 'Enter a valid 10-digit US phone number (e.g., 15551234567).';
+                formError.classList.remove('hidden');
+              }
+              if (formSuccess) formSuccess.classList.add('hidden');
+              return false;
+            }
+            phoneField.value = formattedPhone;
+          }
 
           const requiredFields = demoForm.querySelectorAll('[required]');
           let allFilled = true;
